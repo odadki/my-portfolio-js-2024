@@ -8,16 +8,22 @@ $color-background: #f4f6f8;
 
 body {
   font-family: $font-primary;
-  // padding-left: 150px;
-  // padding-right: 150px;
+  padding-left: 150px;
+  padding-right: 150px;
   background-color: $color-background;
+  margin-top: 0;
 }
 .flex-body {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 nav {
   padding-top: 200px;
+  max-width: 50vw;
+  position: sticky;
+  width: 50vw;
+  align-self: flex-start;
+  top: 0;
   // margin-left: 10vw;
   // display: flex;
   // flex-direction: column;
@@ -70,6 +76,9 @@ nav {
       padding-bottom: 5px;
       position: relative;
     }
+    li.nav-item:hover {
+      cursor: pointer;
+    }
     li.nav-item:after {
       content: "";
       position: absolute;
@@ -77,8 +86,8 @@ nav {
       left: 0;
       right: 0;
       background: $color-beige;
-      height: 3px;
-      border-radius: 0 1.5px 1.5px 0;
+      height: 2px;
+      border-radius: 0 1px 1px 0;
       transform: scaleX(1);
       transition: transform 250ms ease-in-out;
       display: block;
@@ -86,6 +95,95 @@ nav {
     }
     li.nav-item:hover:after {
       transform: scaleX(2);
+    }
+  }
+}
+section {
+  max-width: 40vw;
+  color: $color-gray;
+
+  h2 {
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    position: relative;
+    text-transform: uppercase;
+  }
+  h2:after {
+    content: "";
+    background: red;
+    position: absolute;
+    bottom: 10px;
+    // need to custom adjust the left marker for each h2 or width
+    // left: 0;
+    right: 0;
+    height: 3px;
+    width: 50%;
+  }
+  div.section-text {
+    padding: 20px 0 20px 0;
+
+    p {
+      font-size: 12px;
+      font-weight: 300;
+      letter-spacing: 1.5px;
+      line-height: 2;
+      margin-bottom: 20px;
+
+      a {
+        text-decoration: none;
+        color: $color-gray;
+        font-weight: 600;
+      }
+    }
+  }
+  .section-experience {
+    display: flex;
+    margin: 0 0 50px 0;
+
+    .exp-date-cont {
+      width: 5vw;
+      word-wrap: normal;
+    }
+    .exp-date {
+      color: $color-mauve;
+      font-size: 9px;
+      font-weight: 300;
+      margin: 0;
+    }
+
+    .exp-content {
+      padding-left: 28px;
+
+      .exp-content-title,
+      .exp-content-place {
+        font-size: 14px;
+        font-weight: 400;
+        letter-spacing: 1.2px;
+      }
+      .exp-content-title {
+        margin: 0;
+        color: black;
+      }
+      .exp-content-place {
+        color: $color-gray;
+        margin-top: 6px;
+        // font-weight: 400;
+        // color: $color-gray;
+      }
+      .exp-content-desc {
+        font-size: 12px;
+      }
+      .exp-content-tool {
+        display: inline-block;
+        background-color: $color-beige;
+        font-size: 9px;
+        font-weight: 500;
+        letter-spacing: 1.2px;
+        margin-bottom: 3px;
+        padding: 5px;
+        text-transform: uppercase;
+      }
     }
   }
 }
