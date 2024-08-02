@@ -1,41 +1,45 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
 body {
   font-family: "Inter";
-  padding-left: 150px;
-  padding-right: 150px;
   background-color: #f4f6f8;
+}
+
+.flex-body {
+  display: flex;
+  justify-content: space-evenly;
 }
 
 nav {
   padding-top: 200px;
 }
-nav .flex {
+nav .logo-cont {
   display: flex;
   flex-direction: row;
   align-items: center;
+  margin-bottom: 100px;
 }
-nav .flex .logo {
+nav .logo-cont .logo {
   width: 80px;
 }
-nav .flex .logo > img {
+nav .logo-cont .logo > img {
   width: 100%;
   height: auto;
   object-position: cover;
 }
-nav .flex .logo-text {
+nav .logo-cont .logo-text {
   margin-left: 20px;
 }
-nav .flex .logo-text > * {
+nav .logo-cont .logo-text > * {
   margin: 0;
 }
-nav .flex .logo-text > h1 {
+nav .logo-cont .logo-text > h1 {
   font-weight: 300;
   font-size: 24px;
   text-transform: uppercase;
   letter-spacing: 3px;
   margin-bottom: 8px;
 }
-nav .flex .logo-text > h2 {
+nav .logo-cont .logo-text > h2 {
   font-weight: 200;
   font-size: 18px;
   letter-spacing: 2px;
@@ -45,14 +49,32 @@ nav ul {
   list-style: none;
   padding-left: 0;
 }
-nav ul li {
+nav ul li.nav-item {
   font-size: 14px;
   font-weight: 300;
   letter-spacing: 1.5px;
-  line-height: normal;
-  border-bottom: 2px solid #c7bab2;
+  line-height: 1;
   margin-bottom: 5px;
   width: 120px;
+  padding-bottom: 5px;
+  position: relative;
+}
+nav ul li.nav-item:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #c7bab2;
+  height: 3px;
+  border-radius: 0 1.5px 1.5px 0;
+  transform: scaleX(1);
+  transition: transform 250ms ease-in-out;
+  display: block;
+  transform-origin: 0% 50%;
+}
+nav ul li.nav-item:hover:after {
+  transform: scaleX(2);
 }
 
 /*# sourceMappingURL=output.css.map */

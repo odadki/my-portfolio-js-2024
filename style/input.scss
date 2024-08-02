@@ -8,17 +8,25 @@ $color-background: #f4f6f8;
 
 body {
   font-family: $font-primary;
-  padding-left: 150px;
-  padding-right: 150px;
+  // padding-left: 150px;
+  // padding-right: 150px;
   background-color: $color-background;
+}
+.flex-body {
+  display: flex;
+  justify-content: space-evenly;
 }
 nav {
   padding-top: 200px;
+  // margin-left: 10vw;
+  // display: flex;
+  // flex-direction: column;
 
-  .flex {
+  .logo-cont {
     display: flex;
     flex-direction: row;
     align-items: center;
+    margin-bottom: 100px;
     .logo {
       width: 80px;
 
@@ -52,14 +60,32 @@ nav {
     list-style: none;
     padding-left: 0;
 
-    li {
+    li.nav-item {
       font-size: 14px;
       font-weight: 300;
       letter-spacing: 1.5px;
-      line-height: normal;
-      border-bottom: 2px solid $color-beige;
+      line-height: 1;
       margin-bottom: 5px;
       width: 120px;
+      padding-bottom: 5px;
+      position: relative;
+    }
+    li.nav-item:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: $color-beige;
+      height: 3px;
+      border-radius: 0 1.5px 1.5px 0;
+      transform: scaleX(1);
+      transition: transform 250ms ease-in-out;
+      display: block;
+      transform-origin: 0% 50%;
+    }
+    li.nav-item:hover:after {
+      transform: scaleX(2);
     }
   }
 }
