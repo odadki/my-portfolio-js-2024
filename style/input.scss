@@ -21,7 +21,7 @@ nav {
   padding-top: 200px;
   max-width: 50vw;
   position: sticky;
-  width: 50vw;
+  width: 40vw;
   align-self: flex-start;
   top: 0;
   // margin-left: 10vw;
@@ -142,8 +142,9 @@ section {
     margin: 0 0 50px 0;
 
     .exp-date-cont {
-      width: 5vw;
+      width: 10vw;
       word-wrap: normal;
+      // text-align: right;
     }
     .exp-date {
       color: $color-mauve;
@@ -154,6 +155,7 @@ section {
 
     .exp-content {
       padding-left: 28px;
+      width: 90vw;
 
       .exp-content-title,
       .exp-content-place {
@@ -173,6 +175,7 @@ section {
       }
       .exp-content-desc {
         font-size: 12px;
+        word-wrap: normal;
       }
       .exp-content-tool {
         display: inline-block;
@@ -183,6 +186,17 @@ section {
         margin-bottom: 3px;
         padding: 5px;
         text-transform: uppercase;
+      }
+    }
+    .projects-img-cont {
+      // width: 50px;
+      // width: 0px;
+
+      img {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+        object-fit: cover;
       }
     }
   }

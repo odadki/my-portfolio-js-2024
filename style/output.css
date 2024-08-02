@@ -16,7 +16,7 @@ nav {
   padding-top: 200px;
   max-width: 50vw;
   position: sticky;
-  width: 50vw;
+  width: 40vw;
   align-self: flex-start;
   top: 0;
 }
@@ -128,7 +128,7 @@ section .section-experience {
   margin: 0 0 50px 0;
 }
 section .section-experience .exp-date-cont {
-  width: 5vw;
+  width: 10vw;
   word-wrap: normal;
 }
 section .section-experience .exp-date {
@@ -139,6 +139,7 @@ section .section-experience .exp-date {
 }
 section .section-experience .exp-content {
   padding-left: 28px;
+  width: 90vw;
 }
 section .section-experience .exp-content .exp-content-title,
 section .section-experience .exp-content .exp-content-place {
@@ -156,6 +157,7 @@ section .section-experience .exp-content .exp-content-place {
 }
 section .section-experience .exp-content .exp-content-desc {
   font-size: 12px;
+  word-wrap: normal;
 }
 section .section-experience .exp-content .exp-content-tool {
   display: inline-block;
@@ -166,6 +168,12 @@ section .section-experience .exp-content .exp-content-tool {
   margin-bottom: 3px;
   padding: 5px;
   text-transform: uppercase;
+}
+section .section-experience .projects-img-cont img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: cover;
 }
 
 /*# sourceMappingURL=output.css.map */
