@@ -32,7 +32,8 @@ nav .logo-cont .logo {
 nav .logo-cont .logo > img {
   width: 100%;
   height: auto;
-  object-position: cover;
+  -o-object-position: cover;
+     object-position: cover;
 }
 nav .logo-cont .logo-text {
   margin-left: 20px;
@@ -63,7 +64,7 @@ nav ul li.nav-item {
   letter-spacing: 1.5px;
   line-height: 1;
   margin-bottom: 5px;
-  width: 10vw;
+  width: 120px;
   padding-bottom: 5px;
   position: relative;
 }
@@ -173,7 +174,6 @@ section .section-experience .projects-img-cont img {
   width: 100%;
   height: auto;
   max-width: 100%;
-  object-fit: cover;
-}
-
-/*# sourceMappingURL=output.css.map */
+  -o-object-fit: cover;
+     object-fit: cover;
+}/*# sourceMappingURL=input.css.map */
