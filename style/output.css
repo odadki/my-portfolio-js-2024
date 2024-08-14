@@ -161,19 +161,27 @@ section .section-experience .exp-content .exp-content-desc {
 }
 section .section-experience .exp-content .exp-content-tool {
   display: inline-block;
-  background-color: #c7bab2;
+  background-color: #a29088;
   font-size: 9px;
   font-weight: 500;
   letter-spacing: 1.2px;
   margin-bottom: 3px;
   padding: 5px;
   text-transform: uppercase;
+  color: #f4f6f8;
 }
 section .section-experience .projects-img-cont img {
   width: 100%;
   height: auto;
   max-width: 100%;
   object-fit: cover;
+  box-shadow: rgb(73, 79, 85) 0px 20px 30px -12px;
+}
+section .section-projects {
+  transition: 150ms ease-in-out;
+}
+section .section-projects:hover {
+  background-color: red;
 }
 
 /*# sourceMappingURL=output.css.map */

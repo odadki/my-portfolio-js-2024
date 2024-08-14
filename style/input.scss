@@ -5,6 +5,9 @@ $color-gray: #323d41;
 $color-mauve: #a29088;
 $color-beige: #c7bab2;
 $color-background: #f4f6f8;
+$color-beige-opaque: rgb(199, 186, 178, 0.25);
+$color-gray-opaque: rgb(50, 61, 65, 0.25);
+$color-background-opaque: rgb(244, 246, 248, 0.25);
 
 body {
   font-family: $font-primary;
@@ -180,25 +183,35 @@ section {
       }
       .exp-content-tool {
         display: inline-block;
-        background-color: $color-beige;
+        background-color: $color-mauve;
         font-size: 9px;
         font-weight: 500;
         letter-spacing: 1.2px;
         margin-bottom: 3px;
         padding: 5px;
         text-transform: uppercase;
+        color: $color-background;
       }
     }
     .projects-img-cont {
       // width: 50px;
       // width: 0px;
+      // border-radius: 50%;
 
       img {
         width: 100%;
         height: auto;
         max-width: 100%;
         object-fit: cover;
+        box-shadow: rgb(73, 79, 85) 0px 20px 30px -12px;
       }
     }
+  }
+  .section-projects {
+    transition: 150ms ease-in-out;
+    // padding-left: 10px !important;
+  }
+  .section-projects:hover {
+    background-color: red;
   }
 }
