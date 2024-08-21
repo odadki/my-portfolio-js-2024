@@ -9,6 +9,9 @@ $color-beige-opaque: rgb(199, 186, 178, 0.25);
 $color-gray-opaque: rgb(50, 61, 65, 0.25);
 $color-background-opaque: rgb(244, 246, 248, 0.25);
 
+* {
+  scroll-behavior: smooth;
+}
 body {
   font-family: $font-primary;
   padding-left: 150px;
@@ -100,6 +103,10 @@ nav {
     li.nav-item:hover:after {
       transform: scaleX(2);
     }
+    li.nav-item > a.nav-link {
+      text-decoration: none;
+      color: $color-gray;
+    }
   }
 }
 section {
@@ -123,6 +130,12 @@ section {
     right: 0;
     height: 3px;
     width: 50%;
+  }
+  div.section-group {
+    margin: 50px 0;
+  }
+  div.about {
+    padding-top: 200px;
   }
   div.section-text {
     padding: 20px 0 20px 0;
@@ -212,6 +225,6 @@ section {
     // padding-left: 10px !important;
   }
   .section-projects:hover {
-    background-color: red;
+    background-color: blue;
   }
 }
