@@ -79,7 +79,7 @@ nav {
       line-height: 1;
       margin-bottom: 5px;
       // width: 120px;
-      width: 10vw;
+      width: 7vw;
       padding-bottom: 5px;
       position: relative;
     }
@@ -113,23 +113,49 @@ section {
   max-width: 40vw;
   color: $color-gray;
 
-  h2 {
+  fieldset {
+    border-top: 1px solid red;
+    border-bottom: none;
+    border-right: none;
+    border-left: none;
+    padding-left: 0;
     font-size: 20px;
     font-weight: 400;
     letter-spacing: 2px;
     position: relative;
     text-transform: uppercase;
   }
-  h2:after {
-    content: "";
-    background: red;
-    position: absolute;
-    bottom: 10px;
+
+  h2 {
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    position: relative;
+    text-transform: uppercase;
+    padding-bottom: 5px;
+  }
+  h2:before {
+    // content: "";
+    // background: red;
+    // position: absolute;
+    // bottom: 10px;
     // need to custom adjust the left marker for each h2 or width
     // left: 0;
+    // right: 0;
+    // height: 3px;
+    // width: 50%;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
     right: 0;
-    height: 3px;
-    width: 50%;
+    background: $color-beige;
+    height: 2px;
+    border-radius: 0 1px 1px 0;
+    transform: scaleX(1);
+    transition: transform 250ms ease-in-out;
+    display: block;
+    transform-origin: 0% 50%;
   }
   div.section-group {
     margin: 50px 0;
@@ -168,6 +194,10 @@ section {
       font-size: 9px;
       font-weight: 300;
       margin: 0;
+    }
+    .exp-date-test {
+      font-size: 15px;
+      text-align: left !important;
     }
 
     .exp-content {
