@@ -162,16 +162,19 @@ section .section-experience {
 section .section-experience .exp-date-cont {
   width: 10vw;
   word-wrap: normal;
+  padding-right: 28px;
 }
 section .section-experience .exp-date {
-  color: #a29088;
+  color: #323d41;
   font-size: 9px;
   font-weight: 300;
   margin: 0;
 }
-section .section-experience .exp-date-test {
-  font-size: 15px;
-  text-align: left !important;
+section .section-experience .exp-date-div {
+  font-size: 14px;
+}
+section .section-experience .exp-date-div > div {
+  text-align: end;
 }
 section .section-experience .exp-content {
   padding-left: 28px;
@@ -218,6 +221,10 @@ section .section-projects {
 }
 section .section-projects:hover {
   background-color: blue;
+}
+
+.amberton-img {
+  border-radius: 50%;
 }
 
 /*# sourceMappingURL=output.css.map */
