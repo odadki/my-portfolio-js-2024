@@ -100,6 +100,11 @@ section {
   max-width: 40vw;
   color: #323d41;
 }
+section > #about,
+section #experience,
+section #projects {
+  scroll-margin-top: 200px;
+}
 section fieldset {
   border-top: 1px solid red;
   border-bottom: none;
@@ -162,7 +167,6 @@ section .section-experience {
 section .section-experience .exp-date-cont {
   width: 10vw;
   word-wrap: normal;
-  padding-right: 28px;
 }
 section .section-experience .exp-date {
   color: #323d41;

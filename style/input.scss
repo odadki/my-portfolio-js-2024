@@ -113,6 +113,12 @@ section {
   max-width: 40vw;
   color: $color-gray;
 
+  & > #about,
+  #experience,
+  #projects {
+    scroll-margin-top: 200px;
+  }
+
   fieldset {
     border-top: 1px solid red;
     border-bottom: none;
@@ -187,7 +193,8 @@ section {
     .exp-date-cont {
       width: 10vw;
       word-wrap: normal;
-      padding-right: 28px;
+      // padding-right: 28px;
+      // background-color: $color-gray;
       // border-right: 2px solid $color-beige;
     }
     .exp-date {
@@ -198,10 +205,12 @@ section {
     }
     .exp-date-div {
       font-size: 14px;
+      // background-color: $color-gray;
       // font-weight: 500;
 
       & > div {
         text-align: end;
+        // color: $color-background !important;
         // line-height: 0.9;
       }
     }
