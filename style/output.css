@@ -105,17 +105,8 @@ section #experience,
 section #projects {
   scroll-margin-top: 200px;
 }
-section fieldset {
-  border-top: 1px solid red;
-  border-bottom: none;
-  border-right: none;
-  border-left: none;
-  padding-left: 0;
-  font-size: 20px;
-  font-weight: 400;
-  letter-spacing: 2px;
-  position: relative;
-  text-transform: uppercase;
+section .about-heading {
+  margin-top: 0;
 }
 section h2 {
   font-size: 20px;
