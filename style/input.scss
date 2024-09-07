@@ -250,14 +250,22 @@ section {
     }
   }
   .section-projects {
-    transition: 150ms ease-in-out;
+    // transition: 150ms ease-in-out;
+    // transition: opacity 0.5s ease-in-out;
     // padding-left: 10px !important;
+    // opacity: 0;
+    // background-image: url(/imgs/amberton-project-square.png);
   }
   .section-projects:hover {
-    background-color: blue;
+    // background-color: blue;
+    background-image: url(/imgs/amberton-project-square.png);
+    background-color: rgba(255, 255, 255, 0.94);
+    background-blend-mode: lighten;
+    // transition: 3s;
+    // opacity: 1;
   }
 }
 
-.amberton-img {
+.img-round {
   border-radius: 50%;
 }

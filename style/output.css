@@ -211,14 +211,13 @@ section .section-experience .projects-img-cont img {
   object-fit: cover;
   box-shadow: rgb(73, 79, 85) 0px 20px 30px -12px;
 }
-section .section-projects {
-  transition: 150ms ease-in-out;
-}
 section .section-projects:hover {
-  background-color: blue;
+  background-image: url(/imgs/amberton-project-square.png);
+  background-color: rgba(255, 255, 255, 0.94);
+  background-blend-mode: lighten;
 }
 
-.amberton-img {
+.img-round {
   border-radius: 50%;
 }
 
