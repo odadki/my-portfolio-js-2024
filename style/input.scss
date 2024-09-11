@@ -18,6 +18,7 @@ body {
   padding-right: 150px;
   background-color: $color-background;
   margin-top: 0;
+  background: url(/imgs/45-degree-fabric-light.png);
 }
 .flex-body {
   display: flex;
@@ -112,11 +113,14 @@ nav {
 section {
   max-width: 40vw;
   color: $color-gray;
+  // opacity: 0;
 
   & > #about,
   #experience,
   #projects {
     scroll-margin-top: 200px;
+    // opacity: 0;
+    // transition: 2s ease-in-out;
   }
 
   & .about-heading {
