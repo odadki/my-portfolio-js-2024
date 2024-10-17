@@ -207,6 +207,10 @@ section {
       width: 90vw;
       // border-left: 2px solid $color-beige;
 
+      .projects-heading-container {
+        display: flex;
+        justify-content: space-between;
+      }
       .exp-content-title,
       .exp-content-place {
         font-size: 14px;

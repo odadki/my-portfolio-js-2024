@@ -176,6 +176,10 @@ section .section-experience .exp-content {
   padding-left: 28px;
   width: 90vw;
 }
+section .section-experience .exp-content .projects-heading-container {
+  display: flex;
+  justify-content: space-between;
+}
 section .section-experience .exp-content .exp-content-title,
 section .section-experience .exp-content .exp-content-place {
   font-size: 14px;
