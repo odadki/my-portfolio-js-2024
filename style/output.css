@@ -137,6 +137,10 @@ section div.section-group {
 section div.about {
   padding-top: 200px;
 }
+section a.project-link {
+  text-decoration: none;
+  color: inherit;
+}
 section div.section-text {
   padding: 20px 0 20px 0;
 }
@@ -179,6 +183,14 @@ section .section-experience .exp-content {
 section .section-experience .exp-content .projects-heading-container {
   display: flex;
   justify-content: space-between;
+}
+section .section-experience .exp-content .projects-heading-container .test-icon {
+  border-top: 4px black solid;
+  border-right: 4px black solid;
+  width: 8px;
+  height: 8px;
+  rotate: 45deg;
+  transition: 200ms ease;
 }
 section .section-experience .exp-content .exp-content-title,
 section .section-experience .exp-content .exp-content-place {

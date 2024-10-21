@@ -155,6 +155,12 @@ section {
   div.about {
     padding-top: 200px;
   }
+
+  a.project-link {
+    text-decoration: none;
+    color: inherit;
+  }
+
   div.section-text {
     padding: 20px 0 20px 0;
 
@@ -210,6 +216,20 @@ section {
       .projects-heading-container {
         display: flex;
         justify-content: space-between;
+
+        .test-icon {
+          border-top: 4px black solid;
+          border-right: 4px black solid;
+          // background-color: blue;
+          width: 8px;
+          height: 8px;
+          rotate: 45deg;
+          transition: 200ms ease;
+          // &:hover {
+          //   width: 20px;
+          //   height: 20px;
+          // }
+        }
       }
       .exp-content-title,
       .exp-content-place {
