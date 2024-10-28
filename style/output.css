@@ -94,7 +94,7 @@ nav ul li.nav-item:hover:after {
 }
 nav ul li.nav-item > a.nav-link {
   text-decoration: none;
-  color: #323d41;
+  color: black;
 }
 
 section {
@@ -236,6 +236,10 @@ section .section-projects:hover {
 
 .img-round {
   border-radius: 50%;
+}
+
+.nav-active {
+  color: blue;
 }
 
 /*# sourceMappingURL=output.css.map */

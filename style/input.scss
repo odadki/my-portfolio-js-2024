@@ -106,7 +106,8 @@ nav {
     }
     li.nav-item > a.nav-link {
       text-decoration: none;
-      color: $color-gray;
+      // color: $color-gray;
+      color: black;
     }
   }
 }
@@ -296,4 +297,8 @@ section {
 
 .img-round {
   border-radius: 50%;
+}
+
+.nav-active {
+  color: blue;
 }
