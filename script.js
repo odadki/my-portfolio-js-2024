@@ -1,5 +1,14 @@
 let h1 = document.getElementById("h1");
 
+//Add intro animation
+document.addEventListener("DOMContentLoaded", () => {
+  const introAnimation = document.getElementById("intro-animation");
+
+  setTimeout(() => {
+    introAnimation.classList.add("hide");
+  }, 3000); // Adjust the duration as needed
+});
+
 // const aboutLink = document.getElementById("about-link");
 // const aboutSection = document.getElementById("about");
 // aboutLink.addEventListener("click", (e) => {

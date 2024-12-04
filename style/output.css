@@ -1,4 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 * {
   scroll-behavior: smooth;
 }
@@ -10,6 +18,31 @@ body {
   background-color: #f4f6f8;
   margin-top: 0;
   background: url(/imgs/45-degree-fabric-light.png);
+}
+
+#intro-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f4f6f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1; /* Ensure it's on top */
+}
+#intro-animation.hide {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1s ease-in-out;
+}
+#intro-animation .intro-content {
+  opacity: 1;
+}
+#intro-animation .intro-content img {
+  width: 250px;
+  height: auto !important;
 }
 
 .flex-body {
@@ -71,6 +104,9 @@ nav ul li.nav-item {
   width: 7vw;
   padding-bottom: 5px;
   position: relative;
+}
+nav ul li.nav-item.active {
+  color: red;
 }
 nav ul li.nav-item:hover {
   cursor: pointer;
