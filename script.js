@@ -10,9 +10,30 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // const aboutLink = document.getElementById("about-link");
-// const aboutSection = document.getElementById("about");
+// const experienceLink = document.getElementById("experience-link");
+// const projectsLink = document.getElementById("projects-link");
+const section = document.querySelector("section");
+const navLinks = document.querySelectorAll(".nav-item");
+
+// function showSection(e) {
+//   e.preventDefault();
+//   console.log("clicked");
+
+//   // section.classList.add("active");
+
+//   // if (!section.classList.contains("active")) {
+//   //   section.classList.add("active");
+//   // } else {
+//   //   return;
+//   // }
+// }
+// aboutLink.addEventListener("click", showSection);
+// experienceLink.addEventListener("click", showSection);
+// projectsLink.addEventListener("click", showSection);
+
 // aboutLink.addEventListener("click", (e) => {
 //   e.preventDefault();
+//   console.log("clicked");
 //   aboutSection.style.opacity = 1;
 // });
 

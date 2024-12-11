@@ -160,6 +160,10 @@ section {
   color: $color-gray;
   // opacity: 0;
 
+  // .active {
+  //   opacity: 1;
+  // }
+
   & > #about,
   #experience,
   #projects {
@@ -346,3 +350,7 @@ section {
 .nav-active {
   color: blue;
 }
+
+// .active {
+//   opacity: 1;
+// }
