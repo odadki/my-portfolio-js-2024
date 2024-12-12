@@ -9,11 +9,37 @@ document.addEventListener("DOMContentLoaded", () => {
   }, 3000); // Adjust the duration as needed
 });
 
+//add activeNav class to nav item that is clicked
+const section = document.querySelector("section");
+const navLinks = document.querySelectorAll(".nav-link");
+
+navLinks.forEach((navLink) => {
+  navLink.addEventListener("click", () => {
+    document.querySelector(".activeNav")?.classList.remove("activeNav");
+    navLink.classList.add("activeNav");
+  });
+});
+
+//add styling when sectionContent enters screen
+// const config = {
+//   root: null, // avoiding 'root' or setting it to 'null' sets it to default value: viewport
+//   rootMargin: "0px",
+//   threshold: 1,
+// };
+// let observer = new IntersectionObserver(function (entries) {
+//   console.log("VIEWED");
+//   navLinks.forEach((navLink) => {
+//     document.querySelector(".activeNav")?.classList.remove("activeNav");
+//     navLink.classList.add("activeNav");
+//   });
+// }, config);
+
+// const aboutHeading = document.querySelector(".projects-heading");
+// observer.observe(aboutHeading);
+
 // const aboutLink = document.getElementById("about-link");
 // const experienceLink = document.getElementById("experience-link");
 // const projectsLink = document.getElementById("projects-link");
-const section = document.querySelector("section");
-const navLinks = document.querySelectorAll(".nav-item");
 
 // function showSection(e) {
 //   e.preventDefault();
