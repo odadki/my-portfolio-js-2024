@@ -10,6 +10,8 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 //add activeNav class to nav item that is clicked
+
+//1-14 try to get intersectionobserver
 const section = document.querySelector("section");
 const navLinks = document.querySelectorAll(".nav-link");
 
@@ -19,6 +21,20 @@ navLinks.forEach((navLink) => {
     navLink.classList.add("activeNav");
   });
 });
+
+const projectHeading = document.querySelector(".projects-heading");
+const aboutNavItem = document.querySelector("#about-link");
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    const intersecting = entry.isIntersecting;
+    entry.target.style.backgroundColor = intersecting ? "blue" : "orange";
+  });
+});
+
+observer.observe(projectHeading);
+
+//1-14 END
 
 //add styling when sectionContent enters screen
 // const config = {
