@@ -36,13 +36,13 @@ observer.observe(projectHeading);
 
 //1-14 END
 
-//add styling when sectionContent enters screen
+// add styling when sectionContent enters screen
 // const config = {
 //   root: null, // avoiding 'root' or setting it to 'null' sets it to default value: viewport
 //   rootMargin: "0px",
 //   threshold: 1,
 // };
-// let observer = new IntersectionObserver(function (entries) {
+// let observer2 = new IntersectionObserver(function (entries) {
 //   console.log("VIEWED");
 //   navLinks.forEach((navLink) => {
 //     document.querySelector(".activeNav")?.classList.remove("activeNav");
@@ -51,7 +51,7 @@ observer.observe(projectHeading);
 // }, config);
 
 // const aboutHeading = document.querySelector(".projects-heading");
-// observer.observe(aboutHeading);
+// observer2.observe(aboutHeading);
 
 // const aboutLink = document.getElementById("about-link");
 // const experienceLink = document.getElementById("experience-link");
