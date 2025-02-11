@@ -28,7 +28,8 @@ const aboutNavItem = document.querySelector("#about-link");
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     const intersecting = entry.isIntersecting;
-    entry.target.style.backgroundColor = intersecting ? "blue" : "orange";
+    // entry.target.style.backgroundColor = intersecting ? "blue" : "orange";
+    console.log("target is intersecting");
   });
 });
 

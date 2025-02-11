@@ -141,7 +141,7 @@ nav ul li.nav-item:after {
   transform-origin: 0% 50%;
 }
 nav ul li.nav-item:hover:after {
-  transform: scaleX(1.25);
+  transform: scaleX(2);
 }
 nav ul li.nav-item > a.nav-link {
   text-decoration: none;
@@ -338,8 +338,18 @@ body {
   align-items: center !important;
 }
 
+.nav-link {
+  color: var(--sub-text-color) !important;
+}
+
 .navbar-toggler {
   margin-right: 100px;
+}
+
+.navbar-nav .nav-link:hover {
+  color: white !important;
+  background-color: rgba(94, 101, 109, 0.85) !important;
+  transition: 600ms !important;
 }
 
 .sr-only {
@@ -1126,4 +1136,4 @@ p {
   }
 }
 
-/*# sourceMappingURL=output.css.map */
+/*# sourceMappingURL=outputcss.map */
