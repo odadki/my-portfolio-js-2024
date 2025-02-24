@@ -9,10 +9,10 @@
   </head>
   <body>
     <!-- comment -->
-    <div id="intro-animation">
+    <!-- <div id="intro-animation">
       <div class="intro-content">
         <img src="imgs/logos/doda-logo.svg" />
-      </div>
+      </div> -->
     </div>
     <div class="flex-body">
       <nav class="flex-nav">
@@ -28,15 +28,15 @@
         </div>
         <ul class="nav-cont-1">
           <li class="nav-item">
-            <a href="#about" class="nav-link" id="about-link"> About </a>
+            <a href="#about" class="nav-link" id="about-link" data-nav="about-section"> About </a>
           </li>
           <li class="nav-item">
-            <a href="#experience" class="nav-link" id="experience-link">
+            <a href="#experience" class="nav-link" id="experience-link" data-nav="experience-section">
               Experience
             </a>
           </li>
           <li class="nav-item">
-            <a href="#projects" class="nav-link" id="projects-link">
+            <a href="#projects" class="nav-link" id="projects-link" data-nav="projects-section">
               Projects
             </a>
           </li>
@@ -52,7 +52,7 @@
       </nav>
       <section>
         <div class="about" id="about">
-          <h2 class="about-heading heading">About</h2>
+          <h2 class="about-heading heading" data-nav="about-section">About</h2>
           <!-- <fieldset>
             <legend>About</legend>
           </fieldset> -->
@@ -83,7 +83,7 @@
           </div>
         </div>
         <div class="experience" id="experience">
-          <h2 class="experience-heading heading">Experience</h2>
+          <h2 class="experience-heading heading" data-nav="experience-section">Experience</h2>
           <!-- <fieldset>
             <legend>Experience</legend>
           </fieldset> -->
@@ -209,7 +209,7 @@
         </div>
         <div class="projects" id="projects">
           <!-- <h2 class="projects-heading heading">Projects</h2> -->
-          <h2 class="projects-heading heading">Development Projects</h2>
+          <h2 class="projects-heading heading" data-nav="projects-section">Development Projects</h2>
           <div class="section-group">
             <a class="project-link" href="https://amberton.edu/">
               <div class="section-text section-experience section-projects">

@@ -125,8 +125,6 @@ nav {
       position: relative;
 
       .nav-link {
-        &.activeNav {
-          color: $color-mauve !important;
 
           //remove all of :after if the underline width is unwanted
           &:after {
@@ -142,7 +140,7 @@ nav {
             transform-origin: 0% 50%;
             transform: scaleX(2);
           }
-        }
+        
       }
     }
     li.nav-item:hover {
@@ -1316,6 +1314,6 @@ p {
 //   opacity: 1;
 // }
 
-// .activeNav {
-//   color: red !important;
-// }
+.activeNav {
+  color: red !important;
+}
