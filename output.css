@@ -1,0 +1,1140 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap");
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter";
+  padding-left: 150px;
+  padding-right: 150px;
+  background-color: #f4f6f8;
+  margin-top: 0;
+  background: url(/imgs/45-degree-fabric-light.png);
+}
+
+#intro-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f4f6f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1; /* Ensure it's on top */
+}
+#intro-animation.hide {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1s ease-in-out;
+}
+#intro-animation .intro-content {
+  opacity: 1;
+}
+#intro-animation .intro-content img {
+  width: 250px;
+  height: auto !important;
+}
+
+.flex-body {
+  display: flex;
+  justify-content: space-between;
+}
+
+nav {
+  padding-top: 200px;
+  max-width: 50vw;
+  position: sticky;
+  width: 40vw;
+  align-self: flex-start;
+  top: 0;
+}
+nav .logo-cont {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 100px;
+}
+nav .logo-cont .logo {
+  width: 80px;
+}
+nav .logo-cont .logo > img {
+  width: 100%;
+  height: auto;
+  object-position: cover;
+}
+nav .logo-cont .logo-text {
+  margin-left: 20px;
+}
+nav .logo-cont .logo-text > * {
+  margin: 0;
+}
+nav .logo-cont .logo-text > h1 {
+  font-weight: 300;
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 8px;
+}
+nav .logo-cont .logo-text > h2 {
+  font-weight: 200;
+  font-size: 18px;
+  letter-spacing: 2px;
+  color: #323d41;
+}
+nav ul {
+  list-style: none;
+  padding-left: 0;
+}
+nav ul li.nav-item {
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 1.5px;
+  line-height: 1;
+  margin-bottom: 5px;
+  width: 7vw;
+  padding-bottom: 5px;
+  position: relative;
+}
+nav ul li.nav-item .nav-link.activeNav {
+  color: #a29088 !important;
+}
+nav ul li.nav-item .nav-link.activeNav:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #c7bab2;
+  height: 2px;
+  border-radius: 0 1px 1px 0;
+  display: block;
+  transform-origin: 0% 50%;
+  transform: scaleX(2);
+}
+nav ul li.nav-item:hover {
+  cursor: pointer;
+}
+nav ul li.nav-item:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #c7bab2;
+  height: 2px;
+  border-radius: 0 1px 1px 0;
+  transform: scaleX(1);
+  transition: transform 250ms ease-in-out;
+  display: block;
+  transform-origin: 0% 50%;
+}
+nav ul li.nav-item:hover:after {
+  transform: scaleX(2);
+}
+nav ul li.nav-item > a.nav-link {
+  text-decoration: none;
+  color: black;
+}
+
+section {
+  max-width: 40vw;
+  color: #323d41;
+}
+section > #about,
+section #experience,
+section #projects {
+  scroll-margin-top: 200px;
+}
+section .about-heading {
+  margin-top: 0;
+}
+section h2 {
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  position: relative;
+  text-transform: uppercase;
+  padding-bottom: 5px;
+}
+section h2:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #c7bab2;
+  height: 2px;
+  border-radius: 0 1px 1px 0;
+  transform: scaleX(1);
+  transition: transform 250ms ease-in-out;
+  display: block;
+  transform-origin: 0% 50%;
+}
+section div.section-group {
+  margin: 50px 0;
+}
+section div.about {
+  padding-top: 200px;
+}
+section a.project-link {
+  text-decoration: none;
+  color: inherit;
+}
+section div.section-text {
+  padding: 20px 0 20px 0;
+}
+section div.section-text p {
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 1.5px;
+  line-height: 2;
+  margin-bottom: 20px;
+}
+section div.section-text p a {
+  text-decoration: none;
+  color: #323d41;
+  font-weight: 600;
+}
+section .section-experience {
+  display: flex;
+  margin: 0 0 50px 0;
+}
+section .section-experience .exp-date-cont {
+  width: 10vw;
+  word-wrap: normal;
+}
+section .section-experience .exp-date {
+  color: #323d41;
+  font-size: 9px;
+  font-weight: 300;
+  margin: 0;
+}
+section .section-experience .exp-date-div {
+  font-size: 14px;
+}
+section .section-experience .exp-date-div > div {
+  text-align: end;
+}
+section .section-experience .exp-content {
+  padding-left: 28px;
+  width: 90vw;
+}
+section .section-experience .exp-content .projects-heading-container {
+  display: flex;
+  justify-content: space-between;
+}
+section .section-experience .exp-content .projects-heading-container .test-icon {
+  border-top: 4px black solid;
+  border-right: 4px black solid;
+  width: 8px;
+  height: 8px;
+  rotate: 45deg;
+  transition: 200ms ease;
+}
+section .section-experience .exp-content .exp-content-title,
+section .section-experience .exp-content .exp-content-place {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 1.2px;
+}
+section .section-experience .exp-content .exp-content-title {
+  margin: 0;
+  color: black;
+}
+section .section-experience .exp-content .exp-content-place {
+  color: #323d41;
+  margin-top: 6px;
+}
+section .section-experience .exp-content .exp-content-desc {
+  font-size: 12px;
+  word-wrap: normal;
+}
+section .section-experience .exp-content .exp-content-tool {
+  display: inline-block;
+  background-color: #a29088;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 1.2px;
+  margin-bottom: 3px;
+  padding: 5px;
+  text-transform: uppercase;
+  color: #f4f6f8;
+}
+section .section-experience .projects-img-cont img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: cover;
+  box-shadow: rgb(73, 79, 85) 0px 20px 30px -12px;
+}
+section .section-projects:hover {
+  background-image: url(/imgs/amberton-project-square.png);
+  background-color: rgba(255, 255, 255, 0.94);
+  background-blend-mode: lighten;
+}
+
+.img-round {
+  border-radius: 50%;
+}
+
+:root {
+  --header-font: "Crimson Text", serif;
+  --sub-font: "Poppins", sans-serif;
+  --italic-font: "Playfair Display", serif;
+  --sub-text-color: #5d6775;
+  --hover-text: #cedaea;
+  --hover-bg: #5e656d;
+  --project-bg: #ebf0f6;
+  --darker-text-color: #2f3a47;
+  --box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
+    0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075),
+    0 8px 8px hsl(0deg 0% 0% / 0.075), 0 16px 16px hsl(0deg 0% 0% / 0.075);
+}
+
+body {
+  font-family: var(--sub-font) !important;
+}
+
+/*BOOTSTRAP NAVBAR HEADER*/
+.navbar {
+  padding: 50px;
+}
+
+.navbar-light .navbar-toggler {
+  border: none !important;
+  border-color: white !important;
+  width: 60px;
+}
+
+.navbar-brand {
+  font-family: var(--header-font);
+  font-size: 50px;
+  margin-left: 50px;
+  color: var(--hover-bg) !important;
+}
+
+.logo-img {
+  width: 100px;
+  margin-bottom: 5px;
+}
+
+.navbar-nav {
+  margin-left: auto;
+  font-family: var(--header-font);
+  margin-right: 50px;
+  font-size: 15px;
+  align-items: center !important;
+}
+
+.nav-link {
+  color: var(--sub-text-color) !important;
+  margin-left: 20px;
+}
+
+.navbar-toggler {
+  margin-right: 100px;
+}
+
+.navbar-nav .nav-link:hover {
+  color: white !important;
+  background-color: rgba(94, 101, 109, 0.85) !important;
+  transition: 600ms !important;
+}
+
+.sr-only {
+  margin-bottom: 60px;
+  border-bottom: 1px solid currentColor;
+}
+
+/*BODY OF PAGE*/
+/*TITLE AND TITLE IMAGE*/
+.container {
+  font-family: var(--header-font);
+  width: 100% !important;
+  margin: 0 auto !important;
+  align-items: center !important;
+}
+
+.title-container {
+  margin-top: 100px;
+}
+
+.title-text {
+  margin-top: 150px;
+}
+
+.title-info {
+  text-align: center;
+  font-family: var(--sub-font);
+}
+
+.title-text h3,
+p {
+  font-family: var(--sub-font);
+  color: var(--sub-text-color);
+}
+
+.title-text h1 {
+  font-family: var(--header-font);
+  font-size: 50px;
+}
+
+.case-study {
+  margin-bottom: 60px;
+  font-size: 30px;
+  text-transform: uppercase;
+  font-family: var(--header-font);
+}
+
+.case-desc {
+  font-size: 20px;
+}
+
+.title-img {
+  display: block;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.carrots-title-img {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/*TEXT ITALICS HEADER*/
+.text-italic {
+  font-size: 50px;
+  font-family: var(--italic-font);
+}
+
+/*UPDATE ALL HEADERS TO "ALL CAPS"*/
+.all-caps-title {
+  /* text-transform: uppercase; */
+  font-family: var(--header-font);
+}
+
+/*PROJECT OVERVIEW*/
+.project-overview-section {
+  border: 1px solid var(--hover-text);
+  border-radius: 10px;
+  margin: 0 auto;
+  margin-top: 150px;
+  padding: 50px 68px;
+}
+
+.project-overview-title {
+  margin-bottom: 40px;
+}
+
+/*UNDERSTANDING THE USER*/
+.understand-user-section {
+  margin-top: 80px;
+  background-color: var(--project-bg);
+  border-radius: 10px;
+  padding: 50px 68px;
+}
+
+.understand-user-title {
+  margin-bottom: 10px;
+}
+
+.pain-points {
+  margin-top: 50px;
+}
+
+.pain-point-individual {
+  border: 0.8px solid var(--sub-text-color);
+  margin: 0 auto;
+  padding: 20px 5px;
+  background-color: #ffffff;
+}
+
+/*PERSONA AND PROBLEM STATEMENT*/
+.persona-section {
+  margin-top: 60px;
+  padding: 50px 68px;
+}
+
+.boutique-persona-one {
+  display: block;
+  width: 100% !important;
+}
+
+/*USER JOURNEY MAP*/
+.user-journey-map-section {
+  margin-top: 5px;
+  padding: 50px 68px;
+}
+
+/*PAPER WIREFRAMES*/
+.paper-wireframe-section {
+  margin-top: 5px;
+  padding: 50px 68px;
+}
+
+/*DIGITAL WIREFRAMES*/
+.digital-wireframe-section {
+  margin-top: 5px;
+  padding: 50px 68px;
+}
+
+.pet-wireframe-desktop,
+.pet-wireframe-mobile {
+  box-shadow: var(--box-shadow);
+}
+
+/*USABILITY STUDY FINDINGS*/
+.usability-study-findings {
+  margin-top: 80px;
+  background-color: var(--project-bg);
+  border-radius: 10px;
+  padding: 50px 68px;
+}
+
+.round-findings {
+  border: 0.8px solid var(--sub-text-color);
+  margin: 0 auto;
+  padding: 20px 5px;
+  background-color: #ffffff;
+}
+
+.findings {
+  padding-top: 20px;
+}
+
+.findings-line {
+  padding: 10px;
+}
+
+.usability-study-title {
+  margin-bottom: 40px;
+}
+
+/*REFINING THE DESIGN*/
+.refining-the-desgin {
+  margin-top: 80px;
+}
+
+.mockups {
+  margin-top: 60px;
+  margin-bottom: 80px;
+}
+
+/*ACCESSIBILITY*/
+.accessibility-section {
+  margin-top: 80px;
+  background-color: var(--project-bg);
+  border-radius: 10px;
+  padding: 50px 68px;
+}
+
+.accessibility-point {
+  border: 0.8px solid var(--sub-text-color);
+  margin: 0 auto;
+  padding: 20px 5px;
+  background-color: #ffffff;
+}
+
+/*REFINED DESIGNS*/
+.refined-designs-section {
+  margin-top: 80px;
+}
+
+/*HI-FI PROTOTYPE*/
+.hifi-prototype {
+  margin-top: 60px;
+}
+
+/*RESPONSIVE DESIGN*/
+.responsive-design {
+  margin-top: 80px;
+}
+
+.carrots-slide-mobile {
+  max-width: 280px;
+}
+
+.slide-shadow {
+  box-shadow: var(--box-shadow);
+}
+
+.carrots-slide-tablet {
+  max-width: 410px;
+}
+
+.carrots-slide-laptop {
+  max-width: 540px;
+}
+
+/*GOING FORWARD*/
+.end-section {
+  margin-top: 80px;
+}
+
+.going-forward {
+  margin-bottom: 20px;
+}
+
+.takeaways {
+  border: 1px solid var(--hover-text);
+  border-radius: 10px;
+  margin: 0 auto;
+  margin-top: 60px;
+  padding: 50px 68px;
+  margin-bottom: 60px;
+}
+
+.takeaway-paragraph {
+  padding: 20px 20px;
+}
+
+/*NEXT STEPS*/
+.next-steps {
+  margin-top: 80px;
+  margin-bottom: 150px;
+  background-color: var(--project-bg);
+  border-radius: 10px;
+  padding: 50px 68px;
+}
+
+/*FOOTER*/
+.footer-link {
+  font-family: var(--header-font);
+  padding: 24px;
+}
+
+.footer-link a {
+  color: var(--sub-text-color);
+  text-decoration: none;
+}
+
+.footer-link a:hover {
+  color: white !important;
+  background-color: rgba(94, 101, 109, 0.6) !important;
+  transition: 600ms !important;
+  padding: 10px 16px;
+}
+
+.footer-link .active {
+  margin-bottom: 60px;
+  border-bottom: 1px solid currentColor;
+}
+
+.footer-all {
+  margin-top: 150px;
+  margin-bottom: 70px;
+}
+
+/*FOOTER CODE*/
+.footer-code {
+  font-family: var(--sub-font);
+  color: var(--sub-text-color);
+  margin-bottom: 70px;
+  font-size: 10px;
+}
+
+.footer-code-link:hover {
+  color: var(--sub-text-color);
+  transition: 600ms;
+}
+
+/*MEDIA QUERIES*/
+@media (min-width: 821px) and (max-width: 991px) {
+  .navbar {
+    padding: 30px;
+  }
+  .navbar-brand {
+    margin-left: 20px;
+    font-size: 35px;
+  }
+  .logo-text {
+    margin-left: 20px;
+  }
+  .navbar-toggler {
+    margin-right: 10px;
+  }
+  .navbar-nav {
+    margin-left: auto;
+  }
+  .navbar-collapse {
+    padding: 80px;
+  }
+  .image-title {
+    font-size: 16px;
+  }
+  .case-title {
+    font-size: 50px;
+  }
+  .container {
+    align-items: center;
+  }
+}
+@media (min-width: 768px) and (max-width: 820px) {
+  .navbar {
+    padding-left: 30px;
+    padding-right: 0;
+  }
+  .navbar-brand {
+    margin-left: 40px;
+  }
+  .navbar-toggler {
+    margin-right: 40px;
+  }
+  .about-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .about-paragraph,
+  .about-paragraph-two {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-left: none;
+    text-align: center;
+  }
+  a .resume-button {
+    display: inline-block;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .footer-all {
+    margin-top: 80px;
+  }
+  .footer-link {
+    margin-bottom: 80px;
+  }
+}
+@media (min-width: 415px) and (max-width: 767px) {
+  .navbar {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+  }
+  .navbar-brand {
+    margin-left: 5px;
+  }
+  .navbar-toggler {
+    margin-right: 5px;
+  }
+  .logo-img {
+    width: 80px;
+  }
+  .logo-text {
+    margin-left: 20px;
+    font-size: 10px;
+  }
+  .navbar-toggler-icon {
+    max-width: 30px;
+  }
+  .container {
+    text-align: center !important;
+  }
+  .title-text {
+    margin-top: 20px;
+  }
+  .case-title {
+    font-size: 20px;
+  }
+  .petconnect-title {
+    font-size: 38px !important;
+  }
+  .case-study,
+  .case-desc {
+    font-size: 14px;
+  }
+  .case-study {
+    margin-bottom: 8px;
+  }
+  .about-title {
+    font-size: 28px;
+  }
+  .about-section,
+  .about-paragraph {
+    font-size: 15px;
+  }
+  .footer-all {
+    margin-top: 50px;
+  }
+  .footer-link {
+    padding-bottom: 80px !important;
+  }
+  .footer-code {
+    margin-left: 18px;
+    margin-right: 18px;
+    margin-top: 60px;
+    font-size: 12px;
+  }
+  .persona-section,
+  .user-journey-map-section,
+  .paper-wireframe-section,
+  .digital-wireframe-section,
+  .usability-study-findings,
+  .mockups,
+  .accessibility-section,
+  .refined-designs-section,
+  .hifi-prototype {
+    margin-top: 40px;
+    padding-left: 18px;
+    padding-right: 18px;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    margin-bottom: 40px;
+  }
+  .project-overview-section {
+    padding-bottom: 2px;
+  }
+  .understand-user-section {
+    padding-bottom: 2px;
+  }
+  .bio-pic {
+    display: block !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+  }
+  .about-title {
+    text-align: center !important;
+    margin-top: 30px !important;
+  }
+  .title-text {
+    margin-top: 25px;
+    margin-bottom: 10px;
+    text-align: left !important;
+  }
+  .title-img {
+    margin-top: 20px;
+  }
+  .case-study {
+    margin-bottom: 10px;
+  }
+  .project-overview-section,
+  .understand-user-section,
+  .persona-section,
+  .user-journey-map-section,
+  .digital-wireframe-section,
+  .refining-the-desgin,
+  .end-section {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 20px;
+    font-size: 13px;
+  }
+  .project-overview-section h4,
+  .pain-points h4,
+  .paper-wireframe-section h3,
+  .digital-wireframe-section h3,
+  .round-findings h4,
+  .refining-the-desgin h3,
+  .mockups h3,
+  .accessibility-section h5,
+  .end-section h4 {
+    font-size: 19px;
+  }
+  .project-overview-title,
+  .pain-points h2,
+  .persona-section h2,
+  .user-journey-map-section h2,
+  .accessibility-section h3,
+  .refined-designs-section h3,
+  .hifi-prototype h3 {
+    font-size: 19px;
+  }
+  .project-overview-title {
+    margin-bottom: 14px;
+  }
+  .text-italic {
+    font-size: 30px;
+  }
+  .understand-user-section {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    text-align: center;
+  }
+  .pain-point-title {
+    margin-bottom: 0 !important;
+  }
+  .pain-point-paragraph {
+    margin-bottom: 2px !important;
+    padding-bottom: 2px !important;
+  }
+  .pain-point-individual {
+    padding-left: 0;
+    padding-right: 0;
+    border: none;
+    background-color: var(--project-bg);
+  }
+  .usability-study-findings {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .usability-study-title {
+    font-size: 17px;
+    margin-bottom: 10px;
+  }
+  .usability-study-findings p,
+  .findings,
+  .mockups p,
+  .accessibility-section p,
+  .hifi-prototype p {
+    font-size: 13px;
+  }
+  .round-findings {
+    padding-left: 1px;
+    padding-right: 1px;
+    text-align: left;
+  }
+  .takeaway-paragraph {
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+  }
+  .takeaways {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  .next-steps {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+  .pet-next-steps {
+    font-size: 15px !important;
+  }
+}
+@media (max-width: 414px) {
+  /* .navbar {
+    padding: 12px 0 12px 0;
+  }
+  .navbar-brand {
+    font-size: 26px;
+    margin-left: 12px;
+  }
+
+  .navbar-toggler {
+    margin-right: 12px;
+  }
+
+  .container {
+    font-family: var(--header-font);
+    width: 100% !important;
+    margin: 0 auto !important;
+    align-items: center !important;
+  }
+
+  .project-overview-media {
+    padding: 0 !important;
+  }
+
+  .petconnect-title {
+    font-size: 50px !important;
+  }
+
+  .footer-code {
+    margin-left: 18px;
+    margin-right: 18px;
+    margin-top: 60px;
+    font-size: 10px;
+  } */
+  .container {
+    text-align: center !important;
+    margin: 0 auto !important;
+    align-items: center !important;
+  }
+  .title-text {
+    margin-top: 20px;
+  }
+  .case-title {
+    font-size: 20px;
+  }
+  .petconnect-title {
+    font-size: 38px !important;
+  }
+  .case-study,
+  .case-desc {
+    font-size: 14px;
+  }
+  .case-study {
+    margin-bottom: 8px;
+  }
+  .about-title {
+    font-size: 28px;
+  }
+  .about-section,
+  .about-paragraph {
+    font-size: 15px;
+  }
+  .footer-all {
+    margin-top: 50px;
+  }
+  .footer-link {
+    padding-bottom: 80px !important;
+  }
+  .footer-code {
+    margin-left: 18px;
+    margin-right: 18px;
+    margin-top: 60px;
+    font-size: 12px;
+  }
+  .persona-section,
+  .user-journey-map-section,
+  .paper-wireframe-section,
+  .digital-wireframe-section,
+  .usability-study-findings,
+  .mockups,
+  .accessibility-section,
+  .refined-designs-section,
+  .hifi-prototype {
+    margin-top: 40px;
+    padding-left: 18px;
+    padding-right: 18px;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    margin-bottom: 40px;
+  }
+  .project-overview-section {
+    padding-bottom: 2px;
+  }
+  .understand-user-section {
+    padding-bottom: 2px;
+  }
+  .bio-pic {
+    display: block !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+  }
+  .about-title {
+    text-align: center !important;
+    margin-top: 30px !important;
+  }
+  .title-text {
+    margin-top: 25px;
+    margin-bottom: 10px;
+    text-align: left !important;
+  }
+  .title-img {
+    margin-top: 20px;
+  }
+  .case-study {
+    margin-bottom: 10px;
+  }
+  .project-overview-section,
+  .understand-user-section,
+  .persona-section,
+  .user-journey-map-section,
+  .digital-wireframe-section,
+  .refining-the-desgin,
+  .end-section {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 20px;
+    font-size: 13px;
+  }
+  .project-overview-section h4,
+  .pain-points h4,
+  .paper-wireframe-section h3,
+  .digital-wireframe-section h3,
+  .round-findings h4,
+  .refining-the-desgin h3,
+  .mockups h3,
+  .accessibility-section h5,
+  .end-section h4 {
+    font-size: 19px;
+  }
+  .project-overview-title,
+  .pain-points h2,
+  .persona-section h2,
+  .user-journey-map-section h2,
+  .accessibility-section h3,
+  .refined-designs-section h3,
+  .hifi-prototype h3 {
+    font-size: 19px;
+  }
+  .project-overview-title {
+    margin-bottom: 14px;
+  }
+  .text-italic {
+    font-size: 30px;
+  }
+  .understand-user-section {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    text-align: center;
+  }
+  .pain-point-title {
+    margin-bottom: 0 !important;
+  }
+  .pain-point-paragraph {
+    margin-bottom: 2px !important;
+    padding-bottom: 2px !important;
+  }
+  .pain-point-individual {
+    padding-left: 0;
+    padding-right: 0;
+    border: none;
+    background-color: var(--project-bg);
+  }
+  .usability-study-findings {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .usability-study-title {
+    font-size: 17px;
+    margin-bottom: 10px;
+  }
+  .usability-study-findings p,
+  .findings,
+  .mockups p,
+  .accessibility-section p,
+  .hifi-prototype p {
+    font-size: 13px;
+  }
+  .round-findings {
+    padding-left: 1px;
+    padding-right: 1px;
+    text-align: left;
+  }
+  .takeaway-paragraph {
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+  }
+  .takeaways {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  .next-steps {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+  .pet-next-steps {
+    font-size: 15px !important;
+  }
+  .boutiqute-title {
+    font-size: 35px !important;
+  }
+  .project-overview-title {
+    font-size: 22px;
+  }
+}
+
+/*# sourceMappingURL=output.css.map */
