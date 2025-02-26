@@ -23,7 +23,8 @@
 
 // When h2 headers are 33% into Viewport
 const headingObservers = document.querySelectorAll(".heading");
-const navLinks = document.querySelectorAll("nav a");
+const navLinks = document.querySelectorAll(".nav-observer");
+let experienceHeading = document.querySelector(".experience-heading");
 // const aboutLink = document.getElementById("about-link");
 
 // const observer = new IntersectionObserver(
@@ -59,6 +60,9 @@ const observer = new IntersectionObserver(
                       link.classList.remove("activeNav");
                   }
               });
+
+              entry.target.classList.add("test", "animate-line");
+            //   observer.unobserve(entry.target);
           }
       });
   },
