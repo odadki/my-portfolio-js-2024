@@ -126,22 +126,20 @@ nav {
       position: relative;
 
       .nav-link {
-
-          //remove all of :after if the underline width is unwanted
-          &:after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: $color-beige;
-            height: 2px;
-            border-radius: 0 1px 1px 0;
-            display: block;
-            transform-origin: 0% 50%;
-            transform: scaleX(1);
-          }
-        
+        //remove all of :after if the underline width is unwanted
+        &:after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background: $color-beige;
+          height: 2px;
+          border-radius: 0 1px 1px 0;
+          display: block;
+          transform-origin: 0% 50%;
+          transform: scaleX(1);
+        }
       }
     }
     li.nav-item:hover {
@@ -357,6 +355,15 @@ section {
     background-blend-mode: lighten;
     // transition: 3s;
     // opacity: 1;
+  }
+
+  .projects-main-heading {
+    margin-bottom: 0;
+  }
+
+  .projects-sub-heading {
+    // color: #779380;
+    margin-top: 0;
   }
 }
 
@@ -1339,7 +1346,8 @@ p {
     display: block;
   }
 
-  &.animate-line:after { /* Add this class in your JavaScript */
+  &.animate-line:after {
+    /* Add this class in your JavaScript */
     transform: scaleX(1); /* Animate to full width */
     // transition: transform 200ms ease-in-out;
   }

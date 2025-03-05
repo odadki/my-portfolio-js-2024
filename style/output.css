@@ -267,6 +267,12 @@ section .section-projects:hover {
   background-color: rgba(255, 255, 255, 0.94);
   background-blend-mode: lighten;
 }
+section .projects-main-heading {
+  margin-bottom: 0;
+}
+section .projects-sub-heading {
+  margin-top: 0;
+}
 
 .img-round {
   border-radius: 50%;
@@ -1127,7 +1133,8 @@ p {
   transition: transform 200ms ease-in-out;
   display: block;
 }
-.test.animate-line:after { /* Add this class in your JavaScript */
+.test.animate-line:after {
+  /* Add this class in your JavaScript */
   transform: scaleX(1); /* Animate to full width */
 }
 
