@@ -1,15 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
-
-$font-primary: "Inter";
-$color-gray: #323d41;
-$color-mauve: #a29088;
-$color-beige: #c7bab2;
-$color-background: #f4f6f8;
-$color-beige-opaque: rgb(199, 186, 178, 0.25);
-$color-gray-opaque: rgb(50, 61, 65, 0.25);
-$color-background-opaque: rgb(244, 246, 248, 0.25);
-
-//intro animation
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap");
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -18,15 +9,15 @@ $color-background-opaque: rgb(244, 246, 248, 0.25);
     opacity: 1;
   }
 }
-
 * {
   scroll-behavior: smooth;
 }
+
 body {
-  font-family: $font-primary;
+  font-family: "Inter";
   padding-left: 150px;
   padding-right: 150px;
-  background-color: $color-background;
+  background-color: #f4f6f8;
   margin-top: 0;
   background: url(/imgs/45-degree-fabric-light.png);
 }
@@ -37,33 +28,30 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: $color-background;
+  background-color: #f4f6f8;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1; /* Ensure it's on top */
-
-  &.hide {
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 1s ease-in-out;
-  }
-
-  .intro-content {
-    opacity: 1;
-    // animation: fadeIn 1s ease-in-out forwards;
-
-    img {
-      width: 250px;
-      height: auto !important;
-    }
-  }
+}
+#intro-animation.hide {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1s ease-in-out;
+}
+#intro-animation .intro-content {
+  opacity: 1;
+}
+#intro-animation .intro-content img {
+  width: 250px;
+  height: auto !important;
 }
 
 .flex-body {
   display: flex;
   justify-content: space-between;
 }
+
 nav {
   padding-top: 200px;
   max-width: 50vw;
@@ -71,306 +59,232 @@ nav {
   width: 40vw;
   align-self: flex-start;
   top: 0;
-  // margin-left: 10vw;
-  // display: flex;
-  // flex-direction: column;
-
-  .logo-cont {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-bottom: 100px;
-    .logo {
-      width: 80px;
-      height: 80px;
-
-      > img {
-        width: 100%;
-        height: auto;
-        object-position: cover;
-      }
-    }
-    .logo-text {
-      margin-left: 20px;
-    }
-    .logo-text > * {
-      margin: 0;
-    }
-    .logo-text > h1 {
-      font-weight: 300;
-      font-size: 24px;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      // margin-bottom: 8px;
-    }
-    .logo-text > h2 {
-      font-weight: 200;
-      font-size: 18px;
-      letter-spacing: 2px;
-      color: $color-gray;
-    }
-  }
-  ul {
-    list-style: none;
-    padding-left: 0;
-
-    .nav-item {
-      font-size: 14px;
-      font-weight: 300;
-      letter-spacing: 1.5px;
-      line-height: 1;
-      margin-bottom: 5px;
-      width: 120px;
-      // width: 7vw;
-      padding-bottom: 5px;
-      position: relative;
-
-      .nav-link {
-
-          //remove all of :after if the underline width is unwanted
-          &:after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: $color-beige;
-            height: 2px;
-            border-radius: 0 1px 1px 0;
-            display: block;
-            transform-origin: 0% 50%;
-            transform: scaleX(1);
-          }
-        
-      }
-    }
-    li.nav-item:hover {
-      cursor: pointer;
-    }
-    li.nav-item:after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: $color-beige;
-      height: 2px;
-      border-radius: 0 1px 1px 0;
-      transform: scaleX(1);
-      transition: transform 250ms ease-in-out;
-      display: block;
-      transform-origin: 0% 50%;
-    }
-    li.nav-item:hover:after {
-      // transform: scaleX(2);
-      transform: scaleX(1.5);
-    }
-    li.nav-item > a.nav-link {
-      text-decoration: none;
-      // color: $color-gray;
-      color: black;
-    }
-  }
 }
+nav .logo-cont {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 100px;
+}
+nav .logo-cont .logo {
+  width: 80px;
+}
+nav .logo-cont .logo > img {
+  width: 100%;
+  height: auto;
+  object-position: cover;
+}
+nav .logo-cont .logo-text {
+  margin-left: 20px;
+}
+nav .logo-cont .logo-text > * {
+  margin: 0;
+}
+nav .logo-cont .logo-text > h1 {
+  font-weight: 300;
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 8px;
+}
+nav .logo-cont .logo-text > h2 {
+  font-weight: 200;
+  font-size: 18px;
+  letter-spacing: 2px;
+  color: #323d41;
+}
+nav ul {
+  list-style: none;
+  padding-left: 0;
+}
+nav ul li.nav-item {
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 1.5px;
+  line-height: 1;
+  margin-bottom: 5px;
+  width: 7vw;
+  padding-bottom: 5px;
+  position: relative;
+}
+nav ul li.nav-item .nav-link:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #c7bab2;
+  height: 2px;
+  border-radius: 0 1px 1px 0;
+  display: block;
+  transform-origin: 0% 50%;
+  transform: scaleX(2);
+}
+nav ul li.nav-item:hover {
+  cursor: pointer;
+}
+nav ul li.nav-item:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #c7bab2;
+  height: 2px;
+  border-radius: 0 1px 1px 0;
+  transform: scaleX(1);
+  transition: transform 250ms ease-in-out;
+  display: block;
+  transform-origin: 0% 50%;
+}
+nav ul li.nav-item:hover:after {
+  transform: scaleX(1.25);
+}
+nav ul li.nav-item > a.nav-link {
+  text-decoration: none;
+  color: black;
+}
+
 section {
   max-width: 40vw;
-  color: $color-gray;
-  // opacity: 0;
-
-  // .active {
-  //   opacity: 1;
-  // }
-
-  & > #about,
-  #experience,
-  #projects {
-    scroll-margin-top: 200px;
-    // opacity: 0;
-    // transition: 2s ease-in-out;
-  }
-
-  & .about-heading {
-    margin-top: 0;
-  }
-
-  h2 {
-    font-size: 20px;
-    font-weight: 300;
-    letter-spacing: 2px;
-    position: relative;
-    text-transform: uppercase;
-    padding-bottom: 5px;
-  }
-  h2:before {
-    // content: "";
-    // position: absolute;
-    // bottom: 0;
-    // left: 0;
-    // right: 0;
-    // background: $color-beige;
-    // // height: 2px;
-    // border-radius: 0 1px 1px 0;
-    // transform: scaleX(1);
-    // transition: transform 250ms ease-in-out;
-    // display: block;
-    // transform-origin: 0% 50%;
-  }
-  div.section-group {
-    margin: 50px 0;
-  }
-  div.about {
-    padding-top: 200px;
-  }
-
-  a.project-link {
-    text-decoration: none;
-    color: inherit;
-  }
-
-  div.section-text {
-    padding: 20px 0 20px 0;
-
-    p {
-      font-size: 12px;
-      font-weight: 300;
-      letter-spacing: 1.5px;
-      line-height: 2;
-      margin-bottom: 20px;
-
-      a {
-        text-decoration: none;
-        color: $color-gray;
-        font-weight: 600;
-      }
-    }
-  }
-  .section-experience {
-    display: flex;
-    margin: 0 0 50px 0;
-
-    .exp-date-cont {
-      width: 10vw;
-      word-wrap: normal;
-      // padding-right: 28px;
-      // background-color: $color-gray;
-      // border-right: 2px solid $color-beige;
-    }
-    .exp-date {
-      color: $color-gray;
-      font-size: 9px;
-      font-weight: 300;
-      margin: 0;
-    }
-    .exp-date-div {
-      font-size: 14px;
-      // background-color: $color-gray;
-      // font-weight: 500;
-
-      & > div {
-        text-align: end;
-        // color: $color-background !important;
-        // line-height: 0.9;
-      }
-    }
-
-    .exp-content {
-      padding-left: 28px;
-      // padding-left: 8px;
-      width: 90vw;
-      // border-left: 2px solid $color-beige;
-
-      .projects-heading-container {
-        display: flex;
-        justify-content: space-between;
-
-        .test-icon {
-          border-top: 4px black solid;
-          border-right: 4px black solid;
-          // background-color: blue;
-          width: 8px;
-          height: 8px;
-          rotate: 45deg;
-          transition: 200ms ease;
-          // &:hover {
-          //   width: 20px;
-          //   height: 20px;
-          // }
-        }
-      }
-      .exp-content-title,
-      .exp-content-place {
-        font-size: 14px;
-        font-weight: 400;
-        letter-spacing: 1.2px;
-      }
-      .exp-content-title {
-        margin: 0;
-        color: black;
-      }
-      .exp-content-place {
-        color: $color-gray;
-        margin-top: 6px;
-        // font-weight: 400;
-        // color: $color-gray;
-      }
-      .exp-content-desc {
-        font-size: 12px;
-        word-wrap: normal;
-      }
-      .exp-content-tool {
-        display: inline-block;
-        background-color: $color-mauve;
-        font-size: 9px;
-        font-weight: 500;
-        letter-spacing: 1.2px;
-        margin-bottom: 3px;
-        padding: 5px;
-        text-transform: uppercase;
-        color: $color-background;
-      }
-    }
-    .projects-img-cont {
-      // width: 50px;
-      // width: 0px;
-      // border-radius: 50%;
-
-      img {
-        width: 100%;
-        height: auto;
-        max-width: 100%;
-        object-fit: cover;
-        box-shadow: rgb(73, 79, 85) 0px 20px 30px -12px;
-      }
-    }
-  }
-  .section-projects {
-    // transition: 150ms ease-in-out;
-    // transition: opacity 0.5s ease-in-out;
-    // padding-left: 10px !important;
-    // opacity: 0;
-    // background-image: url(/imgs/amberton-project-square.png);
-  }
-  .section-projects:hover {
-    // background-color: blue;
-    background-image: url(/imgs/amberton-project-square.png);
-    background-color: rgba(255, 255, 255, 0.94);
-    background-blend-mode: lighten;
-    // transition: 3s;
-    // opacity: 1;
-  }
+  color: #323d41;
+}
+section > #about,
+section #experience,
+section #projects {
+  scroll-margin-top: 200px;
+}
+section .about-heading {
+  margin-top: 0;
+}
+section h2 {
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  position: relative;
+  text-transform: uppercase;
+  padding-bottom: 5px;
+}
+section h2:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #c7bab2;
+  height: 2px;
+  border-radius: 0 1px 1px 0;
+  transform: scaleX(1);
+  transition: transform 250ms ease-in-out;
+  display: block;
+  transform-origin: 0% 50%;
+}
+section div.section-group {
+  margin: 50px 0;
+}
+section div.about {
+  padding-top: 200px;
+}
+section a.project-link {
+  text-decoration: none;
+  color: inherit;
+}
+section div.section-text {
+  padding: 20px 0 20px 0;
+}
+section div.section-text p {
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 1.5px;
+  line-height: 2;
+  margin-bottom: 20px;
+}
+section div.section-text p a {
+  text-decoration: none;
+  color: #323d41;
+  font-weight: 600;
+}
+section .section-experience {
+  display: flex;
+  margin: 0 0 50px 0;
+}
+section .section-experience .exp-date-cont {
+  width: 10vw;
+  word-wrap: normal;
+}
+section .section-experience .exp-date {
+  color: #323d41;
+  font-size: 9px;
+  font-weight: 300;
+  margin: 0;
+}
+section .section-experience .exp-date-div {
+  font-size: 14px;
+}
+section .section-experience .exp-date-div > div {
+  text-align: end;
+}
+section .section-experience .exp-content {
+  padding-left: 28px;
+  width: 90vw;
+}
+section .section-experience .exp-content .projects-heading-container {
+  display: flex;
+  justify-content: space-between;
+}
+section .section-experience .exp-content .projects-heading-container .test-icon {
+  border-top: 4px black solid;
+  border-right: 4px black solid;
+  width: 8px;
+  height: 8px;
+  rotate: 45deg;
+  transition: 200ms ease;
+}
+section .section-experience .exp-content .exp-content-title,
+section .section-experience .exp-content .exp-content-place {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 1.2px;
+}
+section .section-experience .exp-content .exp-content-title {
+  margin: 0;
+  color: black;
+}
+section .section-experience .exp-content .exp-content-place {
+  color: #323d41;
+  margin-top: 6px;
+}
+section .section-experience .exp-content .exp-content-desc {
+  font-size: 12px;
+  word-wrap: normal;
+}
+section .section-experience .exp-content .exp-content-tool {
+  display: inline-block;
+  background-color: #a29088;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 1.2px;
+  margin-bottom: 3px;
+  padding: 5px;
+  text-transform: uppercase;
+  color: #f4f6f8;
+}
+section .section-experience .projects-img-cont img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: cover;
+  box-shadow: rgb(73, 79, 85) 0px 20px 30px -12px;
+}
+section .section-projects:hover {
+  background-image: url(/imgs/amberton-project-square.png);
+  background-color: rgba(255, 255, 255, 0.94);
+  background-blend-mode: lighten;
 }
 
 .img-round {
   border-radius: 50%;
 }
-
-.nav-active {
-  // color: blue;
-}
-
-//UX
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap");
 
 :root {
   --header-font: "Crimson Text", serif;
@@ -389,6 +303,7 @@ section {
 body {
   font-family: var(--sub-font) !important;
 }
+
 /*BOOTSTRAP NAVBAR HEADER*/
 .navbar {
   padding: 50px;
@@ -399,6 +314,7 @@ body {
   border-color: white !important;
   width: 60px;
 }
+
 .navbar-brand {
   font-family: var(--header-font);
   font-size: 50px;
@@ -419,19 +335,8 @@ body {
   align-items: center !important;
 }
 
-.nav-link {
-  // color: var(--sub-text-color) !important;
-  // margin-left: 20px;
-}
-
 .navbar-toggler {
   margin-right: 100px;
-}
-
-.navbar-nav .nav-link:hover {
-  // color: white !important;
-  // background-color: rgba(94, 101, 109, 0.85) !important;
-  // transition: 600ms !important;
 }
 
 .sr-only {
@@ -440,9 +345,7 @@ body {
 }
 
 /*BODY OF PAGE*/
-
 /*TITLE AND TITLE IMAGE*/
-
 .container {
   font-family: var(--header-font);
   width: 100% !important;
@@ -453,6 +356,7 @@ body {
 .title-container {
   margin-top: 100px;
 }
+
 .title-text {
   margin-top: 150px;
 }
@@ -665,6 +569,7 @@ p {
 .end-section {
   margin-top: 80px;
 }
+
 .going-forward {
   margin-bottom: 20px;
 }
@@ -733,7 +638,6 @@ p {
 }
 
 /*MEDIA QUERIES*/
-
 @media (min-width: 821px) and (max-width: 991px) {
   .navbar {
     padding: 30px;
@@ -742,46 +646,36 @@ p {
     margin-left: 20px;
     font-size: 35px;
   }
-
   .logo-text {
     margin-left: 20px;
   }
-
   .navbar-toggler {
     margin-right: 10px;
   }
-
   .navbar-nav {
     margin-left: auto;
   }
-
   .navbar-collapse {
     padding: 80px;
   }
-
   .image-title {
     font-size: 16px;
   }
-
   .case-title {
     font-size: 50px;
   }
-
   .container {
     align-items: center;
   }
 }
-
 @media (min-width: 768px) and (max-width: 820px) {
   .navbar {
     padding-left: 30px;
     padding-right: 0;
   }
-
   .navbar-brand {
     margin-left: 40px;
   }
-
   .navbar-toggler {
     margin-right: 40px;
   }
@@ -790,7 +684,6 @@ p {
     flex-direction: column;
     align-items: center;
   }
-
   .about-paragraph,
   .about-paragraph-two {
     display: flex;
@@ -799,7 +692,6 @@ p {
     border-left: none;
     text-align: center;
   }
-
   a .resume-button {
     display: inline-block;
     margin: 0 auto;
@@ -812,7 +704,6 @@ p {
     margin-bottom: 80px;
   }
 }
-
 @media (min-width: 415px) and (max-width: 767px) {
   .navbar {
     padding-left: 10px;
@@ -822,35 +713,28 @@ p {
   .navbar-brand {
     margin-left: 5px;
   }
-
   .navbar-toggler {
     margin-right: 5px;
   }
-
   .logo-img {
     width: 80px;
   }
-
   .logo-text {
     margin-left: 20px;
     font-size: 10px;
   }
-
   .navbar-toggler-icon {
     max-width: 30px;
   }
-
   .container {
     text-align: center !important;
   }
-
   .title-text {
     margin-top: 20px;
   }
   .case-title {
     font-size: 20px;
   }
-
   .petconnect-title {
     font-size: 38px !important;
   }
@@ -858,35 +742,28 @@ p {
   .case-desc {
     font-size: 14px;
   }
-
   .case-study {
     margin-bottom: 8px;
   }
-
   .about-title {
     font-size: 28px;
   }
-
   .about-section,
   .about-paragraph {
     font-size: 15px;
   }
-
   .footer-all {
     margin-top: 50px;
   }
-
   .footer-link {
     padding-bottom: 80px !important;
   }
-
   .footer-code {
     margin-left: 18px;
     margin-right: 18px;
     margin-top: 60px;
     font-size: 12px;
   }
-
   .persona-section,
   .user-journey-map-section,
   .paper-wireframe-section,
@@ -903,40 +780,32 @@ p {
     padding-bottom: 22px;
     margin-bottom: 40px;
   }
-
   .project-overview-section {
     padding-bottom: 2px;
   }
-
   .understand-user-section {
     padding-bottom: 2px;
   }
-
   .bio-pic {
     display: block !important;
     margin: 0 auto !important;
     text-align: center !important;
   }
-
   .about-title {
     text-align: center !important;
     margin-top: 30px !important;
   }
-
   .title-text {
     margin-top: 25px;
     margin-bottom: 10px;
     text-align: left !important;
   }
-
   .title-img {
     margin-top: 20px;
   }
-
   .case-study {
     margin-bottom: 10px;
   }
-
   .project-overview-section,
   .understand-user-section,
   .persona-section,
@@ -949,7 +818,6 @@ p {
     padding-top: 20px;
     font-size: 13px;
   }
-
   .project-overview-section h4,
   .pain-points h4,
   .paper-wireframe-section h3,
@@ -961,7 +829,6 @@ p {
   .end-section h4 {
     font-size: 19px;
   }
-
   .project-overview-title,
   .pain-points h2,
   .persona-section h2,
@@ -971,49 +838,39 @@ p {
   .hifi-prototype h3 {
     font-size: 19px;
   }
-
   .project-overview-title {
     margin-bottom: 14px;
   }
-
   .text-italic {
     font-size: 30px;
   }
-
   .understand-user-section {
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 10px;
     text-align: center;
   }
-
   .pain-point-title {
     margin-bottom: 0 !important;
   }
-
   .pain-point-paragraph {
     margin-bottom: 2px !important;
     padding-bottom: 2px !important;
   }
-
   .pain-point-individual {
     padding-left: 0;
     padding-right: 0;
-
     border: none;
     background-color: var(--project-bg);
   }
-
   .usability-study-findings {
     padding-left: 20px;
     padding-right: 20px;
   }
-
   .usability-study-title {
     font-size: 17px;
     margin-bottom: 10px;
   }
-
   .usability-study-findings p,
   .findings,
   .mockups p,
@@ -1021,37 +878,31 @@ p {
   .hifi-prototype p {
     font-size: 13px;
   }
-
   .round-findings {
     padding-left: 1px;
     padding-right: 1px;
     text-align: left;
   }
-
   .takeaway-paragraph {
     padding-left: 2px;
     padding-right: 2px;
     padding-top: 1px;
     padding-bottom: 1px;
   }
-
   .takeaways {
     margin-top: 40px;
     margin-bottom: 40px;
   }
-
   .next-steps {
     margin-top: 40px;
     margin-bottom: 40px;
     padding-left: 18px;
     padding-right: 18px;
   }
-
   .pet-next-steps {
     font-size: 15px !important;
   }
 }
-
 @media (max-width: 414px) {
   /* .navbar {
     padding: 12px 0 12px 0;
@@ -1086,20 +937,17 @@ p {
     margin-top: 60px;
     font-size: 10px;
   } */
-
   .container {
     text-align: center !important;
     margin: 0 auto !important;
     align-items: center !important;
   }
-
   .title-text {
     margin-top: 20px;
   }
   .case-title {
     font-size: 20px;
   }
-
   .petconnect-title {
     font-size: 38px !important;
   }
@@ -1107,35 +955,28 @@ p {
   .case-desc {
     font-size: 14px;
   }
-
   .case-study {
     margin-bottom: 8px;
   }
-
   .about-title {
     font-size: 28px;
   }
-
   .about-section,
   .about-paragraph {
     font-size: 15px;
   }
-
   .footer-all {
     margin-top: 50px;
   }
-
   .footer-link {
     padding-bottom: 80px !important;
   }
-
   .footer-code {
     margin-left: 18px;
     margin-right: 18px;
     margin-top: 60px;
     font-size: 12px;
   }
-
   .persona-section,
   .user-journey-map-section,
   .paper-wireframe-section,
@@ -1152,40 +993,32 @@ p {
     padding-bottom: 22px;
     margin-bottom: 40px;
   }
-
   .project-overview-section {
     padding-bottom: 2px;
   }
-
   .understand-user-section {
     padding-bottom: 2px;
   }
-
   .bio-pic {
     display: block !important;
     margin: 0 auto !important;
     text-align: center !important;
   }
-
   .about-title {
     text-align: center !important;
     margin-top: 30px !important;
   }
-
   .title-text {
     margin-top: 25px;
     margin-bottom: 10px;
     text-align: left !important;
   }
-
   .title-img {
     margin-top: 20px;
   }
-
   .case-study {
     margin-bottom: 10px;
   }
-
   .project-overview-section,
   .understand-user-section,
   .persona-section,
@@ -1198,7 +1031,6 @@ p {
     padding-top: 20px;
     font-size: 13px;
   }
-
   .project-overview-section h4,
   .pain-points h4,
   .paper-wireframe-section h3,
@@ -1210,7 +1042,6 @@ p {
   .end-section h4 {
     font-size: 19px;
   }
-
   .project-overview-title,
   .pain-points h2,
   .persona-section h2,
@@ -1220,49 +1051,39 @@ p {
   .hifi-prototype h3 {
     font-size: 19px;
   }
-
   .project-overview-title {
     margin-bottom: 14px;
   }
-
   .text-italic {
     font-size: 30px;
   }
-
   .understand-user-section {
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 10px;
     text-align: center;
   }
-
   .pain-point-title {
     margin-bottom: 0 !important;
   }
-
   .pain-point-paragraph {
     margin-bottom: 2px !important;
     padding-bottom: 2px !important;
   }
-
   .pain-point-individual {
     padding-left: 0;
     padding-right: 0;
-
     border: none;
     background-color: var(--project-bg);
   }
-
   .usability-study-findings {
     padding-left: 20px;
     padding-right: 20px;
   }
-
   .usability-study-title {
     font-size: 17px;
     margin-bottom: 10px;
   }
-
   .usability-study-findings p,
   .findings,
   .mockups p,
@@ -1270,77 +1091,39 @@ p {
   .hifi-prototype p {
     font-size: 13px;
   }
-
   .round-findings {
     padding-left: 1px;
     padding-right: 1px;
     text-align: left;
   }
-
   .takeaway-paragraph {
     padding-left: 2px;
     padding-right: 2px;
     padding-top: 1px;
     padding-bottom: 1px;
   }
-
   .takeaways {
     margin-top: 40px;
     margin-bottom: 40px;
   }
-
   .next-steps {
     margin-top: 40px;
     margin-bottom: 40px;
     padding-left: 18px;
     padding-right: 18px;
   }
-
   .pet-next-steps {
     font-size: 15px !important;
   }
-
   .boutiqute-title {
     font-size: 35px !important;
   }
-
   .project-overview-title {
     font-size: 22px;
   }
 }
-
-//End UX
-
-// .active {
-//   opacity: 1;
-// }
-
-// Add active class to nav item on intersection observer
 .activeNav {
-  color: $color-mauve !important;
+  color: red !important;
 }
 
-.test {
-  // position: relative; /* Needed for absolute positioning of ::after */
-  // color: red;
-  transition: 200ms ease; /* Transition for other properties if needed */
-
-  &:after {
-    content: "";
-    position: absolute;
-    // bottom: -5px; /* Adjust as needed for line position */
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: $color-beige; /* Or your desired line color */
-    transform: scaleX(0);
-    transform-origin: 0% 50%;
-    transition: transform 200ms ease-in-out;
-    display: block;
-  }
-
-  &.animate-line:after { /* Add this class in your JavaScript */
-    transform: scaleX(1); /* Animate to full width */
-    // transition: transform 200ms ease-in-out;
-  }
-}
+/*# sourceMappingURL=output.css.map */
