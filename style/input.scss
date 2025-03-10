@@ -22,7 +22,7 @@ $color-background-opaque: rgb(244, 246, 248, 0.25);
 * {
   scroll-behavior: smooth;
 }
-body {
+body#body-main {
   font-family: $font-primary;
   padding-left: 150px;
   padding-right: 150px;
@@ -602,6 +602,8 @@ p {
 
 .findings {
   padding-top: 20px;
+  font-family: var(--sub-font);
+  color: var(--sub-text-color);
 }
 
 .findings-line {
@@ -1294,6 +1296,8 @@ p {
   .takeaways {
     margin-top: 40px;
     margin-bottom: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   .next-steps {
