@@ -4,6 +4,7 @@ $font-primary: "Inter";
 $color-gray: #323d41;
 $color-mauve: #a29088;
 $color-beige: #c7bab2;
+// $color-beige: $color-mauve;
 $color-background: #f4f6f8;
 $color-beige-opaque: rgb(199, 186, 178, 0.25);
 $color-gray-opaque: rgb(50, 61, 65, 0.25);
@@ -28,7 +29,7 @@ body#body-main {
   padding-right: 150px;
   background-color: $color-background;
   margin-top: 0;
-  background: url(/imgs/45-degree-fabric-light.png);
+  // background: url(/imgs/45-degree-fabric-light.png);
 }
 
 #intro-animation {
@@ -71,15 +72,15 @@ nav {
   width: 40vw;
   align-self: flex-start;
   top: 0;
-  // margin-left: 10vw;
-  // display: flex;
-  // flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
 
   .logo-cont {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-bottom: 100px;
+    // margin-bottom: 100px;
     .logo {
       width: 80px;
       height: 80px;
@@ -110,7 +111,7 @@ nav {
       color: $color-gray;
     }
   }
-  ul {
+  ul.nav-cont-1 {
     list-style: none;
     padding-left: 0;
 
@@ -142,6 +143,7 @@ nav {
         }
       }
     }
+  
     li.nav-item:hover {
       cursor: pointer;
     }
@@ -168,6 +170,26 @@ nav {
       // color: $color-gray;
       color: black;
     }
+  }
+
+  .nav-cont-2 {
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+
+    .nav-item > img {
+      width: 30px;
+      height: auto;
+    }
+
+    .nav-item:nth-child(2) {
+      padding: 0 10px;
+    }
+  }
+
+  .nav-cont-1, .nav-cont-2 {
+    margin-top: 0;
+    margin-bottom: 0;
   }
 }
 section {
@@ -1329,12 +1351,14 @@ p {
 // Add active class to nav item on intersection observer
 .activeNav {
   color: $color-mauve !important;
+  // color: #6b5952 !important;
+  // font-style: italic;
 }
 
-.test {
-  // position: relative; /* Needed for absolute positioning of ::after */
+.h2-animate {
+  position: relative; /* Needed for absolute positioning of ::after */
   // color: red;
-  transition: 200ms ease; /* Transition for other properties if needed */
+  // transition: 500ms ease; /* Transition for other properties if needed */
 
   &:after {
     content: "";
@@ -1346,7 +1370,7 @@ p {
     background: $color-beige; /* Or your desired line color */
     transform: scaleX(0);
     transform-origin: 0% 50%;
-    transition: transform 200ms ease-in-out;
+    transition: transform 500ms ease-in-out;
     display: block;
   }
 

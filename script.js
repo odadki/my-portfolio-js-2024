@@ -61,8 +61,13 @@ const observer = new IntersectionObserver(
                   }
               });
 
-              entry.target.classList.add("test", "animate-line");
+              entry.target.classList.add("h2-animate");
             //   observer.unobserve(entry.target);
+
+            // Delay adding the animate-line class
+            setTimeout(() => {
+                entry.target.classList.add("animate-line");
+            }, 10); // Adjust the delay as needed (10ms is usually fine)
           }
       });
   },

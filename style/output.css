@@ -19,7 +19,6 @@ body#body-main {
   padding-right: 150px;
   background-color: #f4f6f8;
   margin-top: 0;
-  background: url(/imgs/45-degree-fabric-light.png);
 }
 
 #intro-animation {
@@ -59,12 +58,14 @@ nav {
   width: 40vw;
   align-self: flex-start;
   top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
 }
 nav .logo-cont {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-bottom: 100px;
 }
 nav .logo-cont .logo {
   width: 80px;
@@ -93,11 +94,11 @@ nav .logo-cont .logo-text > h2 {
   letter-spacing: 2px;
   color: #323d41;
 }
-nav ul {
+nav ul.nav-cont-1 {
   list-style: none;
   padding-left: 0;
 }
-nav ul .nav-item {
+nav ul.nav-cont-1 .nav-item {
   font-size: 14px;
   font-weight: 300;
   letter-spacing: 1.5px;
@@ -107,7 +108,7 @@ nav ul .nav-item {
   padding-bottom: 5px;
   position: relative;
 }
-nav ul .nav-item .nav-link:after {
+nav ul.nav-cont-1 .nav-item .nav-link:after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -120,10 +121,10 @@ nav ul .nav-item .nav-link:after {
   transform-origin: 0% 50%;
   transform: scaleX(1);
 }
-nav ul li.nav-item:hover {
+nav ul.nav-cont-1 li.nav-item:hover {
   cursor: pointer;
 }
-nav ul li.nav-item:after {
+nav ul.nav-cont-1 li.nav-item:after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -137,12 +138,28 @@ nav ul li.nav-item:after {
   display: block;
   transform-origin: 0% 50%;
 }
-nav ul li.nav-item:hover:after {
+nav ul.nav-cont-1 li.nav-item:hover:after {
   transform: scaleX(1.5);
 }
-nav ul li.nav-item > a.nav-link {
+nav ul.nav-cont-1 li.nav-item > a.nav-link {
   text-decoration: none;
   color: black;
+}
+nav .nav-cont-2 {
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+}
+nav .nav-cont-2 .nav-item > img {
+  width: 30px;
+  height: auto;
+}
+nav .nav-cont-2 .nav-item:nth-child(2) {
+  padding: 0 10px;
+}
+nav .nav-cont-1, nav .nav-cont-2 {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 section {
@@ -1122,10 +1139,10 @@ p {
   color: #a29088 !important;
 }
 
-.test {
-  transition: 200ms ease; /* Transition for other properties if needed */
+.h2-animate {
+  position: relative; /* Needed for absolute positioning of ::after */
 }
-.test:after {
+.h2-animate:after {
   content: "";
   position: absolute;
   left: 0;
@@ -1134,10 +1151,10 @@ p {
   background: #c7bab2; /* Or your desired line color */
   transform: scaleX(0);
   transform-origin: 0% 50%;
-  transition: transform 200ms ease-in-out;
+  transition: transform 500ms ease-in-out;
   display: block;
 }
-.test.animate-line:after {
+.h2-animate.animate-line:after {
   /* Add this class in your JavaScript */
   transform: scaleX(1); /* Animate to full width */
 }
