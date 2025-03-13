@@ -75,12 +75,13 @@ nav {
   display: flex;
   flex-direction: column;
   gap: 4rem;
+  // gap: (100vh - 65vh) / 3;
 
   .logo-cont {
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding-bottom: 4rem;
+    padding-bottom: 5rem;
     // margin-bottom: 100px;
     .logo {
       width: 80px;
@@ -178,7 +179,7 @@ nav {
     list-style: none;
     padding-left: 0;
 
-    .nav-item > img {
+    .nav-item > a > img {
       // width: 30px;
       width: 2rem;
       height: auto;
@@ -367,16 +368,19 @@ section {
     }
   }
   .section-projects {
-    // transition: 150ms ease-in-out;
+    transition: 200ms ease-in-out !important;
     // transition: opacity 0.5s ease-in-out;
-    // padding-left: 10px !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
     // opacity: 0;
     // background-image: url(/imgs/amberton-project-square.png);
+    border-radius: 15px;
   }
   .section-projects:hover {
     // background-color: blue;
     background-image: url(/imgs/amberton-project-square.png);
-    background-color: rgba(255, 255, 255, 0.94);
+    // background-color: rgba(255, 255, 255, 0.94);
+    background-color: $color-beige-opaque;
     background-blend-mode: lighten;
     // transition: 3s;
     // opacity: 1;

@@ -66,7 +66,7 @@ nav .logo-cont {
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding-bottom: 4rem;
+  padding-bottom: 5rem;
 }
 nav .logo-cont .logo {
   width: 80px;
@@ -151,7 +151,7 @@ nav .nav-cont-2 {
   list-style: none;
   padding-left: 0;
 }
-nav .nav-cont-2 .nav-item > img {
+nav .nav-cont-2 .nav-item > a > img {
   width: 2rem;
   height: auto;
 }
@@ -281,9 +281,15 @@ section .section-experience .projects-img-cont img {
   object-fit: cover;
   box-shadow: rgb(73, 79, 85) 0px 20px 30px -12px;
 }
+section .section-projects {
+  transition: 200ms ease-in-out !important;
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+  border-radius: 15px;
+}
 section .section-projects:hover {
   background-image: url(/imgs/amberton-project-square.png);
-  background-color: rgba(255, 255, 255, 0.94);
+  background-color: rgba(199, 186, 178, 0.25);
   background-blend-mode: lighten;
 }
 section .projects-main-heading {
