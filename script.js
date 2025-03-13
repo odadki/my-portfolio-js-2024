@@ -48,31 +48,31 @@ let experienceHeading = document.querySelector(".experience-heading");
 
 const observer = new IntersectionObserver(
   (entries, observer) => {
-      entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-              const sectionId = entry.target.dataset.nav; // Get the data-nav value
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const sectionId = entry.target.dataset.nav; // Get the data-nav value
 
-              // Find the corresponding navigation link
-              navLinks.forEach((link) => {
-                  if (link.dataset.nav === sectionId) {
-                      link.classList.add("activeNav");
-                  } else {
-                      link.classList.remove("activeNav");
-                  }
-              });
-
-              entry.target.classList.add("h2-animate");
-            //   observer.unobserve(entry.target);
-
-            // Delay adding the animate-line class
-            setTimeout(() => {
-                entry.target.classList.add("animate-line");
-            }, 10); // Adjust the delay as needed (10ms is usually fine)
+        // Find the corresponding navigation link
+        navLinks.forEach((link) => {
+          if (link.dataset.nav === sectionId) {
+            link.classList.add("activeNav");
+          } else {
+            link.classList.remove("activeNav");
           }
-      });
+        });
+
+        entry.target.classList.add("h2-animate");
+        //   observer.unobserve(entry.target);
+
+        // Delay adding the animate-line class
+        setTimeout(() => {
+          entry.target.classList.add("animate-line");
+        }, 20); // Adjust the delay as needed (10ms is usually fine)
+      }
+    });
   },
   {
-      rootMargin: "0px 0px -33% 0px",
+    rootMargin: "0px 0px -33% 0px",
   }
 );
 

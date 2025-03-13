@@ -80,6 +80,7 @@ nav {
     display: flex;
     flex-direction: row;
     align-items: center;
+    padding-bottom: 4rem;
     // margin-bottom: 100px;
     .logo {
       width: 80px;
@@ -121,8 +122,8 @@ nav {
       letter-spacing: 1.5px;
       line-height: 1;
       margin-bottom: 5px;
-      width: 120px;
-      // width: 7vw;
+      // width: 120px;
+      width: 8rem;
       padding-bottom: 5px;
       position: relative;
 
@@ -143,7 +144,7 @@ nav {
         }
       }
     }
-  
+
     li.nav-item:hover {
       cursor: pointer;
     }
@@ -178,16 +179,18 @@ nav {
     padding-left: 0;
 
     .nav-item > img {
-      width: 30px;
+      // width: 30px;
+      width: 2rem;
       height: auto;
     }
 
     .nav-item:nth-child(2) {
-      padding: 0 10px;
+      padding: 0 1rem;
     }
   }
 
-  .nav-cont-1, .nav-cont-2 {
+  .nav-cont-1,
+  .nav-cont-2 {
     margin-top: 0;
     margin-bottom: 0;
   }
@@ -1358,7 +1361,7 @@ p {
 .h2-animate {
   position: relative; /* Needed for absolute positioning of ::after */
   // color: red;
-  // transition: 500ms ease; /* Transition for other properties if needed */
+  transition: 500ms ease; /* Transition for other properties if needed */
 
   &:after {
     content: "";
@@ -1377,6 +1380,6 @@ p {
   &.animate-line:after {
     /* Add this class in your JavaScript */
     transform: scaleX(1); /* Animate to full width */
-    // transition: transform 200ms ease-in-out;
+    // transition: transform 500ms ease-in-out;
   }
 }
