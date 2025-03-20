@@ -214,6 +214,10 @@ section .section-experience {
   display: flex;
   margin: 0 0 50px 0;
 }
+section .section-experience.section-experience-cont {
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+}
 section .section-experience .exp-date-cont {
   width: 10vw;
   word-wrap: normal;
@@ -261,14 +265,27 @@ section .section-experience .exp-content .exp-content-place {
   margin-top: 6px;
 }
 section .section-experience .exp-content .view-project {
-  width: 15px;
-  height: 15px;
-  border-top: 2.5px #323d41 solid;
-  border-right: 2.5px #323d41 solid;
-  transition: 500ms ease;
+  display: block;
+  margin: 30px auto;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid #000;
+  border-left: 2px solid #000;
+  transform: rotate(135deg);
+  transition: 300ms ease;
 }
-section .section-experience .exp-content:hover > .projects-heading-container > .view-project {
-  rotate: 45deg;
+section .section-experience .exp-content .view-project:after {
+  content: "";
+  display: block;
+  width: 2px;
+  height: 45px;
+  background-color: black;
+  transform: rotate(-45deg) translate(15px, 4px);
+  left: 0;
+  top: 0;
+}
+section .section-experience .exp-content:hover > .projects-heading-container > .view-project:after {
+  width: 80px;
 }
 section .section-experience .exp-content .exp-content-desc {
   font-size: 12px;
@@ -302,7 +319,7 @@ section .section-projects:hover {
   background-image: url(/imgs/amberton-project-square.png);
   background-color: rgba(199, 186, 178, 0.25);
   background-blend-mode: lighten;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 25px 15px -20px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 8px -20px;
 }
 section .projects-main-heading {
   margin-bottom: 0;

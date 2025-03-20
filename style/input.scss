@@ -273,6 +273,11 @@ section {
     display: flex;
     margin: 0 0 50px 0;
 
+    &.section-experience-cont {
+      padding-left: 20px !important;
+      padding-right: 20px !important;
+    }
+
     .exp-date-cont {
       width: 10vw;
       word-wrap: normal;
@@ -339,18 +344,36 @@ section {
         // color: $color-gray;
       }
       .view-project {
-        width: 15px;
-        height: 15px;
-        border-top: 2.5px $color-gray solid;
-        border-right: 2.5px $color-gray solid;
-        transition: 500ms ease;
+        // width: 15px;
+        // height: 15px;
+        // border-top: 2.5px $color-gray solid;
+        // border-right: 2.5px $color-gray solid;
+        // transition: 500ms ease;
+        display: block;
+        margin: 30px auto;
+        width: 10px;
+        height: 10px;
+        border-top: 2px solid #000;
+        border-left: 2px solid #000;
+        transform: rotate(135deg);
+        transition: 300ms ease;
 
-        // &:hover {
-        //   rotate: 45deg;
-        // }
+        &:after {
+          content: "";
+          display: block;
+          width: 2px;
+          height: 45px;
+          background-color: black;
+          transform: rotate(-45deg) translate(15px, 4px);
+          left: 0;
+          top: 0;
+        }
       }
-      &:hover > .projects-heading-container > .view-project {
-        rotate: 45deg;
+      &:hover > .projects-heading-container > .view-project:after {
+        // rotate: 45deg;
+        // height: 65px; // Extend the arrow shaft length
+        // transform: rotate(-45deg) translate(15px, 4px) scaleY(1.5);
+        width: 80px;
       }
       .exp-content-desc {
         font-size: 12px;
@@ -399,7 +422,7 @@ section {
     background-blend-mode: lighten;
     // transition: 3s;
     // opacity: 1;
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 25px 15px -20px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 8px -20px;
   }
 
   .projects-main-heading {
