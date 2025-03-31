@@ -302,7 +302,7 @@ section .projects-img-cont img {
 }
 
 .section-projects {
-  transition: 200ms ease-in-out !important;
+  transition: 250ms ease-in-out !important;
   padding-left: 20px !important;
   padding-right: 20px !important;
   border-radius: 15px;
@@ -312,46 +312,49 @@ section .projects-img-cont img {
   justify-content: space-between;
   position: relative;
 }
-.section-projects .projects-heading-container .test-icon {
+.section-projects .projects-heading-container .arrow-icon {
   position: absolute;
-  border-top: 3px #323d41 solid;
-  border-right: 3px #323d41 solid;
+  border-top: 2.5px #323d41 solid;
+  border-right: 2.5px #323d41 solid;
   width: 8px;
   height: 8px;
-  rotate: 45deg;
-  transition: 300ms ease;
-  top: 0;
+  transition: 250ms linear;
+  top: 10px;
   right: 10px;
 }
-.section-projects .projects-heading-container .test-icon:after {
+.section-projects .projects-heading-container .arrow-icon:after {
   content: "";
   position: absolute;
   top: 0;
   left: 10px;
   width: 12px;
-  height: 3px;
+  height: 2.5px;
   background-color: #323d41;
   transform: rotate(135deg);
   transform-origin: top left;
 }
-.section-projects:hover .test-icon {
+.section-projects:hover .arrow-icon {
   top: 0;
   right: 0;
 }
-.section-projects .section-projects:hover {
-  background-color: rgba(199, 186, 178, 0.25);
+.section-projects:hover {
+  background-color: rgba(199, 186, 178, 0.15);
   background-blend-mode: lighten;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 8px -20px;
 }
 .section-projects .projects-main-heading {
   margin-bottom: 0;
 }
-.section-projects .projects-sub-heading {
-  margin-top: 0;
+.section-projects .img-round {
+  border-radius: 50%;
 }
 
-.img-round {
-  border-radius: 50%;
+.projects-no-margin-bottom {
+  margin-bottom: 0 !important;
+}
+
+.projects-sub-heading {
+  margin-top: 0 !important;
 }
 
 :root {

@@ -6,7 +6,8 @@ $color-mauve: #a29088;
 $color-beige: #c7bab2;
 // $color-beige: $color-mauve;
 $color-background: #f4f6f8;
-$color-beige-opaque: rgb(199, 186, 178, 0.25);
+$color-white-opaque: rgb(255, 255, 255, 0.5);
+$color-beige-opaque: rgb(199, 186, 178, 0.15);
 $color-gray-opaque: rgb(50, 61, 65, 0.25);
 $color-background-opaque: rgb(244, 246, 248, 0.25);
 
@@ -415,7 +416,7 @@ section {
   }
 }
 .section-projects {
-  transition: 200ms ease-in-out !important;
+  transition: 250ms ease-in-out !important;
   // transition: opacity 0.5s ease-in-out;
   padding-left: 20px !important;
   padding-right: 20px !important;
@@ -428,19 +429,18 @@ section {
     justify-content: space-between;
     position: relative;
 
-    .test-icon {
+    .arrow-icon {
       position: absolute;
-      border-top: 3px $color-gray solid;
-      border-right: 3px $color-gray solid;
-      // background-color: blue;
+      border-top: 2.5px $color-gray solid;
+      border-right: 2.5px $color-gray solid;
       width: 8px;
       height: 8px;
-      rotate: 45deg; // off: diagonal, on: right
-      transition: 300ms ease;
-      // top: 10px; // for diagonal arrow
-      // right: 10px; // for diagonal arrow
-      top: 0; // for right arrow
-      right: 10px; // for right arrow
+      // rotate: 45deg; // off: diagonal, on: right
+      transition: 250ms linear;
+      top: 10px; // for diagonal arrow
+      right: 10px; // for diagonal arrow
+      // top: 0; // for right arrow
+      // right: 10px; // for right arrow
 
       &:after {
         content: "";
@@ -448,7 +448,7 @@ section {
         top: 0;
         left: 10px;
         width: 12px;
-        height: 3px;
+        height: 2.5px;
         background-color: $color-gray;
         transform: rotate(135deg);
         transform-origin: top left;
@@ -456,20 +456,21 @@ section {
     }
   }
 
-  &:hover .test-icon {
+  &:hover .arrow-icon {
     top: 0;
     right: 0;
   }
 
-  &:hover .test-icon:after {
+  &:hover .arrow-icon:after {
     // width: 16px;
   }
 
-  .section-projects:hover {
+  &:hover {
     // background-color: blue;
     // background-image: url(/imgs/amberton-project-square.png);
     // background-color: rgba(255, 255, 255, 0.94);
     background-color: $color-beige-opaque;
+    // background-color: $color-white-opaque;
     background-blend-mode: lighten;
     // transition: 3s;
     // opacity: 1;
@@ -480,19 +481,32 @@ section {
     margin-bottom: 0;
   }
 
-  .projects-sub-heading {
-    // color: #779380;
-    margin-top: 0;
+  // .projects-no-margin-bottom {
+  //   margin-bottom: 0 !important;
+  // }
+
+  // .projects-sub-heading {
+  //   // color: #779380;
+  //   margin-top: 0 !important;
+  // }
+
+  .img-round {
+    border-radius: 50%;
   }
 }
 
-.img-round {
-  border-radius: 50%;
+.projects-no-margin-bottom {
+  margin-bottom: 0 !important;
 }
 
-.nav-active {
-  // color: blue;
+.projects-sub-heading {
+  // color: #779380;
+  margin-top: 0 !important;
 }
+
+// .img-round {
+//   border-radius: 50%;
+// }
 
 //UX
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap");
