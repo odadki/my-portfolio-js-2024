@@ -15,8 +15,8 @@
 
 body#body-main {
   font-family: "Inter";
-  padding-left: 150px;
-  padding-right: 150px;
+  padding-left: 7%;
+  padding-right: 7%;
   background-color: #f4f6f8;
   margin-top: 0;
 }
@@ -55,7 +55,6 @@ nav {
   padding-top: 200px;
   max-width: 50vw;
   position: sticky;
-  width: 40vw;
   align-self: flex-start;
   top: 0;
   display: flex;
@@ -85,13 +84,13 @@ nav .logo-cont .logo-text > * {
 }
 nav .logo-cont .logo-text > h1 {
   font-weight: 300;
-  font-size: 24px;
+  font-size: 1.5rem;
   text-transform: uppercase;
   letter-spacing: 3px;
 }
 nav .logo-cont .logo-text > h2 {
   font-weight: 200;
-  font-size: 18px;
+  font-size: 1.125rem;
   letter-spacing: 2px;
   color: #323d41;
 }
@@ -169,7 +168,7 @@ nav .nav-cont-2 {
 }
 
 section {
-  max-width: 40vw;
+  max-width: 45vw;
   color: #323d41;
 }
 section > #about,
@@ -177,8 +176,17 @@ section #experience,
 section #projects {
   scroll-margin-top: 200px;
 }
-section .about-heading {
+section .about .about-heading {
   margin-top: 0;
+}
+section .about .about-header {
+  display: flex;
+}
+section .about .about-header .about-pic-cont {
+  width: 100px;
+}
+section .about .about-header .about-pic-cont .about-pic {
+  width: 100%;
 }
 section h2 {
   font-size: 20px;
@@ -357,6 +365,27 @@ section .projects-img-cont img {
   margin-top: 0 !important;
 }
 
+@media (max-width: 1023px) {
+  .flex-body {
+    display: block;
+  }
+  nav {
+    position: static;
+  }
+  section#content {
+    max-width: 100%;
+  }
+}
+@media (max-width: 767px) {
+  body#body-main {
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+  .logo {
+    width: 70px !important;
+    height: 70px !important;
+  }
+}
 :root {
   --header-font: "Crimson Text", serif;
   --sub-font: "Poppins", sans-serif;
