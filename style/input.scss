@@ -193,7 +193,6 @@ nav {
     .nav-item:nth-child(2) {
       margin: 0 1rem;
     }
-
   }
 
   .nav-cont-1,
@@ -336,140 +335,139 @@ section {
       //     //   right: 0;
       //     // }
       //   }
-      }
-      .exp-content-title,
-      .exp-content-place {
-        font-size: 14px;
-        font-weight: 400;
-        letter-spacing: 1.2px;
-      }
-      .exp-content-title {
-        margin: 0;
-        color: black;
-      }
-      .exp-content-place {
-        color: $color-gray;
-        margin-top: 6px;
-        // font-weight: 400;
-        // color: $color-gray;
-      }
-      .view-project {
-        // width: 15px;
-        // height: 15px;
-        // border-top: 2.5px $color-gray solid;
-        // border-right: 2.5px $color-gray solid;
-        // transition: 500ms ease;
-        display: block;
-        margin: 30px auto;
-        width: 10px;
-        height: 10px;
-        border-top: 2px solid #000;
-        border-left: 2px solid #000;
-        transform: rotate(135deg);
-        transition: 300ms ease;
+    }
+    .exp-content-title,
+    .exp-content-place {
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: 1.2px;
+    }
+    .exp-content-title {
+      margin: 0;
+      color: black;
+    }
+    .exp-content-place {
+      color: $color-gray;
+      margin-top: 6px;
+      // font-weight: 400;
+      // color: $color-gray;
+    }
+    .view-project {
+      // width: 15px;
+      // height: 15px;
+      // border-top: 2.5px $color-gray solid;
+      // border-right: 2.5px $color-gray solid;
+      // transition: 500ms ease;
+      display: block;
+      margin: 30px auto;
+      width: 10px;
+      height: 10px;
+      border-top: 2px solid #000;
+      border-left: 2px solid #000;
+      transform: rotate(135deg);
+      transition: 300ms ease;
 
-        &:after {
-          content: "";
-          display: block;
-          width: 2px;
-          height: 45px;
-          background-color: black;
-          transform: rotate(-45deg) translate(15px, 4px);
-          left: 0;
-          top: 0;
-        }
-      }
-      &:hover > .projects-heading-container > .view-project:after {
-        // rotate: 45deg;
-        // height: 65px; // Extend the arrow shaft length
-        // transform: rotate(-45deg) translate(15px, 4px) scaleY(1.5);
-        width: 80px;
-      }
-      .exp-content-desc {
-        font-size: 12px;
-        word-wrap: normal;
-      }
-      .exp-content-tool {
-        display: inline-block;
-        background-color: $color-mauve;
-        font-size: 9px;
-        font-weight: 500;
-        letter-spacing: 1.2px;
-        margin-bottom: 3px;
-        padding: 5px;
-        text-transform: uppercase;
-        color: $color-background;
+      &:after {
+        content: "";
+        display: block;
+        width: 2px;
+        height: 45px;
+        background-color: black;
+        transform: rotate(-45deg) translate(15px, 4px);
+        left: 0;
+        top: 0;
       }
     }
-    .projects-img-cont {
-      // width: 50px;
-      // width: 0px;
-      // border-radius: 50%;
+    &:hover > .projects-heading-container > .view-project:after {
+      // rotate: 45deg;
+      // height: 65px; // Extend the arrow shaft length
+      // transform: rotate(-45deg) translate(15px, 4px) scaleY(1.5);
+      width: 80px;
+    }
+    .exp-content-desc {
+      font-size: 12px;
+      word-wrap: normal;
+    }
+    .exp-content-tool {
+      display: inline-block;
+      background-color: $color-mauve;
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 1.2px;
+      margin-bottom: 3px;
+      padding: 5px;
+      text-transform: uppercase;
+      color: $color-background;
+    }
+  }
+  .projects-img-cont {
+    // width: 50px;
+    // width: 0px;
+    // border-radius: 50%;
 
-      img {
-        width: 100%;
-        height: auto;
-        max-width: 100%;
-        object-fit: cover;
-        box-shadow: rgb(73, 79, 85) 0px 20px 30px -12px;
+    img {
+      width: 100%;
+      height: auto;
+      max-width: 100%;
+      object-fit: cover;
+      box-shadow: rgb(73, 79, 85) 0px 20px 30px -12px;
+    }
+  }
+}
+.section-projects {
+  transition: 200ms ease-in-out !important;
+  // transition: opacity 0.5s ease-in-out;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+  // opacity: 0;
+  // background-image: url(/imgs/amberton-project-square.png);
+  border-radius: 15px;
+
+  .projects-heading-container {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+
+    .test-icon {
+      position: absolute;
+      border-top: 3px $color-gray solid;
+      border-right: 3px $color-gray solid;
+      // background-color: blue;
+      width: 8px;
+      height: 8px;
+      rotate: 45deg; // off: diagonal, on: right
+      transition: 300ms ease;
+      // top: 10px; // for diagonal arrow
+      // right: 10px; // for diagonal arrow
+      top: 0; // for right arrow
+      right: 10px; // for right arrow
+
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 10px;
+        width: 12px;
+        height: 3px;
+        background-color: $color-gray;
+        transform: rotate(135deg);
+        transform-origin: top left;
       }
     }
   }
-  .section-projects {
-    transition: 200ms ease-in-out !important;
-    // transition: opacity 0.5s ease-in-out;
-    padding-left: 20px !important;
-    padding-right: 20px !important;
-    // opacity: 0;
-    // background-image: url(/imgs/amberton-project-square.png);
-    border-radius: 15px;
 
-    .projects-heading-container {
-      display: flex;
-      justify-content: space-between;
-      position: relative;
+  &:hover .test-icon {
+    top: 0;
+    right: 0;
+  }
 
-      .test-icon {
-        position: absolute;
-        border-top: 3px $color-gray solid;
-        border-right: 3px $color-gray solid;
-        // background-color: blue;
-        width: 8px;
-        height: 8px;
-        rotate: 45deg; // off: diagonal, on: right
-        transition: 300ms ease;
-        // top: 10px; // for diagonal arrow
-        // right: 10px; // for diagonal arrow
-        top: 0; // for right arrow
-        right: 10px; // for right arrow
-  
-        &:after {
-          content: "";
-          position: absolute;  
-          top: 0;               
-          left: 10px;              
-          width: 12px;          
-          height: 3px;          
-          background-color: $color-gray;  
-          transform: rotate(135deg); 
-          transform-origin: top left;
-        }
-      }
-    }
+  &:hover .test-icon:after {
+    // width: 16px;
+  }
 
-    &:hover .test-icon {
-      top: 0;
-      right: 0;
-    }
-
-    &:hover .test-icon:after {
-      // width: 16px;
-    }
-
-    
   .section-projects:hover {
     // background-color: blue;
-    background-image: url(/imgs/amberton-project-square.png);
+    // background-image: url(/imgs/amberton-project-square.png);
     // background-color: rgba(255, 255, 255, 0.94);
     background-color: $color-beige-opaque;
     background-blend-mode: lighten;
