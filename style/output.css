@@ -249,6 +249,15 @@ section .section-experience .exp-content {
   padding-left: 28px;
   width: 90vw;
 }
+section .section-experience .exp-content .hide-desktop-text {
+  display: none;
+  letter-spacing: 1.2px;
+  color: #a29088;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 13px;
+  margin-bottom: 3px;
+}
 section .section-experience .exp-content-title,
 section .section-experience .exp-content-place {
   font-size: 14px;
@@ -381,9 +390,39 @@ section .projects-img-cont img {
     padding-left: 2%;
     padding-right: 2%;
   }
+  nav {
+    max-width: 100vw !important;
+  }
   .logo {
-    width: 70px !important;
-    height: 70px !important;
+    width: 55px !important;
+    height: 55px !important;
+  }
+  .logo-text {
+    margin-left: 3% !important;
+  }
+  .logo-text > h1 {
+    font-size: 1.25rem !important;
+  }
+  .logo-text > h2 {
+    font-size: 0.875rem !important;
+  }
+  .section-text.section-experience.section-experience-cont,
+  .section-text.section-experience.section-projects {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+@media (max-width: 575px) {
+  .exp-date-cont.projects-img-cont,
+  .exp-date-cont {
+    display: none !important;
+  }
+  .exp-content {
+    padding-left: 0 !important;
+    width: auto !important;
+  }
+  .hide-desktop-text {
+    display: block !important;
   }
 }
 :root {

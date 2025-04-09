@@ -234,19 +234,15 @@ section {
         // height: 100px;
 
         .about-pic {
-        // border-radius: 50%;
-        width: 100%;
-        // max-width: 100px;
-        // width: 100px;
-        // height: auto;
+          // border-radius: 50%;
+          width: 100%;
+          // max-width: 100px;
+          // width: 100px;
+          // height: auto;
         }
       }
-
-      
     }
   }
-
-  
 
   h2 {
     font-size: 20px;
@@ -361,6 +357,16 @@ section {
       //     //   right: 0;
       //     // }
       //   }
+
+      .hide-desktop-text {
+        display: none;
+        letter-spacing: 1.2px;
+        color: $color-mauve;
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 13px;
+        margin-bottom: 3px;
+      }
     }
     .exp-content-title,
     .exp-content-place {
@@ -551,22 +557,56 @@ section {
     padding-left: 2%;
     padding-right: 2%;
   }
+
+  nav {
+    max-width: 100vw !important;
+  }
+
   .logo {
-    width: 70px !important;
-    height: 70px !important;
+    width: 55px !important;
+    height: 55px !important;
+  }
+  .logo-text {
+    margin-left: 3% !important;
   }
   .logo-text > h1 {
     // font-weight: 300;
-    // font-size: calc(46px + 64 * (100vw - 320px) / 1120) !important;
+    font-size: 1.25rem !important;
     // text-transform: uppercase;
     // letter-spacing: 3px;
     // margin-bottom: 8px;
   }
   .logo-text > h2 {
     // font-weight: 200;
-    // font-size: 16px !important;
+    font-size: 0.875rem !important;
     // letter-spacing: 2px;
     // color: $color-gray;
+  }
+
+  .section-text.section-experience.section-experience-cont,
+  .section-text.section-experience.section-projects {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  // .hide-desktop-text {
+  //   display: block !important;
+  // }
+}
+
+@media (max-width: 575px) {
+  .exp-date-cont.projects-img-cont,
+  .exp-date-cont {
+    display: none !important;
+  }
+
+  .exp-content {
+    padding-left: 0 !important;
+    width: auto !important;
+  }
+
+  .hide-desktop-text {
+    display: block !important;
   }
 }
 
