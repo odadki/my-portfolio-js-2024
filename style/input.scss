@@ -524,6 +524,10 @@ section {
   .img-round {
     border-radius: 50%;
   }
+
+  .projects-mobile {
+    display: none;
+  }
 }
 
 .projects-no-margin-bottom {
@@ -549,6 +553,12 @@ section {
   }
   section#content {
     max-width: 100%;
+
+    & > #about,
+    #experience,
+    #projects {
+      scroll-margin-top: 10px;
+    }
   }
 }
 
@@ -595,6 +605,9 @@ section {
 }
 
 @media (max-width: 575px) {
+  .section-projects:hover {
+    background-color: transparent;
+  }
   .exp-date-cont.projects-img-cont,
   .exp-date-cont {
     display: none !important;
@@ -607,6 +620,20 @@ section {
 
   .hide-desktop-text {
     display: block !important;
+  }
+
+  .projects-mobile {
+    display: block !important;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 10px;
+
+    .projects-mobile-img {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
   }
 }
 

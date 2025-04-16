@@ -365,6 +365,9 @@ section .projects-img-cont img {
 .section-projects .img-round {
   border-radius: 50%;
 }
+.section-projects .projects-mobile {
+  display: none;
+}
 
 .projects-no-margin-bottom {
   margin-bottom: 0 !important;
@@ -383,6 +386,11 @@ section .projects-img-cont img {
   }
   section#content {
     max-width: 100%;
+  }
+  section#content > #about,
+  section#content #experience,
+  section#content #projects {
+    scroll-margin-top: 10px;
   }
 }
 @media (max-width: 767px) {
@@ -413,6 +421,9 @@ section .projects-img-cont img {
   }
 }
 @media (max-width: 575px) {
+  .section-projects:hover {
+    background-color: transparent;
+  }
   .exp-date-cont.projects-img-cont,
   .exp-date-cont {
     display: none !important;
@@ -423,6 +434,18 @@ section .projects-img-cont img {
   }
   .hide-desktop-text {
     display: block !important;
+  }
+  .projects-mobile {
+    display: block !important;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+  .projects-mobile .projects-mobile-img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
   }
 }
 :root {
