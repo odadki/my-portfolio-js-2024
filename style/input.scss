@@ -69,7 +69,7 @@ body#body-main {
   justify-content: space-between;
 }
 nav {
-  padding-top: 200px;
+  // padding-top: 200px;
   max-width: 50vw;
   position: sticky;
   // width: 40vw;
@@ -79,12 +79,14 @@ nav {
   flex-direction: column;
   gap: 4rem;
   // gap: (100vh - 65vh) / 3;
+  height: 100vh;
+  justify-content: space-evenly;
 
   .logo-cont {
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding-bottom: 5rem;
+    // padding-bottom: 5rem;
     // margin-bottom: 100px;
     .logo {
       width: 80px;
@@ -119,13 +121,14 @@ nav {
   ul.nav-cont-1 {
     list-style: none;
     padding-left: 0;
+    transform: translateY(-75px);
 
     .nav-item {
       font-size: 14px;
       font-weight: 300;
       letter-spacing: 1.5px;
       line-height: 1;
-      margin-bottom: 5px;
+      margin-bottom: 10px;
       // width: 120px;
       width: 8rem;
       padding-bottom: 5px;
@@ -216,7 +219,8 @@ section {
   & > #about,
   #experience,
   #projects {
-    scroll-margin-top: 200px;
+    // scroll-margin-top: 200px;
+    scroll-margin-top: var(--scroll-align-offset, 0px);
     // opacity: 0;
     // transition: 2s ease-in-out;
   }
@@ -270,7 +274,8 @@ section {
     margin: 50px 0;
   }
   div.about {
-    padding-top: 200px;
+    // padding-top: 200px;
+    padding-top: var(--scroll-align-offset, 0px);
   }
 
   a.project-link {

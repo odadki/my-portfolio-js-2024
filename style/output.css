@@ -52,7 +52,6 @@ body#body-main {
 }
 
 nav {
-  padding-top: 200px;
   max-width: 50vw;
   position: sticky;
   align-self: flex-start;
@@ -60,12 +59,13 @@ nav {
   display: flex;
   flex-direction: column;
   gap: 4rem;
+  height: 100vh;
+  justify-content: space-evenly;
 }
 nav .logo-cont {
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding-bottom: 5rem;
 }
 nav .logo-cont .logo {
   width: 80px;
@@ -97,13 +97,14 @@ nav .logo-cont .logo-text > h2 {
 nav ul.nav-cont-1 {
   list-style: none;
   padding-left: 0;
+  transform: translateY(-75px);
 }
 nav ul.nav-cont-1 .nav-item {
   font-size: 14px;
   font-weight: 300;
   letter-spacing: 1.5px;
   line-height: 1;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   width: 8rem;
   padding-bottom: 5px;
   position: relative;
@@ -174,7 +175,7 @@ section {
 section > #about,
 section #experience,
 section #projects {
-  scroll-margin-top: 200px;
+  scroll-margin-top: var(--scroll-align-offset, 0px);
 }
 section .about .about-heading {
   margin-top: 0;
@@ -200,7 +201,7 @@ section div.section-group {
   margin: 50px 0;
 }
 section div.about {
-  padding-top: 200px;
+  padding-top: var(--scroll-align-offset, 0px);
 }
 section a.project-link {
   text-decoration: none;

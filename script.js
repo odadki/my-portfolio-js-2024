@@ -72,10 +72,22 @@ const observer = new IntersectionObserver(
     });
   },
   {
-    rootMargin: "0px 0px -33% 0px",
+    rootMargin: "0px 0px -50% 0px",
   }
 );
 
 headingObservers.forEach((h2) => {
   observer.observe(h2);
+});
+
+window.addEventListener("DOMContentLoaded", () => {
+  const logoCont = document.querySelector(".logo-cont");
+  if (!logoCont) return;
+
+  const offset = logoCont.getBoundingClientRect().top + window.scrollY;
+
+  document.documentElement.style.setProperty(
+    "--scroll-align-offset",
+    `${offset}px`
+  );
 });
