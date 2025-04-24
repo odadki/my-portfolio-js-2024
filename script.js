@@ -91,3 +91,16 @@ window.addEventListener("DOMContentLoaded", () => {
     `${offset}px`
   );
 });
+
+// Add mobile sticky nav after 100vh
+window.addEventListener('scroll', function() {
+  const nav = this.document.getElementById('mobile-sticky-nav');
+  const scrollPosition = this.window.scrollY;
+  const viewportHeight = this.window.innerHeight;
+
+  if (scrollPosition > viewportHeight) {
+    nav.classList.add('sticky');
+  } else {
+    nav.classList.remove('sticky');
+  }
+})

@@ -51,7 +51,7 @@ body#body-main {
   justify-content: space-between;
 }
 
-nav {
+nav#main-nav {
   max-width: 50vw;
   position: sticky;
   align-self: flex-start;
@@ -62,44 +62,44 @@ nav {
   height: 100vh;
   justify-content: space-evenly;
 }
-nav .logo-cont {
+nav#main-nav .logo-cont {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-nav .logo-cont .logo {
+nav#main-nav .logo-cont .logo {
   width: 80px;
   height: 80px;
 }
-nav .logo-cont .logo > img {
+nav#main-nav .logo-cont .logo > img {
   width: 100%;
   height: auto;
   object-position: cover;
 }
-nav .logo-cont .logo-text {
+nav#main-nav .logo-cont .logo-text {
   margin-left: 20px;
 }
-nav .logo-cont .logo-text > * {
+nav#main-nav .logo-cont .logo-text > * {
   margin: 0;
 }
-nav .logo-cont .logo-text > h1 {
+nav#main-nav .logo-cont .logo-text > h1 {
   font-weight: 300;
   font-size: 1.5rem;
   text-transform: uppercase;
   letter-spacing: 3px;
 }
-nav .logo-cont .logo-text > h2 {
+nav#main-nav .logo-cont .logo-text > h2 {
   font-weight: 200;
   font-size: 1.125rem;
   letter-spacing: 2px;
   color: #323d41;
 }
-nav ul.nav-cont-1 {
+nav#main-nav ul.nav-cont-1 {
   list-style: none;
   padding-left: 0;
   transform: translateY(-75px);
 }
-nav ul.nav-cont-1 .nav-item {
+nav#main-nav ul.nav-cont-1 .nav-item {
   font-size: 14px;
   font-weight: 300;
   letter-spacing: 1.5px;
@@ -109,7 +109,7 @@ nav ul.nav-cont-1 .nav-item {
   padding-bottom: 5px;
   position: relative;
 }
-nav ul.nav-cont-1 .nav-item .nav-link:after {
+nav#main-nav ul.nav-cont-1 .nav-item .nav-link:after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -122,10 +122,10 @@ nav ul.nav-cont-1 .nav-item .nav-link:after {
   transform-origin: 0% 50%;
   transform: scaleX(1);
 }
-nav ul.nav-cont-1 li.nav-item:hover {
+nav#main-nav ul.nav-cont-1 li.nav-item:hover {
   cursor: pointer;
 }
-nav ul.nav-cont-1 li.nav-item:after {
+nav#main-nav ul.nav-cont-1 li.nav-item:after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -139,33 +139,49 @@ nav ul.nav-cont-1 li.nav-item:after {
   display: block;
   transform-origin: 0% 50%;
 }
-nav ul.nav-cont-1 li.nav-item:hover:after {
+nav#main-nav ul.nav-cont-1 li.nav-item:hover:after {
   transform: scaleX(1.5);
 }
-nav ul.nav-cont-1 li.nav-item > a.nav-link {
+nav#main-nav ul.nav-cont-1 li.nav-item > a.nav-link {
   text-decoration: none;
   color: black;
 }
-nav .nav-cont-2 {
+nav#main-nav .nav-cont-2 {
   display: flex;
   list-style: none;
   padding-left: 0;
 }
-nav .nav-cont-2 .nav-item > a > img {
+nav#main-nav .nav-cont-2 .nav-item > a > img {
   width: 2rem;
   height: auto;
   transition: transform 300ms ease;
 }
-nav .nav-cont-2 .nav-item > a > img:hover {
+nav#main-nav .nav-cont-2 .nav-item > a > img:hover {
   transform: scale(1.1);
 }
-nav .nav-cont-2 .nav-item:nth-child(2) {
+nav#main-nav .nav-cont-2 .nav-item:nth-child(2) {
   margin: 0 1rem;
 }
-nav .nav-cont-1,
-nav .nav-cont-2 {
+nav#main-nav .nav-cont-1,
+nav#main-nav .nav-cont-2 {
   margin-top: 0;
   margin-bottom: 0;
+}
+
+#mobile-sticky-nav {
+  opacity: 0;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: #c7bab2;
+  transition: all 250ms ease-in-out;
+}
+#mobile-sticky-nav .mobile-ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  justify-content: space-around;
+  padding-left: 0;
 }
 
 section {
@@ -382,7 +398,7 @@ section .projects-img-cont img {
   .flex-body {
     display: block;
   }
-  nav {
+  nav#main-nav {
     position: static;
   }
   section#content {
@@ -415,15 +431,18 @@ section .projects-img-cont img {
   .logo-text > h2 {
     font-size: 0.875rem !important;
   }
-  .section-text.section-experience.section-experience-cont,
-  .section-text.section-experience.section-projects {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+  nav#mobile-sticky-nav.sticky {
+    display: block;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    opacity: 1;
   }
 }
 @media (max-width: 575px) {
   .section-projects:hover {
     background-color: transparent;
+    box-shadow: none;
   }
   .exp-date-cont.projects-img-cont,
   .exp-date-cont {
@@ -432,6 +451,11 @@ section .projects-img-cont img {
   .exp-content {
     padding-left: 0 !important;
     width: auto !important;
+  }
+  .section-text.section-experience.section-experience-cont,
+  .section-text.section-experience.section-projects {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
   .hide-desktop-text {
     display: block !important;
