@@ -18,12 +18,20 @@
 
     <!-- Mobile sticky nav -->
     <nav id="mobile-sticky-nav">
-      <div>
+      <div class="mobile-logo-cont">
         <ul class="mobile-ul">
-          <li class="mobile-nav-item">About</li>
-          <li class="mobile-nav-item">Experience</li>
-          <li class="mobile-nav-item">Projects</li>
-          <li class="mobile-nav-item">Resume</li>
+          <li class="mobile-nav-item">
+            <a href="#about" class="mob-nav-observer" data-mobile-nav="mob-about-section">About</a>
+          </li>
+          <li class="mobile-nav-item">
+            <a href="#experience" class="mob-nav-observer" data-mobile-nav="mob-experience-section">Experience</a>
+          </li>
+          <li class="mobile-nav-item">
+            <a href="#projects" class="mob-nav-observer" data-mobile-nav="mob-projects-section">Projects</a>
+          </li>
+          <li class="mobile-nav-item mobile-resume">
+            <a href="#">Resume</a>
+          </li>
         </ul>
       </div>
     </nav>
@@ -85,7 +93,7 @@
       <!-- Main content -->
       <section id="content">
         <div class="about" id="about">
-          <h2 class="about-heading heading" data-nav="about-section">About</h2>
+          <h2 class="about-heading heading" data-nav="about-section" data-mobile-nav="mob-about-section">About</h2>
           <!-- <fieldset>
             <legend>About</legend>
           </fieldset> -->
@@ -122,7 +130,7 @@
           </div>
         </div>
         <div class="experience" id="experience">
-          <h2 class="experience-heading heading" data-nav="experience-section">Experience</h2>
+          <h2 class="experience-heading heading" data-nav="experience-section" data-mobile-nav="mob-experience-section">Experience</h2>
           <!-- <fieldset>
             <legend>Experience</legend>
           </fieldset> -->
@@ -252,7 +260,7 @@
         </div>
         <div class="projects" id="projects">
           <!-- <h2 class="projects-heading heading">Projects</h2> -->
-          <h2 class="projects-heading heading projects-main-heading projects-no-margin-bottom" data-nav="projects-section">Projects</h2>
+          <h2 class="projects-heading heading projects-main-heading projects-no-margin-bottom" data-nav="projects-section" data-mobile-nav="mob-projects-section">Projects</h2>
           <h2 class="projects-sub-heading">Development</h2>
           <div class="section-group">
             <a class="project-link" href="https://amberton.edu/">

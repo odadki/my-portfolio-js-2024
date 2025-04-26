@@ -27,25 +27,7 @@ const navLinks = document.querySelectorAll(".nav-observer");
 let experienceHeading = document.querySelector(".experience-heading");
 // const aboutLink = document.getElementById("about-link");
 
-// const observer = new IntersectionObserver(
-//   (entries, observer) => {
-//     entries.forEach((entry) => {
-//       if (entry.isIntersecting) {
-//         console.log("projects-heading target is intersecting");
-//         // entry.target.classList.add("activeNav");
-//         aboutLink.classList.add("activeNav");
-//         // observer.unobserve(entry.target);
-//       }
-//       // const intersecting = entry.isIntersecting;
-//       // entry.target.style.backgroundColor = intersecting ? "blue" : "orange";
-//       // console.log("projects-heading target is intersecting");
-//     });
-//   },
-//   {
-//     rootMargin: "0px 0px -33% 0px",
-//   }
-// );
-
+// Desktop nav observer
 const observer = new IntersectionObserver(
   (entries, observer) => {
     entries.forEach((entry) => {
@@ -80,7 +62,42 @@ headingObservers.forEach((h2) => {
   observer.observe(h2);
 });
 
-window.addEventListener("DOMContentLoaded", () => {
+// Mobile nav scroll observer
+const mobNavLinks = document.querySelectorAll(".mob-nav-observer");
+
+const mobileObserver = new IntersectionObserver(
+  (entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const mobSectionId = entry.target.dataset.mobileNav;
+
+        // Find the corresponding navigation link
+        mobNavLinks.forEach((link) => {
+          if (link.dataset.mobileNav === mobSectionId) {
+            link.classList.add("activeNav", "h2-animate");
+          } else {
+            link.classList.remove("activeNav");
+          }
+        });
+
+        // entry.target.classList.add("h2-animate");
+        //   observer.unobserve(entry.target);
+
+      }
+    })
+
+  },
+  {
+    rootMargin: "0px 0px -50% 0px",
+  }
+);
+
+headingObservers.forEach((h2) => {
+  mobileObserver.observe(h2);
+});
+
+// Add margin at the top when nav item is clicked so it doesn't get hidden
+function scrollOffset() {
   const logoCont = document.querySelector(".logo-cont");
   if (!logoCont) return;
 
@@ -90,15 +107,24 @@ window.addEventListener("DOMContentLoaded", () => {
     "--scroll-align-offset",
     `${offset}px`
   );
+}
+
+window.addEventListener("DOMContentLoaded", scrollOffset);
+
+window.addEventListener("resize", () => {
+  scrollOffset();
 });
 
 // Add mobile sticky nav after 100vh
 window.addEventListener('scroll', function() {
   const nav = this.document.getElementById('mobile-sticky-nav');
+  const navCont2 = this.document.querySelector('.nav-cont-2');
   const scrollPosition = this.window.scrollY;
   const viewportHeight = this.window.innerHeight;
 
-  if (scrollPosition > viewportHeight) {
+  const navCont2Position = navCont2.getBoundingClientRect().bottom + this.window.scrollY;
+
+  if (scrollPosition > navCont2Position) {
     nav.classList.add('sticky');
   } else {
     nav.classList.remove('sticky');
