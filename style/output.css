@@ -173,7 +173,7 @@ nav#main-nav .nav-cont-2 {
   width: 100%;
   top: 0;
   left: 0;
-  background-color: #EDEDEE;
+  background-color: #ededee;
   transition: all 250ms ease-in-out;
   box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
 }
@@ -184,6 +184,13 @@ nav#main-nav .nav-cont-2 {
   justify-content: space-around;
   padding-left: 0;
   align-items: center;
+}
+#mobile-sticky-nav .mobile-ul > .mobile-logo > .mobile-logo-div {
+  width: 40px;
+  height: 40px;
+}
+#mobile-sticky-nav .mobile-ul > .mobile-logo > .mobile-logo-div > img {
+  width: 100%;
 }
 #mobile-sticky-nav .mobile-ul > .mobile-nav-item > a {
   text-decoration: none;
@@ -453,7 +460,7 @@ section .projects-img-cont img {
   }
   .mobile-resume {
     border: 1px solid #a29088;
-    padding: 5px 15px;
+    padding: 3px 13px;
     background-color: #f4f6f8;
   }
 }
@@ -1354,6 +1361,22 @@ p {
 .h2-animate.animate-line:after {
   /* Add this class in your JavaScript */
   transform: scaleX(1); /* Animate to full width */
+}
+
+.mob-active-nav {
+  color: #a29088 !important;
+  position: relative;
+  transition: 250ms ease;
+}
+.mob-active-nav:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -8px;
+  height: 100%;
+  width: 5px;
+  background-color: #a29088;
+  transition: transform 500ms ease-in-out;
 }
 
 .test-div {
