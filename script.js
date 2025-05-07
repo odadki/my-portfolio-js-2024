@@ -28,39 +28,69 @@ let experienceHeading = document.querySelector(".experience-heading");
 // const aboutLink = document.getElementById("about-link");
 
 // Desktop nav observer
-const observer = new IntersectionObserver(
-  (entries, observer) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        const sectionId = entry.target.dataset.nav; // Get the data-nav value
+const isMobile = window.innerWidth <= 767;
 
-        // Find the corresponding navigation link
-        navLinks.forEach((link) => {
-          if (link.dataset.nav === sectionId) {
-            link.classList.add("activeNav");
-          } else {
-            link.classList.remove("activeNav");
-          }
-        });
+if (!isMobile) {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const sectionId = entry.target.dataset.nav;
 
-        entry.target.classList.add("h2-animate");
-        //   observer.unobserve(entry.target);
+          navLinks.forEach((link) => {
+            link.classList.toggle("activeNav", link.dataset.nav === sectionId);
+          });
 
-        // Delay adding the animate-line class
-        setTimeout(() => {
-          entry.target.classList.add("animate-line");
-        }, 20); // Adjust the delay as needed (10ms is usually fine)
-      }
+          entry.target.classList.add("h2-animate");
+
+          setTimeout(() => {
+            entry.target.classList.add("animate-line");
+          }, 20);
+        }
+      });
+    },
+    {
+      rootMargin: "0px 0px -50% 0px",
+    }
+  );
+
+  headingObservers.forEach((h2) => {
+    observer.observe(h2);
+  });
+}
+
+// If browser is resized <=767
+let wasMobile = window.innerWidth <= 767;
+
+function handleResize() {
+  const isMobile = window.innerWidth <= 767;
+
+  if (isMobile && !wasMobile) {
+    // Just transitioned from desktop to mobile — clear activeNav
+    navLinks.forEach((link) => {
+      link.classList.remove("activeNav");
     });
-  },
-  {
-    rootMargin: "0px 0px -50% 0px",
   }
-);
 
-headingObservers.forEach((h2) => {
-  observer.observe(h2);
+  wasMobile = isMobile;
+}
+
+window.addEventListener("resize", handleResize);
+
+// Remove activeNav
+navLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    if (window.innerWidth <= 767) {
+      navLinks.forEach((l) => l.classList.remove("activeNav"));
+    }
+  });
 });
+
+if (window.innerWidth <= 767) {
+  window.addEventListener("scroll", () => {
+    navLinks.forEach((l) => l.classList.remove("activeNav"));
+  });
+}
 
 // Mobile nav scroll observer
 const mobNavLinks = document.querySelectorAll(".mob-nav-observer");
