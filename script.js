@@ -28,36 +28,57 @@ let experienceHeading = document.querySelector(".experience-heading");
 // const aboutLink = document.getElementById("about-link");
 
 // Desktop nav observer
-const isMobile = window.innerWidth <= 767;
+// const isMobile = window.innerWidth <= 767;
 
-if (!isMobile) {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const sectionId = entry.target.dataset.nav;
+// if (!isMobile) {
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      let screenWidth = window.innerWidth;
 
-          navLinks.forEach((link) => {
-            link.classList.toggle("activeNav", link.dataset.nav === sectionId);
-          });
+      if (entry.isIntersecting) {
+        const sectionId = entry.target.dataset.nav;
 
-          entry.target.classList.add("h2-animate");
+        navLinks.forEach((link) => {
+          link.classList.toggle("activeNav", link.dataset.nav === sectionId);
+        });
 
-          setTimeout(() => {
-            entry.target.classList.add("animate-line");
-          }, 20);
+        entry.target.classList.add("h2-animate");
+
+        setTimeout(() => {
+          entry.target.classList.add("animate-line");
+        }, 20);
+
+        if (window.innerWidth <= 767) {
+          //stop observing
+          // entry.target.classList.remove("h2-animate");
+          // entry.target.classList.remove("animate-line");
+          // observer.unobserve(entry.target);
         }
-      });
-    },
-    {
-      rootMargin: "0px 0px -50% 0px",
-    }
-  );
 
-  headingObservers.forEach((h2) => {
-    observer.observe(h2);
-  });
-}
+        window.addEventListener("resize", function () {
+          const currentWidth = window.innerWidth;
+
+          if (screenWidth > 767 && currentWidth <= 767) {
+            // Width has changed from above 767 to 767 or less
+            navLinks.forEach((m) => m.classList.remove("activeNav"));
+            // console.log("Width changed to 767 or less");
+          }
+
+          screenWidth = currentWidth; // Update for next check
+        });
+      }
+    });
+  },
+  {
+    rootMargin: "0px 0px -50% 0px",
+  }
+);
+
+headingObservers.forEach((h2) => {
+  observer.observe(h2);
+});
+// }
 
 // If browser is resized <=767
 let wasMobile = window.innerWidth <= 767;
@@ -91,6 +112,15 @@ if (window.innerWidth <= 767) {
     navLinks.forEach((l) => l.classList.remove("activeNav"));
   });
 }
+window.addEventListener("resize", function () {
+  currentWidth = window.innerWidth;
+  // console.log(currentWidth);
+
+  if (currentWidth <= 767) {
+    navLinks.forEach((m) => m.classList.remove("activeNav"));
+    // console.log("width is less than 767");
+  }
+});
 
 // Mobile nav scroll observer
 const mobNavLinks = document.querySelectorAll(".mob-nav-observer");
@@ -146,9 +176,9 @@ function scrollOffset() {
 
 window.addEventListener("DOMContentLoaded", scrollOffset);
 
-window.addEventListener("resize", () => {
-  scrollOffset();
-});
+// window.addEventListener("resize", () => {
+//   scrollOffset();
+// });
 
 // Add mobile sticky nav after 100vh
 window.addEventListener("scroll", function () {
