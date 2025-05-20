@@ -181,9 +181,13 @@ nav#main-nav .nav-cont-2 {
   display: flex;
   flex-direction: row;
   list-style: none;
-  justify-content: space-around;
+  justify-content: space-between;
   padding-left: 0;
   align-items: center;
+  padding-left: 2%;
+  padding-right: 2%;
+  margin-left: 8px;
+  margin-right: 8px;
 }
 #mobile-sticky-nav .mobile-ul > .mobile-logo > .mobile-logo-div {
   width: 40px;
