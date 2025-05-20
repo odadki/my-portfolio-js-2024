@@ -238,6 +238,8 @@ nav#main-nav {
     & > .mobile-nav-item > a {
       text-decoration: none;
       color: $color-gray;
+      letter-spacing: 1.5px;
+      font-size: 0.95rem;
     }
   }
 }
@@ -655,9 +657,9 @@ section {
   }
 
   .mobile-resume {
-    border: 1px solid $color-mauve;
+    border: 1px solid $color-gray;
     padding: 3px 13px;
-    background-color: $color-background;
+    // background-color: $color-background;
   }
 }
 
@@ -1692,10 +1694,13 @@ p {
   &:before {
     content: "";
     position: absolute;
-    top: 0;
+    // top: 0; // line
+    top: 9px;
     left: -8px;
-    height: 100%;
-    width: 5px;
+    // height: 100%; // line
+    height: 4px;
+    // width: 2.5px; // line
+    width: 4px;
     background-color: $color-mauve;
     transition: transform 500ms ease-in-out;
   }

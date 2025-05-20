@@ -48,25 +48,6 @@ const observer = new IntersectionObserver(
         setTimeout(() => {
           entry.target.classList.add("animate-line");
         }, 20);
-
-        if (window.innerWidth <= 767) {
-          //stop observing
-          // entry.target.classList.remove("h2-animate");
-          // entry.target.classList.remove("animate-line");
-          // observer.unobserve(entry.target);
-        }
-
-        window.addEventListener("resize", function () {
-          const currentWidth = window.innerWidth;
-
-          if (screenWidth > 767 && currentWidth <= 767) {
-            // Width has changed from above 767 to 767 or less
-            navLinks.forEach((m) => m.classList.remove("activeNav"));
-            // console.log("Width changed to 767 or less");
-          }
-
-          screenWidth = currentWidth; // Update for next check
-        });
       }
     });
   },
@@ -97,30 +78,6 @@ function handleResize() {
 }
 
 window.addEventListener("resize", handleResize);
-
-// Remove activeNav
-navLinks.forEach((link) => {
-  link.addEventListener("click", () => {
-    if (window.innerWidth <= 767) {
-      navLinks.forEach((l) => l.classList.remove("activeNav"));
-    }
-  });
-});
-
-if (window.innerWidth <= 767) {
-  window.addEventListener("scroll", () => {
-    navLinks.forEach((l) => l.classList.remove("activeNav"));
-  });
-}
-window.addEventListener("resize", function () {
-  currentWidth = window.innerWidth;
-  // console.log(currentWidth);
-
-  if (currentWidth <= 767) {
-    navLinks.forEach((m) => m.classList.remove("activeNav"));
-    // console.log("width is less than 767");
-  }
-});
 
 // Mobile nav scroll observer
 const mobNavLinks = document.querySelectorAll(".mob-nav-observer");
@@ -196,3 +153,34 @@ window.addEventListener("scroll", function () {
     nav.classList.remove("sticky");
   }
 });
+
+// Remove class activeNav on screenwidths <=767
+const aboutId = document.getElementById("about-link");
+
+function isInViewport(el) {
+  const rect = el.getBoundingClientRect();
+  return (
+    rect.top < window.innerHeight &&
+    rect.bottom > 0 &&
+    rect.left < window.innerWidth &&
+    rect.right > 0
+  );
+}
+
+function removeActiveIfVisible(el) {
+  if (isInViewport(el)) {
+    el.classList.remove("activeNav");
+  }
+}
+
+function handleScroll() {
+  if (window.innerWidth <= 767) {
+    const target = document.querySelector(".activeNav");
+    if (target) {
+      removeActiveIfVisible(target);
+    }
+  }
+}
+
+window.addEventListener("scroll", handleScroll);
+window.addEventListener("resize", handleScroll);
