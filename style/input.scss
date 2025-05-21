@@ -706,6 +706,24 @@ section {
       display: block;
     }
   }
+  
+  #mobile-sticky-nav {
+    display: none !important;
+  }
+
+  .section-div {
+    padding: 0;
+    margin: 0;
+  
+    .heading {
+      position: sticky;
+      top: 0;
+      background-color: $color-background;
+      padding: 10px 10px 0 0;
+      margin: 0;
+      z-index: 10;
+    }
+  }
 }
 
 //UX
