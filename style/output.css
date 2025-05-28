@@ -428,6 +428,12 @@ section .projects-img-cont img {
   section#content #projects {
     scroll-margin-top: 10px;
   }
+  nav#mobile-sticky-nav.sticky {
+    display: block;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+  }
 }
 @media (max-width: 767px) {
   body#body-main {
@@ -449,12 +455,6 @@ section .projects-img-cont img {
   }
   .logo-text > h2 {
     font-size: 0.875rem !important;
-  }
-  nav#mobile-sticky-nav.sticky {
-    display: block;
-    position: fixed;
-    top: 0;
-    z-index: 100;
   }
   #about,
   #experience,
@@ -513,7 +513,7 @@ section .projects-img-cont img {
     position: sticky;
     top: 0;
     background-color: #f4f6f8;
-    padding: 10px 10px 0 0;
+    padding: 20px 10px 0 0;
     margin: 0;
     z-index: 10;
   }

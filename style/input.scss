@@ -606,6 +606,13 @@ section {
       scroll-margin-top: 10px;
     }
   }
+  nav#mobile-sticky-nav.sticky {
+    display: block;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    // opacity: 1;
+  }
 }
 
 @media (max-width: 767px) {
@@ -639,13 +646,13 @@ section {
     // color: $color-gray;
   }
 
-  nav#mobile-sticky-nav.sticky {
-    display: block;
-    position: fixed;
-    top: 0;
-    z-index: 100;
-    // opacity: 1;
-  }
+  // nav#mobile-sticky-nav.sticky {
+  //   display: block;
+  //   position: fixed;
+  //   top: 0;
+  //   z-index: 100;
+  //   // opacity: 1;
+  // }
 
   #about,
   #experience,
@@ -706,7 +713,7 @@ section {
       display: block;
     }
   }
-  
+
   #mobile-sticky-nav {
     display: none !important;
   }
@@ -714,12 +721,13 @@ section {
   .section-div {
     padding: 0;
     margin: 0;
-  
+
     .heading {
       position: sticky;
       top: 0;
       background-color: $color-background;
-      padding: 10px 10px 0 0;
+      // padding: 10px 10px 0 0; // original
+      padding: 20px 10px 0 0;
       margin: 0;
       z-index: 10;
     }

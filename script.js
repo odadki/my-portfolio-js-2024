@@ -62,22 +62,22 @@ headingObservers.forEach((h2) => {
 // }
 
 // If browser is resized <=767
-let wasMobile = window.innerWidth <= 767;
+// let wasMobile = window.innerWidth <= 767;
 
-function handleResize() {
-  const isMobile = window.innerWidth <= 767;
+// function handleResize() {
+//   const isMobile = window.innerWidth <= 767;
 
-  if (isMobile && !wasMobile) {
-    // Just transitioned from desktop to mobile — clear activeNav
-    navLinks.forEach((link) => {
-      link.classList.remove("activeNav");
-    });
-  }
+//   if (isMobile && !wasMobile) {
+//     // Just transitioned from desktop to mobile — clear activeNav
+//     navLinks.forEach((link) => {
+//       link.classList.remove("activeNav");
+//     });
+//   }
 
-  wasMobile = isMobile;
-}
+//   wasMobile = isMobile;
+// }
 
-window.addEventListener("resize", handleResize);
+// window.addEventListener("resize", handleResize);
 
 // Mobile nav scroll observer
 const mobNavLinks = document.querySelectorAll(".mob-nav-observer");
@@ -174,7 +174,7 @@ function removeActiveIfVisible(el) {
 }
 
 function handleScroll() {
-  if (window.innerWidth <= 767) {
+  if (window.innerWidth <= 1023) {
     const target = document.querySelector(".activeNav");
     if (target) {
       removeActiveIfVisible(target);
