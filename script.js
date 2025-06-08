@@ -4,9 +4,54 @@
 
 //   setTimeout(() => {
 //     introAnimation.classList.add("hide");
-//   }, 3000); // Adjust the duration as needed
+//   }, 1000); // Adjust the duration as needed
+
 // });
 //End add intro
+
+// Intro animation 2
+document.addEventListener("DOMContentLoaded", () => {
+  const introAnimation = document.getElementById("intro-animation");
+
+  // Check if user already seen animation
+  const animationSeen = localStorage.getItem('animationSeen');
+
+  if (!animationSeen) {
+
+    setTimeout(() => {
+      introAnimation.classList.add("hide");
+      localStorage.setItem('animationSeen', 'true');
+    }, 1000);
+
+    localStorage.setItem('animationSeen', 'true');
+
+  } else {
+
+    introAnimation.classList.add('hide');
+
+  }
+
+});
+
+// 6-8 display block on section when any nav-observer is selected
+// const navObservers = document.querySelectorAll('.nav-observer');
+
+// navObservers.forEach((navObserver) => {
+//   navObserver.addEventListener('click', (e) => {
+//     e.preventDefault();
+    
+//     const content = document.getElementById('content');
+  
+//     // Show the content
+//     content.classList.add('visible');
+
+//     // Scroll to it after rendering
+//     setTimeout(() => {
+//       content.scrollIntoView({ behavior: "smooth" });
+//     }, 0); // Zero-delay timeout lets the DOM update first
+//   })
+// });
+//6-8 END
 
 //add activeNav class to nav item that is clicked
 

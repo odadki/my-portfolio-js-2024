@@ -32,6 +32,7 @@ body#body-main {
   justify-content: center;
   align-items: center;
   z-index: 1; /* Ensure it's on top */
+  animation-iteration-count: 1;
 }
 #intro-animation.hide {
   opacity: 0;
@@ -44,6 +45,10 @@ body#body-main {
 #intro-animation .intro-content img {
   width: 250px;
   height: auto !important;
+}
+
+body.animation-seen #intro-animation {
+  display: none;
 }
 
 .flex-body {
@@ -206,6 +211,10 @@ nav#main-nav .nav-cont-2 {
 section {
   max-width: 45vw;
   color: #323d41;
+}
+section.visible {
+  opacity: 1;
+  pointer-events: auto;
 }
 section > #about,
 section #experience,
