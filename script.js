@@ -9,28 +9,42 @@
 // });
 //End add intro
 
-// Intro animation 2
+// Intro animation OG
+// document.addEventListener("DOMContentLoaded", () => {
+//   const introAnimation = document.getElementById("intro-animation");
+
+//   // Check if user already seen animation
+//   const animationSeen = localStorage.getItem("animationSeen");
+
+//   if (!animationSeen) {
+//     setTimeout(() => {
+//       introAnimation.classList.add("hide");
+//       localStorage.setItem("animationSeen", "true");
+//     }, 1000);
+
+//     localStorage.setItem("animationSeen", "true");
+//   } else {
+//     introAnimation.classList.add("hide");
+//   }
+// });
+
+// Intro Animation 2 - DODA one by one
 document.addEventListener("DOMContentLoaded", () => {
   const introAnimation = document.getElementById("intro-animation");
 
   // Check if user already seen animation
-  const animationSeen = localStorage.getItem('animationSeen');
+  // const animationSeen = localStorage.getItem("animationSeen");
 
-  if (!animationSeen) {
-
+  if (introAnimation) {
     setTimeout(() => {
       introAnimation.classList.add("hide");
-      localStorage.setItem('animationSeen', 'true');
+      // localStorage.setItem("animationSeen", "true");
     }, 1000);
 
-    localStorage.setItem('animationSeen', 'true');
-
+    // localStorage.setItem("animationSeen", "true");
   } else {
-
-    introAnimation.classList.add('hide');
-
+    introAnimation.classList.add("hide");
   }
-
 });
 
 // 6-8 display block on section when any nav-observer is selected
@@ -39,9 +53,9 @@ document.addEventListener("DOMContentLoaded", () => {
 // navObservers.forEach((navObserver) => {
 //   navObserver.addEventListener('click', (e) => {
 //     e.preventDefault();
-    
+
 //     const content = document.getElementById('content');
-  
+
 //     // Show the content
 //     content.classList.add('visible');
 
@@ -176,7 +190,17 @@ function scrollOffset() {
   );
 }
 
-window.addEventListener("DOMContentLoaded", scrollOffset);
+// window.addEventListener("DOMContentLoaded", scrollOffset);
+
+// Recalculate after full page load
+window.addEventListener("load", scrollOffset);
+
+// Optional: Recalculate on resize (debounced)
+let resizeTimeout;
+window.addEventListener("resize", () => {
+  clearTimeout(resizeTimeout);
+  resizeTimeout = setTimeout(scrollOffset, 150);
+});
 
 // window.addEventListener("resize", () => {
 //   scrollOffset();
