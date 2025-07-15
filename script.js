@@ -31,21 +31,33 @@
 // Intro Animation 2 - DODA one by one
 document.addEventListener("DOMContentLoaded", () => {
   const introAnimation = document.getElementById("intro-animation");
-
-  // Check if user already seen animation
-  // const animationSeen = localStorage.getItem("animationSeen");
+  const introChars = document.querySelectorAll('.intro-characters');
 
   if (introAnimation) {
-    setTimeout(() => {
-      introAnimation.classList.add("hide");
-      // localStorage.setItem("animationSeen", "true");
-    }, 1000);
+    introChars.forEach((introChar, index) => {
+      setTimeout(() => {
+        introChar.classList.add('show');
 
-    // localStorage.setItem("animationSeen", "true");
+        if (index === introChars.length - 1) {
+          setTimeout(() => {
+            introAnimation.classList.add("hide");
+
+            // Wait for fade-out transition to finish
+            setTimeout(() => {
+              introAnimation.style.display = "none";
+              scrollOffset(); // recalculate scroll alignment after intro is hidden
+            }, 1000); // match transition duration in SCSS
+
+          }, 1000); // delay after last char appears
+        }
+
+      }, 1000 * index);
+    });
   } else {
-    introAnimation.classList.add("hide");
+    scrollOffset(); // fallback if animation is skipped
   }
 });
+
 
 // 6-8 display block on section when any nav-observer is selected
 // const navObservers = document.querySelectorAll('.nav-observer');

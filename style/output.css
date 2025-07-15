@@ -1,6 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap");
+@font-face {
+  font-family: "Kyiv Type Sans";
+  src: url("../fonts/kyivtype_sans/OTF/KyivTypeSans-Regular.otf ") format("otf"), url("../fonts/KyivTypeSans-Regular.woff") format("woff"), url("../fonts/KyivTypeSans-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -45,9 +52,6 @@ body#body-main {
 #intro-animation .intro-content img {
   width: 250px;
   height: auto !important;
-}
-#intro-animation .intro-content .intro-characters {
-  font-size: 5rem;
 }
 
 body.animation-seen #intro-animation {
@@ -536,6 +540,23 @@ section .projects-img-cont img {
     z-index: 10;
   }
 }
+.row {
+  line-height: 1;
+}
+
+.intro-characters {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  font-size: 5rem;
+  font-family: "Kyiv Type Sans", sans-serif;
+  font-weight: 500;
+}
+.intro-characters.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 :root {
   --header-font: "Crimson Text", serif;
   --sub-font: "Poppins", sans-serif;

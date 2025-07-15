@@ -1,4 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+@font-face {
+  font-family: "Kyiv Type Sans"; 
+  src: url("../fonts/kyivtype_sans/OTF/KyivTypeSans-Regular.otf ") format("otf"),
+       url("../fonts/KyivTypeSans-Regular.woff") format("woff"),
+       url("../fonts/KyivTypeSans-Regular.ttf") format("truetype");
+  font-weight: normal; 
+  font-style: normal;  
+  font-display: swap; 
+}
 
 $font-primary: "Inter";
 $color-gray: #323d41;
@@ -63,9 +72,9 @@ body#body-main {
       height: auto !important;
     }
 
-    .intro-characters {
-      font-size: 5rem;
-    }
+    // .intro-characters {
+    //   font-size: 5rem;
+    // }
   }
 }
 
@@ -761,6 +770,24 @@ section {
     }
   }
 }
+.row {
+  line-height: 1;
+}
+
+.intro-characters {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  font-size: 5rem;
+  font-family: "Kyiv Type Sans", sans-serif;
+  font-weight: 500;
+
+  &.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 //UX
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap");
