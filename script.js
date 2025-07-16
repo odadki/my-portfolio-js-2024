@@ -35,23 +35,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (introAnimation) {
     introChars.forEach((introChar, index) => {
-      setTimeout(() => {
+      // setTimeout(() => {
         introChar.classList.add('show');
 
-        if (index === introChars.length - 1) {
-          setTimeout(() => {
-            introAnimation.classList.add("hide");
+        // if (index === introChars.length - 1) {
+        //   setTimeout(() => {
+        //     introAnimation.classList.add("hide");
 
-            // Wait for fade-out transition to finish
-            setTimeout(() => {
-              introAnimation.style.display = "none";
-              scrollOffset(); // recalculate scroll alignment after intro is hidden
-            }, 1000); // match transition duration in SCSS
+        //     // Wait for fade-out transition to finish
+        //     setTimeout(() => {
+        //       introAnimation.style.display = "none";
+        //       scrollOffset(); // recalculate scroll alignment after intro is hidden
+        //     }, 1000); // match transition duration in SCSS
 
-          }, 1000); // delay after last char appears
-        }
+        //   }, 1000); // delay after last char appears
+        // }
 
-      }, 1000 * index);
+      // }, 1000 * index);
     });
   } else {
     scrollOffset(); // fallback if animation is skipped

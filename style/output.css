@@ -3,7 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap");
 @font-face {
   font-family: "Kyiv Type Sans";
-  src: url("../fonts/kyivtype_sans/OTF/KyivTypeSans-Regular.otf ") format("otf"), url("../fonts/KyivTypeSans-Regular.woff") format("woff"), url("../fonts/KyivTypeSans-Regular.ttf") format("truetype");
+  src: url("../fonts/kyivtype_sans/OTF/KyivTypeSans-Regular.otf ") format("otf"), url("../fonts/kyivtype_sans/WEB/KyivTypeSans-Regular.woff") format("woff"), url("../fonts/kyivtype_sans/TTF/KyivTypeSans-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -540,8 +540,25 @@ section .projects-img-cont img {
     z-index: 10;
   }
 }
+.intro-content {
+  padding: 10px;
+  border: 5px solid;
+}
+
 .row {
-  line-height: 1;
+  line-height: 0.8;
+}
+
+#intro-char-1 {
+  margin-right: -17px;
+}
+
+#intro-char-2 {
+  color: #323d41;
+}
+
+#intro-char-3 {
+  margin-right: -13px;
 }
 
 .intro-characters {
