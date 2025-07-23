@@ -31,33 +31,38 @@
 // Intro Animation 2 - DODA one by one
 document.addEventListener("DOMContentLoaded", () => {
   const introAnimation = document.getElementById("intro-animation");
-  const introChars = document.querySelectorAll('.intro-characters');
+  const introChars = document.querySelectorAll(".intro-characters");
 
   if (introAnimation) {
     introChars.forEach((introChar, index) => {
-      // setTimeout(() => {
-        introChar.classList.add('show');
+      setTimeout(() => {
+        introChar.classList.add("show");
 
-        // if (index === introChars.length - 1) {
-        //   setTimeout(() => {
-        //     introAnimation.classList.add("hide");
+        if (index === introChars.length - 1) {
+          setTimeout(() => {
+            document
+              .getElementById("intro-content")
+              .classList.add("add-border");
 
-        //     // Wait for fade-out transition to finish
-        //     setTimeout(() => {
-        //       introAnimation.style.display = "none";
-        //       scrollOffset(); // recalculate scroll alignment after intro is hidden
-        //     }, 1000); // match transition duration in SCSS
+            setTimeout(() => {
+              introAnimation.classList.add("hide");
 
-        //   }, 1000); // delay after last char appears
-        // }
+              // Wait for fade-out transition to finish
+              setTimeout(() => {
+                introAnimation.style.display = "none";
+                scrollOffset(); // recalculate scroll alignment after intro is hidden
+              }, 1000); // match transition duration in SCSS
+            }, 1000);
 
-      // }, 1000 * index);
+            // add border last
+          }, 100); // delay after last char appears
+        }
+      }, 350 * index);
     });
   } else {
     scrollOffset(); // fallback if animation is skipped
   }
 });
-
 
 // 6-8 display block on section when any nav-observer is selected
 // const navObservers = document.querySelectorAll('.nav-observer');

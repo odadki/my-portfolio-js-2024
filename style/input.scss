@@ -1,12 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
 @font-face {
-  font-family: "Kyiv Type Sans"; 
+  font-family: "Kyiv Type Sans";
   src: url("../fonts/kyivtype_sans/OTF/KyivTypeSans-Regular.otf ") format("otf"),
-       url("../fonts/kyivtype_sans/WEB/KyivTypeSans-Regular.woff") format("woff"),
-       url("../fonts/kyivtype_sans/TTF/KyivTypeSans-Regular.ttf") format("truetype");
-  font-weight: normal; 
-  font-style: normal;  
-  font-display: swap; 
+    url("../fonts/kyivtype_sans/WEB/KyivTypeSans-Regular.woff") format("woff"),
+    url("../fonts/kyivtype_sans/TTF/KyivTypeSans-Regular.ttf")
+      format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
 $font-primary: "Inter";
@@ -54,7 +55,7 @@ body#body-main {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1; /* Ensure it's on top */
+  z-index: 101; /* Ensure it's on top */
   animation-iteration-count: 1;
 
   &.hide {
@@ -66,6 +67,14 @@ body#body-main {
   .intro-content {
     opacity: 1;
     // animation: fadeIn 1s ease-in-out forwards;
+    transition: opacity 0.5s ease, transform 0.5s ease, border-color 0.5s ease;
+    border: 5px solid transparent;
+
+    &.add-border {
+      padding: 9px 9px 13.5px 6.21px;
+      border-color: black;
+      // opacity: 1;
+    }
 
     img {
       width: 250px;
@@ -771,12 +780,20 @@ section {
   }
 }
 
-.intro-content {
-  padding: 10px;
-  border: 5px solid;
+#intro-content {
+  // padding: 9px 9px 13.5px 6.21px;
+  // border: 5px solid;
+  // opacity: 0;
+  // transition: opacity 0.5s ease, transform 0.5s ease;
+
+  // &.add-border {
+  //   padding: 9px 9px 13.5px 6.21px;
+  //   border: 5px solid;
+  //   opacity: 1;
+  // }
 }
 .row {
-  line-height: 0.8;
+  line-height: 0.75;
 }
 
 #intro-char-1 {
@@ -808,7 +825,6 @@ section {
     transform: translateY(0);
   }
 }
-
 
 //UX
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap");
