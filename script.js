@@ -29,40 +29,40 @@
 // });
 
 // Intro Animation 2 - DODA one by one
-document.addEventListener("DOMContentLoaded", () => {
-  const introAnimation = document.getElementById("intro-animation");
-  const introChars = document.querySelectorAll(".intro-characters");
+// document.addEventListener("DOMContentLoaded", () => {
+//   const introAnimation = document.getElementById("intro-animation");
+//   const introChars = document.querySelectorAll(".intro-characters");
 
-  if (introAnimation) {
-    introChars.forEach((introChar, index) => {
-      setTimeout(() => {
-        introChar.classList.add("show");
+//   if (introAnimation) {
+//     introChars.forEach((introChar, index) => {
+//       setTimeout(() => {
+//         introChar.classList.add("show");
 
-        if (index === introChars.length - 1) {
-          setTimeout(() => {
-            document
-              .getElementById("intro-content")
-              .classList.add("add-border");
+//         if (index === introChars.length - 1) {
+//           setTimeout(() => {
+//             document
+//               .getElementById("intro-content")
+//               .classList.add("add-border");
 
-            setTimeout(() => {
-              introAnimation.classList.add("hide");
+//             setTimeout(() => {
+//               introAnimation.classList.add("hide");
 
-              // Wait for fade-out transition to finish
-              setTimeout(() => {
-                introAnimation.style.display = "none";
-                scrollOffset(); // recalculate scroll alignment after intro is hidden
-              }, 1000); // match transition duration in SCSS
-            }, 1000);
+//               // Wait for fade-out transition to finish
+//               setTimeout(() => {
+//                 introAnimation.style.display = "none";
+//                 scrollOffset(); // recalculate scroll alignment after intro is hidden
+//               }, 1000); // match transition duration in SCSS
+//             }, 600);
 
-            // add border last
-          }, 100); // delay after last char appears
-        }
-      }, 350 * index);
-    });
-  } else {
-    scrollOffset(); // fallback if animation is skipped
-  }
-});
+//             // add border last
+//           }, 100); // delay after last char appears
+//         }
+//       }, 250 * index);
+//     });
+//   } else {
+//     scrollOffset(); // fallback if animation is skipped
+//   }
+// });
 
 // 6-8 display block on section when any nav-observer is selected
 // const navObservers = document.querySelectorAll('.nav-observer');
@@ -210,7 +210,44 @@ function scrollOffset() {
 // window.addEventListener("DOMContentLoaded", scrollOffset);
 
 // Recalculate after full page load
-window.addEventListener("load", scrollOffset);
+// window.addEventListener("load", scrollOffset);
+window.addEventListener("load", () => {
+  // Wait a frame to ensure layout is settled
+  requestAnimationFrame(() => {
+    scrollOffset(); // set scroll-margin-top
+
+    const hash = window.location.hash;
+    if (hash) {
+      // Delay scroll so scroll-margin-top is applied
+      setTimeout(() => {
+        const target = document.querySelector(hash);
+        if (target) {
+          target.scrollIntoView({ behavior: "instant", block: "start" });
+
+          // Optional: re-trigger scroll event to activate observers
+          requestAnimationFrame(() =>
+            window.dispatchEvent(new Event("scroll"))
+          );
+        }
+      }, 0);
+    }
+  });
+});
+
+window.addEventListener("DOMContentLoaded", () => {
+  // scrollOffset();
+
+  const hash = window.location.hash;
+  if (hash) {
+    setTimeout(() => {
+      const target = document.querySelector(hash);
+      if (target) {
+        // Manual scroll ensures it respects the updated scroll-margin-top
+        target.scrollIntoView({ behavior: "instant", block: "start" });
+      }
+    }, 1); // Small delay ensures styles are computed
+  }
+});
 
 // Optional: Recalculate on resize (debounced)
 let resizeTimeout;
