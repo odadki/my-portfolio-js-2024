@@ -29,40 +29,40 @@
 // });
 
 // Intro Animation 2 - DODA one by one
-// document.addEventListener("DOMContentLoaded", () => {
-//   const introAnimation = document.getElementById("intro-animation");
-//   const introChars = document.querySelectorAll(".intro-characters");
+document.addEventListener("DOMContentLoaded", () => {
+  const introAnimation = document.getElementById("intro-animation");
+  const introChars = document.querySelectorAll(".intro-characters");
 
-//   if (introAnimation) {
-//     introChars.forEach((introChar, index) => {
-//       setTimeout(() => {
-//         introChar.classList.add("show");
+  if (introAnimation) {
+    introChars.forEach((introChar, index) => {
+      setTimeout(() => {
+        introChar.classList.add("show");
 
-//         if (index === introChars.length - 1) {
-//           setTimeout(() => {
-//             document
-//               .getElementById("intro-content")
-//               .classList.add("add-border");
+        if (index === introChars.length - 1) {
+          setTimeout(() => {
+            document
+              .getElementById("intro-content")
+              .classList.add("add-border");
 
-//             setTimeout(() => {
-//               introAnimation.classList.add("hide");
+            setTimeout(() => {
+              introAnimation.classList.add("hide");
 
-//               // Wait for fade-out transition to finish
-//               setTimeout(() => {
-//                 introAnimation.style.display = "none";
-//                 scrollOffset(); // recalculate scroll alignment after intro is hidden
-//               }, 1000); // match transition duration in SCSS
-//             }, 600);
+              // Wait for fade-out transition to finish
+              setTimeout(() => {
+                introAnimation.style.display = "none";
+                scrollOffset(); // recalculate scroll alignment after intro is hidden
+              }, 1000); // match transition duration in SCSS
+            }, 600);
 
-//             // add border last
-//           }, 100); // delay after last char appears
-//         }
-//       }, 250 * index);
-//     });
-//   } else {
-//     scrollOffset(); // fallback if animation is skipped
-//   }
-// });
+            // add border last
+          }, 100); // delay after last char appears
+        }
+      }, 250 * index);
+    });
+  } else {
+    scrollOffset(); // fallback if animation is skipped
+  }
+});
 
 // 6-8 display block on section when any nav-observer is selected
 // const navObservers = document.querySelectorAll('.nav-observer');
@@ -207,31 +207,26 @@ function scrollOffset() {
   );
 }
 
-// window.addEventListener("DOMContentLoaded", scrollOffset);
+window.addEventListener("DOMContentLoaded", scrollOffset);
 
 // Recalculate after full page load
 // window.addEventListener("load", scrollOffset);
 window.addEventListener("load", () => {
-  // Wait a frame to ensure layout is settled
-  requestAnimationFrame(() => {
-    scrollOffset(); // set scroll-margin-top
+  scrollOffset(); // Set --scroll-align-offset
 
-    const hash = window.location.hash;
-    if (hash) {
-      // Delay scroll so scroll-margin-top is applied
-      setTimeout(() => {
-        const target = document.querySelector(hash);
-        if (target) {
-          target.scrollIntoView({ behavior: "instant", block: "start" });
+  const hash = window.location.hash;
+  if (hash) {
+    // Delay until styles/layouts are recalculated
+    setTimeout(() => {
+      const target = document.querySelector(hash);
+      if (target) {
+        // target.scrollIntoView({ behavior: "smooth", block: "start" });
 
-          // Optional: re-trigger scroll event to activate observers
-          requestAnimationFrame(() =>
-            window.dispatchEvent(new Event("scroll"))
-          );
-        }
-      }, 0);
-    }
-  });
+        // Optional: trigger nav observer after manual scroll
+        setTimeout(() => window.dispatchEvent(new Event("scroll")), 10);
+      }
+    }, 0);
+  }
 });
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -243,7 +238,7 @@ window.addEventListener("DOMContentLoaded", () => {
       const target = document.querySelector(hash);
       if (target) {
         // Manual scroll ensures it respects the updated scroll-margin-top
-        target.scrollIntoView({ behavior: "instant", block: "start" });
+        // target.scrollIntoView({ behavior: "smooth", block: "start" });
       }
     }, 1); // Small delay ensures styles are computed
   }
@@ -253,7 +248,18 @@ window.addEventListener("DOMContentLoaded", () => {
 let resizeTimeout;
 window.addEventListener("resize", () => {
   clearTimeout(resizeTimeout);
-  resizeTimeout = setTimeout(scrollOffset, 150);
+
+  resizeTimeout = setTimeout(() => {
+    scrollOffset(); // recalculate CSS var
+    const hash = window.location.hash;
+    if (hash) {
+      const target = document.querySelector(hash);
+      if (target) {
+        // Re-align to the section with scroll-margin-top now updated
+        target.scrollIntoView({ behavior: "instant", block: "start" });
+      }
+    }
+  }, 150); // debounce
 });
 
 // window.addEventListener("resize", () => {
@@ -307,3 +313,59 @@ function handleScroll() {
 
 window.addEventListener("scroll", handleScroll);
 window.addEventListener("resize", handleScroll);
+
+// Page Reload Listener
+window.addEventListener("load", () => {
+  requestAnimationFrame(() => {
+    const offset =
+      document.querySelector(".logo-cont")?.getBoundingClientRect().top || 0;
+
+    // Set CSS variable globally
+    document.documentElement.style.setProperty(
+      "--scroll-align-offset",
+      `${offset}px`
+    );
+
+    // Apply scroll-margin-top dynamically
+    document.querySelectorAll(".section-div").forEach((el) => {
+      el.style.scrollMarginTop = `var(--scroll-align-offset, 0px)`;
+    });
+
+    // Force scroll only if there's a hash
+    const hash = window.location.hash;
+    if (hash) {
+      const target = document.querySelector(hash);
+      if (target) {
+        setTimeout(() => {
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 10); // small delay ensures margin is applied
+      }
+    }
+  });
+});
+
+// Smooth scroll when nav item is clicked
+document.querySelectorAll(".nav-link").forEach((link) => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    const targetId = link.getAttribute("href"); // e.g., "#about"
+    const target = document.querySelector(targetId);
+    const logoOffset =
+      document.querySelector(".logo-cont")?.getBoundingClientRect().top || 0;
+
+    if (target) {
+      // Update scroll-margin-top inline
+      target.style.scrollMarginTop = `${logoOffset}px`;
+
+      // Smooth scroll to target
+      target.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+
+      // Update the URL hash without jumping
+      history.pushState(null, "", targetId);
+    }
+  });
+});
