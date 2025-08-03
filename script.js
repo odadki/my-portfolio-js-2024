@@ -49,9 +49,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
               // Wait for fade-out transition to finish
               setTimeout(() => {
-                introAnimation.style.display = "none";
-                scrollOffset(); // recalculate scroll alignment after intro is hidden
-              }, 1000); // match transition duration in SCSS
+              introAnimation.style.display = "none";
+
+              requestAnimationFrame(() => {
+                const offset =
+                  document.querySelector(".logo-cont")?.getBoundingClientRect().top || 0;
+
+                // Set CSS variable globally
+                document.documentElement.style.setProperty(
+                  "--scroll-align-offset",
+                  `${offset}px`
+                );
+
+                // Ensure hash scroll aligns with updated layout
+                const hash = window.location.hash;
+                if (hash) {
+                  const target = document.querySelector(hash);
+                  if (target) {
+                    setTimeout(() => {
+                      target.scrollIntoView({ behavior: "smooth", block: "start" });
+                    }, 10);
+                  }
+                }
+              });
+            }, 1000); // this delay should match your animation fade-out
+
             }, 600);
 
             // add border last
@@ -194,6 +216,26 @@ headingObservers.forEach((h2) => {
   mobileObserver.observe(h2);
 });
 
+mobNavLinks.forEach((link) => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault(); // Prevent the default anchor jump
+
+    const targetId = link.getAttribute("href")?.replace("#", "");
+    const targetElement = document.getElementById(targetId);
+
+    if (targetElement) {
+      targetElement.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+
+      // Optional: close mobile nav menu after clicking
+      // document.querySelector(".mobile-menu").classList.remove("open");
+    }
+  });
+});
+
+
 // Add margin at the top when nav item is clicked so it doesn't get hidden
 function scrollOffset() {
   const logoCont = document.querySelector(".logo-cont");
@@ -245,22 +287,22 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 // Optional: Recalculate on resize (debounced)
-let resizeTimeout;
-window.addEventListener("resize", () => {
-  clearTimeout(resizeTimeout);
+// let resizeTimeout;
+// window.addEventListener("resize", () => {
+//   clearTimeout(resizeTimeout);
 
-  resizeTimeout = setTimeout(() => {
-    scrollOffset(); // recalculate CSS var
-    const hash = window.location.hash;
-    if (hash) {
-      const target = document.querySelector(hash);
-      if (target) {
-        // Re-align to the section with scroll-margin-top now updated
-        target.scrollIntoView({ behavior: "instant", block: "start" });
-      }
-    }
-  }, 150); // debounce
-});
+//   resizeTimeout = setTimeout(() => {
+//     scrollOffset(); // recalculate CSS var
+//     const hash = window.location.hash;
+//     if (hash) {
+//       const target = document.querySelector(hash);
+//       if (target) {
+//         // Re-align to the section with scroll-margin-top now updated
+//         target.scrollIntoView({ behavior: "instant", block: "start" });
+//       }
+//     }
+//   }, 150); // debounce
+// });
 
 // window.addEventListener("resize", () => {
 //   scrollOffset();
@@ -312,9 +354,9 @@ function handleScroll() {
 }
 
 window.addEventListener("scroll", handleScroll);
-window.addEventListener("resize", handleScroll);
+// window.addEventListener("resize", handleScroll);
 
-// Page Reload Listener
+// Page Reload Listener - not sure if this is needed. Commenting out allows for delay in render
 window.addEventListener("load", () => {
   requestAnimationFrame(() => {
     const offset =
@@ -327,9 +369,9 @@ window.addEventListener("load", () => {
     );
 
     // Apply scroll-margin-top dynamically
-    document.querySelectorAll(".section-div").forEach((el) => {
-      el.style.scrollMarginTop = `var(--scroll-align-offset, 0px)`;
-    });
+    // document.querySelectorAll(".section-div").forEach((el) => {
+    //   el.style.scrollMarginTop = `var(--scroll-align-offset, 0px)`;
+    // });
 
     // Force scroll only if there's a hash
     const hash = window.location.hash;
