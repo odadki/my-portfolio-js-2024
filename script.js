@@ -387,7 +387,7 @@ window.addEventListener("load", () => {
 });
 
 // Smooth scroll when nav item is clicked
-document.querySelectorAll(".nav-link").forEach((link) => {
+document.querySelectorAll(".nav-link-section").forEach((link) => {
   link.addEventListener("click", (e) => {
     e.preventDefault();
 
@@ -410,4 +410,26 @@ document.querySelectorAll(".nav-link").forEach((link) => {
       history.pushState(null, "", targetId);
     }
   });
+});
+
+// Calculate --scroll-align-offset when browser's Y-axis is resized
+let resizeTimer;
+window.addEventListener('resize', function() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function() {
+        const newHeight = window.innerHeight;
+        // console.log('Debounced new window height (Y-axis):', newHeight);
+        
+        const offset =
+        document.querySelector(".logo-cont")?.getBoundingClientRect().top || 0;
+
+        // Set CSS variable globally
+        document.documentElement.style.setProperty(
+          "--scroll-align-offset",
+          `${offset}px`
+        );
+
+        // console.log(`offset: ${offset}`);
+
+    }, 250); // Execute after 250ms of no further resize events
 });

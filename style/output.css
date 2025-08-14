@@ -458,6 +458,9 @@ section .projects-img-cont img {
   section#content #projects {
     scroll-margin-top: 100px;
   }
+  #about {
+    padding-top: 0 !important;
+  }
   nav#mobile-sticky-nav.sticky {
     display: block;
     position: fixed;
@@ -490,10 +493,6 @@ section .projects-img-cont img {
   #experience,
   #projects {
     scroll-margin-top: 75px !important;
-  }
-  .mobile-resume {
-    border: 1px solid #323d41;
-    padding: 3px 13px;
   }
 }
 @media (max-width: 575px) {
@@ -595,6 +594,11 @@ section .projects-img-cont img {
 
 body {
   font-family: var(--sub-font) !important;
+}
+
+body p,
+body ul {
+  line-height: 1.5rem;
 }
 
 /*BOOTSTRAP NAVBAR HEADER*/

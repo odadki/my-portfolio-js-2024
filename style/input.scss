@@ -663,6 +663,9 @@ section {
       scroll-margin-top: 100px;
     }
   }
+  #about {
+    padding-top: 0 !important;
+  }
   nav#mobile-sticky-nav.sticky {
     display: block;
     position: fixed;
@@ -726,8 +729,8 @@ section {
   }
 
   .mobile-resume {
-    border: 1px solid $color-gray;
-    padding: 3px 13px;
+    // border: 1px solid $color-gray;
+    // padding: 3px 13px;
     // background-color: $color-background;
   }
 }
@@ -868,6 +871,11 @@ section {
 
 body {
   font-family: var(--sub-font) !important;
+}
+
+body p,
+body ul {
+  line-height: 1.5rem;
 }
 /*BOOTSTRAP NAVBAR HEADER*/
 .navbar {
