@@ -161,7 +161,7 @@ nav#main-nav ul.nav-cont-1 li.nav-item:after {
 nav#main-nav ul.nav-cont-1 li.nav-item:hover:after {
   transform: scaleX(1.5);
 }
-nav#main-nav ul.nav-cont-1 li.nav-item > a.nav-link {
+nav#main-nav ul.nav-cont-1 li.nav-item a.nav-link {
   text-decoration: none;
   color: black;
 }

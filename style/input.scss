@@ -201,11 +201,20 @@ nav#main-nav {
       // transform: scaleX(2);
       transform: scaleX(1.5);
     }
-    li.nav-item > a.nav-link {
+    li.nav-item a.nav-link {
       text-decoration: none;
       // color: $color-gray;
       color: black;
     }
+
+    // .resume-arrow-icon-parent {
+    //   position: relative;
+
+    //   .resume-arrow-icon {
+    //     top: -11px;
+    //     right: 1px;
+    //   }
+    // }
   }
 
   .nav-cont-2 {
@@ -279,8 +288,7 @@ nav#main-nav {
 
 #about,
 #experience,
-#projects 
-{
+#projects {
   // scroll-margin-top: 200px;
   scroll-margin-top: var(--scroll-align-offset, 0px);
   // opacity: 0;
@@ -801,8 +809,6 @@ section {
     // opacity: 0;
     // transition: 2s ease-in-out;
   }
-
-
 }
 
 #intro-content {
