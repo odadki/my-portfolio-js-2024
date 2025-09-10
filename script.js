@@ -49,31 +49,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
               // Wait for fade-out transition to finish
               setTimeout(() => {
-              introAnimation.style.display = "none";
+                introAnimation.style.display = "none";
 
-              requestAnimationFrame(() => {
-                const offset =
-                  document.querySelector(".logo-cont")?.getBoundingClientRect().top || 0;
+                requestAnimationFrame(() => {
+                  const offset =
+                    document
+                      .querySelector(".logo-cont")
+                      ?.getBoundingClientRect().top || 0;
 
-                // Set CSS variable globally
-                document.documentElement.style.setProperty(
-                  "--scroll-align-offset",
-                  `${offset}px`
-                );
+                  // Set CSS variable globally
+                  document.documentElement.style.setProperty(
+                    "--scroll-align-offset",
+                    `${offset}px`
+                  );
 
-                // Ensure hash scroll aligns with updated layout
-                const hash = window.location.hash;
-                if (hash) {
-                  const target = document.querySelector(hash);
-                  if (target) {
-                    setTimeout(() => {
-                      target.scrollIntoView({ behavior: "smooth", block: "start" });
-                    }, 10);
+                  // Ensure hash scroll aligns with updated layout
+                  const hash = window.location.hash;
+                  if (hash) {
+                    const target = document.querySelector(hash);
+                    if (target) {
+                      setTimeout(() => {
+                        target.scrollIntoView({
+                          behavior: "smooth",
+                          block: "start",
+                        });
+                      }, 10);
+                    }
                   }
-                }
-              });
-            }, 1000); // this delay should match your animation fade-out
-
+                });
+              }, 1000); // this delay should match your animation fade-out
             }, 600);
 
             // add border last
@@ -145,7 +149,7 @@ const observer = new IntersectionObserver(
 
         setTimeout(() => {
           entry.target.classList.add("animate-line");
-        }, 20);
+        }, 100);
       }
     });
   },
@@ -234,7 +238,6 @@ mobNavLinks.forEach((link) => {
     }
   });
 });
-
 
 // Add margin at the top when nav item is clicked so it doesn't get hidden
 function scrollOffset() {
@@ -414,22 +417,21 @@ document.querySelectorAll(".nav-link-section").forEach((link) => {
 
 // Calculate --scroll-align-offset when browser's Y-axis is resized
 let resizeTimer;
-window.addEventListener('resize', function() {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(function() {
-        const newHeight = window.innerHeight;
-        // console.log('Debounced new window height (Y-axis):', newHeight);
-        
-        const offset =
-        document.querySelector(".logo-cont")?.getBoundingClientRect().top || 0;
+window.addEventListener("resize", function () {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(function () {
+    const newHeight = window.innerHeight;
+    // console.log('Debounced new window height (Y-axis):', newHeight);
 
-        // Set CSS variable globally
-        document.documentElement.style.setProperty(
-          "--scroll-align-offset",
-          `${offset}px`
-        );
+    const offset =
+      document.querySelector(".logo-cont")?.getBoundingClientRect().top || 0;
 
-        // console.log(`offset: ${offset}`);
+    // Set CSS variable globally
+    document.documentElement.style.setProperty(
+      "--scroll-align-offset",
+      `${offset}px`
+    );
 
-    }, 250); // Execute after 250ms of no further resize events
+    // console.log(`offset: ${offset}`);
+  }, 250); // Execute after 250ms of no further resize events
 });
