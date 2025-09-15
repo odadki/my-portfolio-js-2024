@@ -572,10 +572,12 @@ section .projects-img-cont img {
   font-size: 5rem;
   font-family: "Kyiv Type Sans", sans-serif;
   font-weight: 500;
+  visibility: hidden;
 }
 .intro-characters.show {
   opacity: 1;
   transform: translateY(0);
+  visibility: visible;
 }
 
 :root {

@@ -850,10 +850,12 @@ section {
   font-size: 5rem;
   font-family: "Kyiv Type Sans", sans-serif;
   font-weight: 500;
+  visibility: hidden;
 
   &.show {
     opacity: 1;
     transform: translateY(0);
+    visibility: visible;
   }
 }
 
