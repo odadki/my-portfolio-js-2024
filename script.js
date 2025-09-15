@@ -36,6 +36,9 @@ document.addEventListener("DOMContentLoaded", () => {
   if (introAnimation) {
     introChars.forEach((introChar, index) => {
       setTimeout(() => {
+        // Force Safari/WebKit to register initial state before transition
+        introChar.offsetHeight; // trigger reflow
+
         introChar.classList.add("show");
 
         if (index === introChars.length - 1) {
@@ -47,7 +50,6 @@ document.addEventListener("DOMContentLoaded", () => {
             setTimeout(() => {
               introAnimation.classList.add("hide");
 
-              // Wait for fade-out transition to finish
               setTimeout(() => {
                 introAnimation.style.display = "none";
 
@@ -57,13 +59,11 @@ document.addEventListener("DOMContentLoaded", () => {
                       .querySelector(".logo-cont")
                       ?.getBoundingClientRect().top || 0;
 
-                  // Set CSS variable globally
                   document.documentElement.style.setProperty(
                     "--scroll-align-offset",
                     `${offset}px`
                   );
 
-                  // Ensure hash scroll aligns with updated layout
                   const hash = window.location.hash;
                   if (hash) {
                     const target = document.querySelector(hash);
@@ -77,11 +77,9 @@ document.addEventListener("DOMContentLoaded", () => {
                     }
                   }
                 });
-              }, 1000); // this delay should match your animation fade-out
+              }, 1000);
             }, 600);
-
-            // add border last
-          }, 100); // delay after last char appears
+          }, 100);
         }
       }, 250 * index);
     });
