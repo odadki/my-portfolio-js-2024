@@ -29,65 +29,126 @@
 // });
 
 // Intro Animation 2 - DODA one by one
+// document.addEventListener("DOMContentLoaded", () => {
+//   const introAnimation = document.getElementById("intro-animation");
+//   const introChars = document.querySelectorAll(".intro-characters");
+
+//   if (introAnimation) {
+//     introChars.forEach((introChar, index) => {
+//       setTimeout(() => {
+//         introChar.classList.add("show");
+
+//         if (index === introChars.length - 1) {
+//           setTimeout(() => {
+//             document
+//               .getElementById("intro-content")
+//               .classList.add("add-border");
+
+//             setTimeout(() => {
+//               introAnimation.classList.add("hide");
+
+//               // Wait for fade-out transition to finish
+//               setTimeout(() => {
+//                 introAnimation.style.display = "none";
+
+//                 requestAnimationFrame(() => {
+//                   const offset =
+//                     document
+//                       .querySelector(".logo-cont")
+//                       ?.getBoundingClientRect().top || 0;
+
+//                   // Set CSS variable globally
+//                   document.documentElement.style.setProperty(
+//                     "--scroll-align-offset",
+//                     `${offset}px`
+//                   );
+
+//                   // Ensure hash scroll aligns with updated layout
+//                   const hash = window.location.hash;
+//                   if (hash) {
+//                     const target = document.querySelector(hash);
+//                     if (target) {
+//                       setTimeout(() => {
+//                         target.scrollIntoView({
+//                           behavior: "smooth",
+//                           block: "start",
+//                         });
+//                       }, 10);
+//                     }
+//                   }
+//                 });
+//               }, 1000); // this delay should match your animation fade-out
+//             }, 600);
+
+//             // add border last
+//           }, 100); // delay after last char appears
+//         }
+//       }, 250 * index);
+//     });
+//   } else {
+//     scrollOffset(); // fallback if animation is skipped
+//   }
+// });
+
 document.addEventListener("DOMContentLoaded", () => {
   const introAnimation = document.getElementById("intro-animation");
   const introChars = document.querySelectorAll(".intro-characters");
 
-  if (introAnimation) {
-    introChars.forEach((introChar, index) => {
-      setTimeout(() => {
-        introChar.classList.add("show");
-
-        if (index === introChars.length - 1) {
-          setTimeout(() => {
-            document
-              .getElementById("intro-content")
-              .classList.add("add-border");
-
-            setTimeout(() => {
-              introAnimation.classList.add("hide");
-
-              // Wait for fade-out transition to finish
-              setTimeout(() => {
-                introAnimation.style.display = "none";
-
-                requestAnimationFrame(() => {
-                  const offset =
-                    document
-                      .querySelector(".logo-cont")
-                      ?.getBoundingClientRect().top || 0;
-
-                  // Set CSS variable globally
-                  document.documentElement.style.setProperty(
-                    "--scroll-align-offset",
-                    `${offset}px`
-                  );
-
-                  // Ensure hash scroll aligns with updated layout
-                  const hash = window.location.hash;
-                  if (hash) {
-                    const target = document.querySelector(hash);
-                    if (target) {
-                      setTimeout(() => {
-                        target.scrollIntoView({
-                          behavior: "smooth",
-                          block: "start",
-                        });
-                      }, 10);
-                    }
-                  }
-                });
-              }, 1000); // this delay should match your animation fade-out
-            }, 600);
-
-            // add border last
-          }, 100); // delay after last char appears
-        }
-      }, 250 * index);
-    });
-  } else {
-    scrollOffset(); // fallback if animation is skipped
+  if (!introAnimation) {
+    scrollOffset();
+    return;
   }
+
+  let index = 0;
+  const charDelay = 250; // ms
+
+  function showNextChar() {
+    if (index < introChars.length) {
+      introChars[index].classList.add("show");
+      index++;
+
+      setTimeout(() => requestAnimationFrame(showNextChar), charDelay);
+    } else {
+      // all chars finished → border, hide, etc
+      setTimeout(() => {
+        document.getElementById("intro-content").classList.add("add-border");
+
+        setTimeout(() => {
+          introAnimation.classList.add("hide");
+
+          setTimeout(() => {
+            introAnimation.style.display = "none";
+
+            requestAnimationFrame(() => {
+              const offset =
+                document.querySelector(".logo-cont")?.getBoundingClientRect()
+                  .top || 0;
+
+              document.documentElement.style.setProperty(
+                "--scroll-align-offset",
+                `${offset}px`
+              );
+
+              const hash = window.location.hash;
+              if (hash) {
+                const target = document.querySelector(hash);
+                if (target) {
+                  setTimeout(() => {
+                    target.scrollIntoView({
+                      behavior: "smooth",
+                      block: "start",
+                    });
+                  }, 10);
+                }
+              }
+            });
+          }, 1000); // match fade-out
+        }, 600);
+      }, 100);
+    }
+  }
+
+  requestAnimationFrame(showNextChar);
 });
 
 // 6-8 display block on section when any nav-observer is selected
