@@ -38,31 +38,63 @@ body#body-main {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 101; /* Ensure it's on top */
-  animation-iteration-count: 1;
-}
-#intro-animation.hide {
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 1s ease-in-out;
+  z-index: 101;
+  /* Stagger each letter */
+  /* Box border appears after letters */
+  /* Fade out entire intro */
 }
 #intro-animation .intro-content {
-  opacity: 1;
-  transition: opacity 0.5s ease, transform 0.5s ease, border-color 0.5s ease;
   border: 4px solid transparent;
   padding: 9px 9px 13.5px 6.21px;
+  animation: addBorder 0.5s ease forwards;
+  animation-delay: 1s;
 }
-#intro-animation .intro-content.add-border {
-  padding: 9px 9px 13.5px 6.21px;
-  border-color: black;
+#intro-animation .intro-characters {
+  font-size: 5rem;
+  font-family: "Kyiv Type Sans", sans-serif;
+  font-weight: 500;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.5s ease forwards;
 }
-#intro-animation .intro-content img {
-  width: 250px;
-  height: auto !important;
+#intro-animation #intro-char-1 {
+  animation-delay: 0s;
 }
-
-body.animation-seen #intro-animation {
-  display: none;
+#intro-animation #intro-char-2 {
+  animation-delay: 0.25s;
+}
+#intro-animation #intro-char-3 {
+  animation-delay: 0.5s;
+}
+#intro-animation #intro-char-4 {
+  animation-delay: 0.75s;
+}
+@keyframes addBorder {
+  from {
+    border-color: transparent;
+  }
+  to {
+    border-color: black;
+  }
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+#intro-animation.hide {
+  animation: fadeOut 1s ease forwards;
+}
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
 
 .flex-body {
@@ -549,37 +581,6 @@ section .projects-img-cont img {
     scroll-margin-top: 10px !important;
   }
 }
-.row {
-  line-height: 0.75;
-}
-
-#intro-char-1 {
-  margin-right: -17px;
-}
-
-#intro-char-2 {
-  color: #323d41;
-}
-
-#intro-char-3 {
-  margin-right: -13px;
-}
-
-.intro-characters {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-  font-size: 5rem;
-  font-family: "Kyiv Type Sans", sans-serif;
-  font-weight: 500;
-  visibility: hidden;
-}
-.intro-characters.show {
-  opacity: 1;
-  transform: translateY(0);
-  visibility: visible;
-}
-
 :root {
   --header-font: "Crimson Text", serif;
   --sub-font: "Poppins", sans-serif;

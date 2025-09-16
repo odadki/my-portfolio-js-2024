@@ -92,63 +92,48 @@
 
 document.addEventListener("DOMContentLoaded", () => {
   const introAnimation = document.getElementById("intro-animation");
-  const introChars = document.querySelectorAll(".intro-characters");
 
   if (!introAnimation) {
     scrollOffset();
     return;
   }
 
-  let index = 0;
-  const charDelay = 250; // ms
+  // Total duration: last letter (0.75s) + its animation (0.5s) + border (0.5s) = ~1.75s
+  const totalDuration = 1750;
 
-  function showNextChar() {
-    if (index < introChars.length) {
-      introChars[index].classList.add("show");
-      index++;
+  setTimeout(() => {
+    // Trigger fade-out
+    introAnimation.classList.add("hide");
 
-      setTimeout(() => requestAnimationFrame(showNextChar), charDelay);
-    } else {
-      // all chars finished → border, hide, etc
-      setTimeout(() => {
-        document.getElementById("intro-content").classList.add("add-border");
+    // Wait for fade-out to complete
+    setTimeout(() => {
+      introAnimation.style.display = "none";
 
-        setTimeout(() => {
-          introAnimation.classList.add("hide");
+      requestAnimationFrame(() => {
+        const offset =
+          document.querySelector(".logo-cont")?.getBoundingClientRect().top ||
+          0;
 
-          setTimeout(() => {
-            introAnimation.style.display = "none";
+        document.documentElement.style.setProperty(
+          "--scroll-align-offset",
+          `${offset}px`
+        );
 
-            requestAnimationFrame(() => {
-              const offset =
-                document.querySelector(".logo-cont")?.getBoundingClientRect()
-                  .top || 0;
-
-              document.documentElement.style.setProperty(
-                "--scroll-align-offset",
-                `${offset}px`
-              );
-
-              const hash = window.location.hash;
-              if (hash) {
-                const target = document.querySelector(hash);
-                if (target) {
-                  setTimeout(() => {
-                    target.scrollIntoView({
-                      behavior: "smooth",
-                      block: "start",
-                    });
-                  }, 10);
-                }
-              }
-            });
-          }, 1000); // match fade-out
-        }, 600);
-      }, 100);
-    }
-  }
-
-  requestAnimationFrame(showNextChar);
+        const hash = window.location.hash;
+        if (hash) {
+          const target = document.querySelector(hash);
+          if (target) {
+            setTimeout(() => {
+              target.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }, 10);
+          }
+        }
+      });
+    }, 1000); // matches fadeOut duration
+  }, totalDuration);
 });
 
 // 6-8 display block on section when any nav-observer is selected

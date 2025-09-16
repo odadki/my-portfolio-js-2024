@@ -45,6 +45,49 @@ body#body-main {
   // background: url(/imgs/45-degree-fabric-light.png);
 }
 
+// #intro-animation {
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   background-color: $color-background;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   z-index: 101; /* Ensure it's on top */
+//   animation-iteration-count: 1;
+
+//   &.hide {
+//     opacity: 0;
+//     pointer-events: none;
+//     transition: opacity 1s ease-in-out;
+//   }
+
+//   .intro-content {
+//     opacity: 1;
+//     // animation: fadeIn 1s ease-in-out forwards;
+//     transition: opacity 0.5s ease, transform 0.5s ease, border-color 0.5s ease;
+//     border: 4px solid transparent;
+//     padding: 9px 9px 13.5px 6.21px;
+
+//     &.add-border {
+//       padding: 9px 9px 13.5px 6.21px;
+//       border-color: black;
+//       // opacity: 1;
+//     }
+
+//     img {
+//       width: 250px;
+//       height: auto !important;
+//     }
+
+//     // .intro-characters {
+//     //   font-size: 5rem;
+//     // }
+//   }
+// }
+
 #intro-animation {
   position: fixed;
   top: 0;
@@ -55,42 +98,75 @@ body#body-main {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 101; /* Ensure it's on top */
-  animation-iteration-count: 1;
-
-  &.hide {
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 1s ease-in-out;
-  }
+  z-index: 101;
 
   .intro-content {
-    opacity: 1;
-    // animation: fadeIn 1s ease-in-out forwards;
-    transition: opacity 0.5s ease, transform 0.5s ease, border-color 0.5s ease;
     border: 4px solid transparent;
     padding: 9px 9px 13.5px 6.21px;
+    animation: addBorder 0.5s ease forwards;
+    animation-delay: 1s; // starts after last letter finishes
+  }
 
-    &.add-border {
-      padding: 9px 9px 13.5px 6.21px;
+  .intro-characters {
+    font-size: 5rem;
+    font-family: "Kyiv Type Sans", sans-serif;
+    font-weight: 500;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s ease forwards;
+  }
+
+  /* Stagger each letter */
+  #intro-char-1 {
+    animation-delay: 0s;
+  }
+  #intro-char-2 {
+    animation-delay: 0.25s;
+  }
+  #intro-char-3 {
+    animation-delay: 0.5s;
+  }
+  #intro-char-4 {
+    animation-delay: 0.75s;
+  }
+
+  /* Box border appears after letters */
+  @keyframes addBorder {
+    from {
+      border-color: transparent;
+    }
+    to {
       border-color: black;
-      // opacity: 1;
     }
+  }
 
-    img {
-      width: 250px;
-      height: auto !important;
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
     }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 
-    // .intro-characters {
-    //   font-size: 5rem;
-    // }
+  /* Fade out entire intro */
+  &.hide {
+    animation: fadeOut 1s ease forwards;
+  }
+
+  @keyframes fadeOut {
+    to {
+      opacity: 0;
+      visibility: hidden;
+    }
   }
 }
 
-body.animation-seen #intro-animation {
-  display: none;
-}
+// body.animation-seen #intro-animation {
+//   display: none;
+// }
 
 .flex-body {
   display: flex;
@@ -823,41 +899,41 @@ section {
   //   opacity: 1;
   // }
 }
-.row {
-  line-height: 0.75;
-}
+// .row {
+//   line-height: 0.75;
+// }
 
-#intro-char-1 {
-  margin-right: -17px;
-}
+// #intro-char-1 {
+//   margin-right: -17px;
+// }
 
-#intro-char-2 {
-  color: $color-gray;
-}
+// #intro-char-2 {
+//   color: $color-gray;
+// }
 
-#intro-char-3 {
-  margin-right: -13px;
-}
+// #intro-char-3 {
+//   margin-right: -13px;
+// }
 
 .intro-bottom-row {
   // margin-bottom: 5px;
 }
 
-.intro-characters {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-  font-size: 5rem;
-  font-family: "Kyiv Type Sans", sans-serif;
-  font-weight: 500;
-  visibility: hidden;
+// .intro-characters {
+//   opacity: 0;
+//   transform: translateY(20px);
+//   transition: opacity 0.5s ease, transform 0.5s ease;
+//   font-size: 5rem;
+//   font-family: "Kyiv Type Sans", sans-serif;
+//   font-weight: 500;
+//   visibility: hidden;
 
-  &.show {
-    opacity: 1;
-    transform: translateY(0);
-    visibility: visible;
-  }
-}
+//   &.show {
+//     opacity: 1;
+//     transform: translateY(0);
+//     visibility: visible;
+//   }
+// }
 
 //UX
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap");
