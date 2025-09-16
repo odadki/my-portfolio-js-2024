@@ -44,8 +44,8 @@ body#body-main {
   /* Fade out entire intro */
 }
 #intro-animation .intro-content {
-  border: 4px solid transparent;
-  padding: 9px 9px 13.5px 6.21px;
+  border: 5px solid transparent;
+  padding: 9px 9px 13.5px 7.21px;
   animation: addBorder 0.5s ease forwards;
   animation-delay: 1s;
 }
@@ -59,12 +59,15 @@ body#body-main {
 }
 #intro-animation #intro-char-1 {
   animation-delay: 0s;
+  margin-right: -17px;
 }
 #intro-animation #intro-char-2 {
   animation-delay: 0.25s;
+  color: #323d41;
 }
 #intro-animation #intro-char-3 {
   animation-delay: 0.5s;
+  margin-right: -13px;
 }
 #intro-animation #intro-char-4 {
   animation-delay: 0.75s;
@@ -581,6 +584,10 @@ section .projects-img-cont img {
     scroll-margin-top: 10px !important;
   }
 }
+.row {
+  line-height: 0.75;
+}
+
 :root {
   --header-font: "Crimson Text", serif;
   --sub-font: "Poppins", sans-serif;
