@@ -280,6 +280,10 @@ nav#main-nav {
       // transform: scaleX(2);
       transform: scaleX(1.5);
     }
+    li.nav-item:active:after,
+    li.nav-item:focus-within:after {
+      transform: scaleX(1); // reset underline when clicked/focused
+    }
     li.nav-item a.nav-link {
       text-decoration: none;
       // color: $color-gray;

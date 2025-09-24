@@ -481,3 +481,9 @@ window.addEventListener("resize", function () {
     // console.log(`offset: ${offset}`);
   }, 250); // Execute after 250ms of no further resize events
 });
+
+// document.querySelectorAll(".nav-item").forEach((link) => {
+//   link.addEventListener("click", function () {
+//     this.blur();
+//   });
+// });
