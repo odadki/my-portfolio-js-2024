@@ -533,6 +533,9 @@ section .projects-img-cont img {
   #projects {
     scroll-margin-top: 75px !important;
   }
+  li.nav-item:hover:after {
+    transform: scaleX(1) !important;
+  }
 }
 @media (max-width: 575px) {
   .section-projects:hover {

@@ -824,6 +824,11 @@ section {
     // padding: 3px 13px;
     // background-color: $color-background;
   }
+
+  li.nav-item:hover:after {
+    // transform: scaleX(2);
+    transform: scaleX(1) !important;
+  }
 }
 
 @media (max-width: 575px) {
