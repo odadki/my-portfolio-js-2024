@@ -282,7 +282,7 @@ nav#main-nav {
     }
     li.nav-item:active:after,
     li.nav-item:focus-within:after {
-      transform: scaleX(1); // reset underline when clicked/focused
+      // transform: scaleX(1); // reset underline when clicked/focused
     }
     li.nav-item a.nav-link {
       text-decoration: none;
