@@ -408,13 +408,18 @@ section {
 
     .about-header {
       // display: flex;
+      margin-bottom: 1.5rem;
 
       .about-feature-cont {
         display: flex;
+        flex-direction: row;
+        // align-items: center;
+        align-items: flex-start;
 
         .about-pic-cont {
           // position: relative;
           max-width: 200px;
+          min-width: 150px;
           // height: 250px;
           overflow: hidden;
           // display: block;
@@ -432,14 +437,18 @@ section {
             // border-radius: 50%;
             // display: block;
             object-fit: cover;
-            object-position: 50% 18%;
+            // object-position: 50% 18%;
             top: 0;
             left: 0;
             border-radius: 50%;
+            display: block;
           }
         }
 
         .about-feature {
+          padding-left: 1rem;
+          width: 100%;
+
           .about-feature-header {
             margin-top: 0;
             font-weight: 300;
@@ -457,6 +466,34 @@ section {
             flex-direction: row;
             font-size: 12px;
             justify-content: space-between;
+            color: $color-gray;
+            // line-height: 2;
+            letter-spacing: 1.5px;
+            position: relative;
+            border-bottom: 2px solid $color-beige;
+            margin-bottom: 7px;
+            align-items: end; //remove for EDUCATION, LOCATION, and CURRENT to float to top
+
+            // &:after {
+            //   content: "hi";
+            //   position: absolute;
+            //   height: 2px;
+            //   width: 100%;
+            //   color: red;
+            //   bottom: 0;
+            //   left: 0;
+            //   display: block;
+            // }
+
+            .title-margin {
+              padding-right: 12px;
+              width: 30%;
+            }
+
+            .content-margin {
+              width: 70%;
+              text-align: end;
+            }
           }
         }
       }
@@ -922,6 +959,19 @@ section {
     scroll-margin-top: 10px !important;
     // opacity: 0;
     // transition: 2s ease-in-out;
+  }
+
+  .about-feature-cont {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  .about-feature {
+    padding-left: 0 !important;
+  }
+
+  .about-feature-header {
+    text-align: center;
   }
 }
 
@@ -1987,3 +2037,7 @@ p {
   border-top: solid red 3px;
   border-right: solid red 3px;
 }
+
+// .no-break {
+//   white-space: nowrap;
+// }

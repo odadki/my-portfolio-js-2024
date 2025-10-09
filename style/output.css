@@ -274,21 +274,31 @@ section.visible {
 section .about .about-heading {
   margin-top: 0;
 }
+section .about .about-header {
+  margin-bottom: 1.5rem;
+}
 section .about .about-header .about-feature-cont {
   display: flex;
+  flex-direction: row;
+  align-items: flex-start;
 }
 section .about .about-header .about-feature-cont .about-pic-cont {
   max-width: 200px;
+  min-width: 150px;
   overflow: hidden;
 }
 section .about .about-header .about-feature-cont .about-pic-cont .about-pic {
   width: 100%;
   height: auto;
   object-fit: cover;
-  object-position: 50% 18%;
   top: 0;
   left: 0;
   border-radius: 50%;
+  display: block;
+}
+section .about .about-header .about-feature-cont .about-feature {
+  padding-left: 1rem;
+  width: 100%;
 }
 section .about .about-header .about-feature-cont .about-feature .about-feature-header {
   margin-top: 0;
@@ -307,6 +317,20 @@ section .about .about-header .about-feature-cont .about-feature .about-callout-f
   flex-direction: row;
   font-size: 12px;
   justify-content: space-between;
+  color: #323d41;
+  letter-spacing: 1.5px;
+  position: relative;
+  border-bottom: 2px solid #c7bab2;
+  margin-bottom: 7px;
+  align-items: end;
+}
+section .about .about-header .about-feature-cont .about-feature .about-callout-feature-item .title-margin {
+  padding-right: 12px;
+  width: 30%;
+}
+section .about .about-header .about-feature-cont .about-feature .about-callout-feature-item .content-margin {
+  width: 70%;
+  text-align: end;
 }
 section h2 {
   font-size: 20px;
@@ -604,6 +628,16 @@ section .projects-img-cont img {
   #experience,
   #projects {
     scroll-margin-top: 10px !important;
+  }
+  .about-feature-cont {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  .about-feature {
+    padding-left: 0 !important;
+  }
+  .about-feature-header {
+    text-align: center;
   }
 }
 .row {
