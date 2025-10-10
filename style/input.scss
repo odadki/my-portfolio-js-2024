@@ -418,12 +418,13 @@ section {
 
         .about-pic-cont {
           // position: relative;
-          max-width: 200px;
-          min-width: 150px;
+          // max-width: 200px;
+          // min-width: 150px;
           // height: 250px;
           overflow: hidden;
           // display: block;
           // height: 100px;
+          width: clamp(150px, 50vw, 200px);
 
           .about-pic {
             // position: absolute;

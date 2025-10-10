@@ -283,9 +283,8 @@ section .about .about-header .about-feature-cont {
   align-items: flex-start;
 }
 section .about .about-header .about-feature-cont .about-pic-cont {
-  max-width: 200px;
-  min-width: 150px;
   overflow: hidden;
+  width: clamp(150px, 50vw, 200px);
 }
 section .about .about-header .about-feature-cont .about-pic-cont .about-pic {
   width: 100%;
