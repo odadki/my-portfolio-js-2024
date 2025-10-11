@@ -425,6 +425,12 @@ section {
           // display: block;
           // height: 100px;
           width: clamp(150px, 50vw, 200px);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          overflow: hidden;
+          border-radius: 50%;
+          aspect-ratio: 1/1;
 
           .about-pic {
             // position: absolute;
@@ -441,8 +447,9 @@ section {
             // object-position: 50% 18%;
             top: 0;
             left: 0;
-            border-radius: 50%;
+            // border-radius: 50%;
             display: block;
+            object-position: 0px 10px;
           }
         }
 

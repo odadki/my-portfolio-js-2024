@@ -285,6 +285,12 @@ section .about .about-header .about-feature-cont {
 section .about .about-header .about-feature-cont .about-pic-cont {
   overflow: hidden;
   width: clamp(150px, 50vw, 200px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 50%;
+  aspect-ratio: 1/1;
 }
 section .about .about-header .about-feature-cont .about-pic-cont .about-pic {
   width: 100%;
@@ -292,8 +298,8 @@ section .about .about-header .about-feature-cont .about-pic-cont .about-pic {
   object-fit: cover;
   top: 0;
   left: 0;
-  border-radius: 50%;
   display: block;
+  object-position: 0px 10px;
 }
 section .about .about-header .about-feature-cont .about-feature {
   padding-left: 1rem;
