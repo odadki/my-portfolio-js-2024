@@ -644,6 +644,9 @@ section .projects-img-cont img {
   .about-feature-header {
     text-align: center;
   }
+  .about-feature-subheader {
+    margin: 2.5rem 0;
+  }
 }
 .row {
   line-height: 0.75;
