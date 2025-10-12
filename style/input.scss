@@ -431,6 +431,7 @@ section {
           overflow: hidden;
           border-radius: 50%;
           aspect-ratio: 1/1;
+          box-shadow: rgb(73, 79, 85) 0px 20px 30px -20px;
 
           .about-pic {
             // position: absolute;
@@ -980,10 +981,11 @@ section {
 
   .about-feature-header {
     text-align: center;
+    margin-top: 1.5rem !important;
   }
 
   .about-feature-subheader {
-    margin: 2.5rem 0;
+    margin: 1.75rem 0 2.5rem;
   }
 }
 
