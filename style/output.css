@@ -388,7 +388,7 @@ section .section-experience .exp-date-cont {
   word-wrap: normal;
 }
 section .section-experience .exp-date {
-  color: #323d41;
+  color: black;
   font-size: 9px;
   font-weight: 500;
   margin: 0;
