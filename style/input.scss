@@ -473,11 +473,12 @@ section {
             font-weight: 800;
             letter-spacing: 1.2px;
             text-transform: uppercase;
+            font-size: 14px;
           }
           .about-callout-feature-item {
             display: flex;
             flex-direction: row;
-            font-size: 12px;
+            font-size: 13px;
             justify-content: space-between;
             color: $color-gray;
             // line-height: 2;
@@ -552,7 +553,7 @@ section {
     padding: 20px 0 20px 0;
 
     p {
-      font-size: 12px;
+      font-size: 13px;
       font-weight: 300;
       letter-spacing: 1.5px;
       line-height: 2;
@@ -687,13 +688,13 @@ section {
       width: 80px;
     }
     .exp-content-desc {
-      font-size: 12px;
+      font-size: 13px;
       word-wrap: normal;
     }
     .exp-content-tool {
       display: inline-block;
       background-color: $color-background;
-      font-size: 9px;
+      font-size: 12px;
       font-weight: 500;
       letter-spacing: 1.2px;
       margin-bottom: 3px;
