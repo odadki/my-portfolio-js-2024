@@ -154,7 +154,7 @@ nav#main-nav ul.nav-cont-1 {
   transform: translateY(-75px);
 }
 nav#main-nav ul.nav-cont-1 .nav-item {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 300;
   letter-spacing: 1.5px;
   line-height: 1;
@@ -252,7 +252,7 @@ nav#main-nav .nav-cont-2 {
 }
 #mobile-sticky-nav .mobile-ul > .mobile-nav-item > a {
   text-decoration: none;
-  color: #323d41;
+  color: black;
   letter-spacing: 1.5px;
   font-size: 0.95rem;
 }
@@ -531,6 +531,18 @@ section .projects-img-cont img {
 
 .projects-sub-heading {
   margin-top: 0 !important;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 @media (max-width: 1023px) {
@@ -1531,7 +1543,7 @@ p {
 }
 
 .mob-active-nav {
-  color: #a29088 !important;
+  color: #323d41 !important;
   position: relative;
   transition: 250ms ease;
 }
@@ -1542,7 +1554,7 @@ p {
   left: -8px;
   height: 4px;
   width: 4px;
-  background-color: #a29088;
+  background-color: #323d41;
   transition: transform 500ms ease-in-out;
 }
 
