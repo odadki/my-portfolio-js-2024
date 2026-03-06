@@ -39,7 +39,7 @@
     </div> -->
 
     <!-- Intro Animation 2 - DODA one by one -->
-     <div id="intro-animation">
+     <div id="intro-animation" aria-hidden="true">
       <div id="intro-content" class="intro-content">
         <div class="row intro-top-row">
           <span id="intro-char-1" class="intro-characters">
@@ -101,21 +101,44 @@
         </div>
         <ul class="nav-cont-1">
           <li class="nav-item">
-            <a href="#about" class="nav-link nav-observer nav-link-section" id="about-link" data-nav="about-section"> About </a>
+            <a 
+            href="#about" 
+            class="nav-link nav-observer nav-link-section" 
+            id="about-link" 
+            data-nav="about-section"
+            > About </a>
           </li>
           <li class="nav-item">
-            <a href="#experience" class="nav-link nav-observer nav-link-section" id="experience-link" data-nav="experience-section">
+            <a 
+            href="#experience" 
+            class="nav-link nav-observer nav-link-section" 
+            id="experience-link" 
+            data-nav="experience-section"
+            >
               Experience
             </a>
           </li>
           <li class="nav-item">
-            <a href="#projects" class="nav-link nav-observer nav-link-section" id="projects-link" data-nav="projects-section">
+            <a 
+            href="#projects" 
+            class="nav-link nav-observer nav-link-section" 
+            id="projects-link" 
+            data-nav="projects-section"
+            >
               Projects
             </a>
           </li>
           <li class="nav-item">
             <div class="projects-heading-container">
-              <a href="./danielle-oda_resume.pdf" target="_blank" class="nav-link" aria-label="Resume (opens in a new tab)"> Resume </a>
+              <a 
+              href="./danielle-oda_resume.pdf" 
+              target="_blank" 
+              class="nav-link" 
+              rel="noopener"
+              > 
+              Resume 
+              <span class="visually-hidden">(opens in a new tab)</span>
+              </a>
               <!-- <div class="project-ext-page-icon resume-arrow-icon-parent"> -->
                 <!-- <img src="imgs/icons/mauve-arrow-icon-20-bold.svg" /> -->
                   <!-- <div class="arrow-icon resume-arrow-icon"></div> -->
@@ -125,37 +148,45 @@
         </ul>
         <ul class="nav-cont-2">
           <li class="nav-item">
-            <a href="mailto:hello.danielleoda@gmail.com" aria-label="Email (opens in a separate window)">
-              <img src="./imgs/icons/email-icon.svg" alt="Email icon"/>
+            <a 
+            href="mailto:hello.danielleoda@gmail.com" 
+            >
+              <img src="./imgs/icons/email-icon.svg" alt=""/>
+              <span class="visually-hidden">Email Danielle Oda</span>
             </a>
           </li>
           <li class="nav-item">
-            <a href="https://github.com/odadki" target="_blank" aria-label="GitHub page (opens in a new tab)">
+            <a 
+            href="https://github.com/odadki" 
+            target="_blank" 
+            rel="noopener"
+            aria-label="GitHub page (opens in a new tab)"
+            >
               <img src="./imgs/icons/github-icon.svg" alt="GitHub icon"/>
             </a>
           </li>
           <li class="nav-item">
-            <a href="https://www.linkedin.com/in/danielle-oda-492066221/" target="_blank" aria-label="Linkedin (opens in a new tab)">
+            <a 
+            href="https://www.linkedin.com/in/danielle-oda-492066221/" 
+            target="_blank" 
+            rel="noopener"
+            aria-label="Linkedin (opens in a new tab)">
               <img src="./imgs/icons/linkedin-icon.svg" alt="Linkedin icon"/>
             </a>
-            </li>
           </li>
         </ul>
       </nav>
 
       <!-- Main content -->
-      <section id="content">
-        <div class="about section-div" id="about">
+      <main id="content">
+        <!-- About section -->
+        <section class="about section-div" id="about">
           <h2 class="about-heading heading" data-nav="about-section" data-mobile-nav="mob-about-section">About</h2>
-          <!-- <fieldset>
-            <legend>About</legend>
-          </fieldset> -->
           <div class="section-group">
             <div class="section-text">
               <div class="about-header">
                 <div class="about-feature-cont">
                   <div class="about-pic-cont">
-                    <!-- <img src="imgs/profile-pic-2022.jpg" class="about-pic"/> -->
                     <img class="about-pic" src="imgs/Doda02.webp" alt="a portrait of Danielle" />
                   </div>
                   <div class="about-feature">
@@ -186,12 +217,10 @@
               </p>
             </div>
           </div>
-        </div>
-        <div class="experience section-div" id="experience">
+        </section>
+        <!-- Experience section -->
+        <section class="experience section-div" id="experience">
           <h2 class="experience-heading heading" data-nav="experience-section" data-mobile-nav="mob-experience-section">Experience</h2>
-          <!-- <fieldset>
-            <legend>Experience</legend>
-          </fieldset> -->
           <div class="section-group">
             <div class="section-text section-experience section-experience-cont">
               <div class="exp-date-cont">
@@ -302,9 +331,9 @@
               </div>
             </div>
           </div>
-        </div>
-        <div class="projects section-div" id="projects">
-          <!-- <h2 class="projects-heading heading">Projects</h2> -->
+        </section>
+        <!-- Projects section -->
+        <section class="projects section-div" id="projects">
           <h2 class="projects-heading heading projects-main-heading projects-no-margin-bottom" data-nav="projects-section" data-mobile-nav="mob-projects-section">Projects</h2>
           <h2 class="projects-sub-heading">Development</h2>
           <div class="section-group">
@@ -316,7 +345,6 @@
             >
               <div class="section-text section-experience section-projects">
                 <div class="exp-date-cont projects-img-cont">
-                  <!-- <h3 class="exp-date">08-23 - present</h3> -->
                   <img
                     class="img-round"
                     src="imgs/projects/amberton-project-square.png"
@@ -333,10 +361,8 @@
                       <h4 class="exp-content-place">Push10</h4>
                     </div>
                     <div class="project-ext-page-icon">
-                      <!-- <img src="imgs/icons/mauve-arrow-icon-20-bold.svg" /> -->
                        <div class="arrow-icon"></div>
                     </div>
-                    <!-- <div class="view-project"></div> -->
                   </div>
                   <p class="exp-content-desc">
                    As one of my final major projects at Push10, I contributed to the redesign of Amberton University's website. I began by assisting with the development of modular content blocks and later transitioned into a quality assurance role—testing and reviewing the site across various devices and screen sizes to confirm responsive functionality and design accuracy.
@@ -366,7 +392,6 @@
             >
               <div class="section-text section-experience section-projects">
                 <div class="exp-date-cont projects-img-cont">
-                  <!-- <h3 class="exp-date">08-23 - present</h3> -->
                   <img
                     class="img-round"
                     src="imgs/projects/smartbrain-project-square.png"
@@ -380,10 +405,8 @@
                         Smartbrain App
                         <span class="visually-hidden">(opens in a new tab)</span>
                       </h3>
-                      <!-- <h4 class="exp-content-place">Push10</h4> -->
                     </div>
                     <div class="project-ext-page-icon">
-                      <!-- <img src="imgs/icons/mauve-arrow-icon-20-bold.svg" /> -->
                       <div class="arrow-icon"></div>
                     </div>
                   </div>
@@ -410,7 +433,6 @@
             >
               <div class="section-text section-experience section-projects">
                 <div class="exp-date-cont projects-img-cont">
-                  <!-- <h3 class="exp-date">08-23 - present</h3> -->
                   <img
                     class="img-round"
                     src="imgs/projects/robofriends-project-square.png"
@@ -424,10 +446,8 @@
                         Robofriends
                         <span class="visually-hidden">(opens in a new tab)</span>
                       </h3>
-                      <!-- <h4 class="exp-content-place">Push10</h4> -->
                     </div>
                     <div class="project-ext-page-icon">
-                      <!-- <img src="imgs/icons/mauve-arrow-icon-20-bold.svg" /> -->
                       <div class="arrow-icon"></div>
                     </div>
                   </div>
@@ -456,7 +476,6 @@
             >
               <div class="section-text section-experience section-projects">
                 <div class="exp-date-cont projects-img-cont">
-                  <!-- <h3 class="exp-date">08-23 - present</h3> -->
                   <img
                     class="img-round"
                     src="imgs/projects/weatherapp-project-square.png"
@@ -470,10 +489,8 @@
                         WeatherApp
                         <span class="visually-hidden">(opens in a new tab)</span>
                       </h3>
-                      <!-- <h4 class="exp-content-place">Push10</h4> -->
                     </div>
                     <div class="project-ext-page-icon">
-                      <!-- <img src="imgs/icons/mauve-arrow-icon-20-bold.svg" /> -->
                       <div class="arrow-icon"></div>
                     </div>
                   </div>
@@ -495,7 +512,6 @@
               </div>
             </a>
           </div>
-          <!-- <h2 class="projects-heading heading" data-nav="projects-section">UX/UI Design Projects</h2> -->
           <h2 class="projects-heading projects-sub-heading" data-nav="projects-section">UX/UI Design Projects</h2>
           <div class="section-group">
             <a class="project-link" 
@@ -505,7 +521,6 @@
             >
               <div class="section-text section-experience section-projects">
                 <div class="exp-date-cont projects-img-cont">
-                  <!-- <h3 class="exp-date">08-23 - present</h3> -->
                   <img
                     class="img-round"
                     src="imgs/projects/carrots-project-square.png"
@@ -519,10 +534,8 @@
                         Carrots Cooking App
                         <span class="visually-hidden">(opens in a new tab)</span>
                       </h3>
-                      <!-- <h4 class="exp-content-place">Push10</h4> -->
                     </div>
                     <div class="project-ext-page-icon">
-                      <!-- <img src="imgs/icons/mauve-arrow-icon-20-bold.svg" /> -->
                       <div class="arrow-icon"></div>
                     </div>
                   </div>
@@ -537,13 +550,6 @@
                   </div>
                   <div class="exp-content-tools-cont">
                     <span class="exp-content-tool">FIGMA</span>
-                    <!-- <span class="exp-content-tool">DOCKER</span>
-                    <span class="exp-content-tool">HTML</span>
-                    <span class="exp-content-tool">JAVASCRIPT</span>
-                    <span class="exp-content-tool">PANTHEON</span>
-                    <span class="exp-content-tool">PHP</span>
-                    <span class="exp-content-tool">TWIG</span>
-                    <span class="exp-content-tool">WORDPRESS</span> -->
                   </div>
                 </div>
               </div>
@@ -556,7 +562,6 @@
             >
               <div class="section-text section-experience section-projects">
                 <div class="exp-date-cont projects-img-cont">
-                  <!-- <h3 class="exp-date">08-23 - present</h3> -->
                   <img
                     class="img-round"
                     src="imgs/projects/boutiqueapp-project-square.png"
@@ -570,10 +575,8 @@
                         BoutiqueApp
                         <span class="visually-hidden">(opens in a new tab)</span>
                       </h3>
-                      <!-- <h4 class="exp-content-place">Push10</h4> -->
                     </div>
                     <div class="project-ext-page-icon">
-                      <!-- <img src="imgs/icons/mauve-arrow-icon-20-bold.svg" /> -->
                       <div class="arrow-icon"></div>
                     </div>
                   </div>
@@ -588,9 +591,6 @@
                   </div>
                   <div class="exp-content-tools-cont">
                     <span class="exp-content-tool">FIGMA</span>
-                    <!-- <span class="exp-content-tool">CSS</span>
-                    <span class="exp-content-tool">JAVASCRIPT</span>
-                    <span class="exp-content-tool">REACT</span> -->
                   </div>
                 </div>
               </div>
@@ -603,7 +603,6 @@
             >
               <div class="section-text section-experience section-projects">
                 <div class="exp-date-cont projects-img-cont">
-                  <!-- <h3 class="exp-date">08-23 - present</h3> -->
                   <img
                     class="img-round"
                     src="imgs/projects/petconnect-project-square.png"
@@ -617,10 +616,8 @@
                         PetConnect
                         <span class="visually-hidden">(opens in a new tab)</span>
                       </h3>
-                      <!-- <h4 class="exp-content-place">Push10</h4> -->
                     </div>
                     <div class="project-ext-page-icon">
-                      <!-- <img src="imgs/icons/mauve-arrow-icon-20-bold.svg" /> -->
                       <div class="arrow-icon"></div>
                     </div>
                   </div>
@@ -636,17 +633,13 @@
                   </div>
                   <div class="exp-content-tools-cont">
                     <span class="exp-content-tool">ADOBE XD</span>
-                    <!-- <span class="exp-content-tool">CSS</span>
-                    <span class="exp-content-tool">JAVASCRIPT</span>
-                    <span class="exp-content-tool">REACT</span> -->
                   </div>
                 </div>
               </div>
             </a>
           </div>
-        </div>
-        <!-- comment for repush from og mac -->
-      </section>
+        </section>
+      </main>
     </div>
   </body>
 </html>

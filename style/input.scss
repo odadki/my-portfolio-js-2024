@@ -381,7 +381,7 @@ nav#main-nav {
   // opacity: 0;
   // transition: 2s ease-in-out;
 }
-section {
+main {
   max-width: 45vw;
   color: $color-gray;
   // display: none;
@@ -539,7 +539,7 @@ section {
   div.section-group {
     margin: 50px 0;
   }
-  div.about {
+  .about {
     // padding-top: 200px;
     padding-top: var(--scroll-align-offset, 0px);
   }
@@ -836,7 +836,7 @@ section {
   nav#main-nav {
     position: static;
   }
-  section#content {
+  #content {
     max-width: 100%;
 
     & > #about,
@@ -906,7 +906,7 @@ section {
     // transition: 2s ease-in-out;
   }
 
-  div.about {
+  .about {
     // padding-top: 200px;
     // padding-top: 20px !important;
   }
