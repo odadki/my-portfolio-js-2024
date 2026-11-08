@@ -577,6 +577,7 @@ main {
 
     .exp-date-cont {
       width: 10vw;
+      min-width: 5rem;
       word-wrap: normal;
       // padding-right: 28px;
       // background-color: $color-gray;
@@ -592,6 +593,12 @@ main {
       font-size: 14px;
       // background-color: $color-gray;
       // font-weight: 500;
+
+      & > span:not(.visually-hidden) {
+        display: block;
+        text-align: end;
+        white-space: nowrap;
+      }
 
       & > div {
         text-align: end;
@@ -2075,3 +2082,31 @@ p {
 // .no-break {
 //   white-space: nowrap;
 // }
+
+/* Responsive images: keep width/height attributes from distorting scaled images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Expandable text versions of persona and journey map images */
+details.text-version {
+  text-align: left;
+  border: 1px solid #c9ced3;
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+}
+details.text-version > summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+details.text-version[open] > summary {
+  margin-bottom: 0.75rem;
+}
+details.text-version th,
+details.text-version td,
+details.text-version li {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
