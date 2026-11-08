@@ -4,7 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Portfolio of Danielle Oda, a frontend developer creating responsive, accessible websites and modern user interfaces.">
-    <title>Danielle Oda</title>
+    <title>Danielle Oda - Web Developer</title>
+    <script>
+      // Skip the intro animation if it already played this visit, or if the
+      // visitor prefers reduced motion. Runs before the page paints so the
+      // intro never flashes.
+      try {
+        if (
+          sessionStorage.getItem("introSeen") ||
+          window.matchMedia("(prefers-reduced-motion: reduce)").matches
+        ) {
+          document.documentElement.classList.add("skip-intro");
+        }
+      } catch (e) {}
+    </script>
     <link rel="stylesheet" type="text/css" href="style/output.css" />
     <link rel="shortcut icon" href="./imgs/logos/doda-logo-bg.png" type="image/x-icon">
     <!-- <script>
@@ -233,7 +246,7 @@
                 </p>
               </div>
               <div class="exp-content">
-                <h3 class="hide-desktop-text">Aug 2023 - Present</h3>
+                <p class="hide-desktop-text">Aug 2023 - Present</p>
                 <h3 class="exp-content-title">Web Developer</h3>
                 <h4 class="exp-content-place">LMU Loyola Law School</h4>
                 <p class="exp-content-desc">
@@ -272,7 +285,7 @@
                 </p>
               </div>
               <div class="exp-content">
-                <h3 class="hide-desktop-text">Sep 2022 - Apr 2023</h3>
+                <p class="hide-desktop-text">Sep 2022 - Apr 2023</p>
                 <h3 class="exp-content-title">Web Developer Intern</h3>
                 <h4 class="exp-content-place">Push10</h4>
                 <p class="exp-content-desc">
@@ -302,7 +315,7 @@
                 </p>
               </div>
               <div class="exp-content">
-                <h3 class="hide-desktop-text">Sep 2021 - Apr 2023</h3>
+                <p class="hide-desktop-text">Sep 2021 - Apr 2023</p>
                 <h3 class="exp-content-title">Frontend Developer Projects</h3>
                 <p class="exp-content-desc">
                   Developed dynamic, fully responsive web applications with JavaScript and React, featuring projects such as a Weather & Dictionary App, a Facial Recognition Locator, and an interactive Robo Card interface with real-time filtering.
@@ -329,7 +342,7 @@
                 </p>
               </div>
               <div class="exp-content">
-                <h3 class="hide-desktop-text">Sep 2021 - May 2022</h3>
+                <p class="hide-desktop-text">Sep 2021 - May 2022</p>
                 <h3 class="exp-content-title">UX / UI Designer Projects</h3>
                 <p class="exp-content-desc">
                 Created responsive, user-centered interfaces in Adobe XD and Figma, refining wireframes into high-fidelity prototypes through iterative testing. Projects include a Cooking App, Boutique Shopping App, and Pet Adoption Platform.
@@ -348,12 +361,74 @@
           <h2 class="projects-heading heading projects-main-heading projects-no-margin-bottom" data-nav="projects-section" data-mobile-nav="mob-projects-section">Projects</h2>
           <h2 class="projects-sub-heading">Development</h2>
           <div class="section-group">
-            <a 
-            class="project-link" 
-            href="https://amberton.edu/" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            >
+            <div class="project-link">
+              <div class="section-text section-experience section-projects">
+                <div class="exp-date-cont projects-img-cont">
+                  <img class="img-round" src="imgs/projects/llstech-project-square.webp" alt="LLS Technology Services home page with the Loyola Law School Technology Services headline" width="240" height="240" loading="lazy" decoding="async" />
+                </div>
+                <div class="exp-content">
+                  <div class="projects-heading-container">
+                    <div class="project-header">
+                      <h3 class="exp-content-title">
+                        <a class="project-title-link" href="https://tech.lls.edu/" target="_blank" rel="noopener noreferrer">LLS Technology Services<span class="visually-hidden"> (opens in a new tab)</span></a>
+                      </h3>
+                      <h4 class="exp-content-place">LMU Loyola Law School</h4>
+                    </div>
+                    <div class="project-ext-page-icon" aria-hidden="true">
+                       <div class="arrow-icon"></div>
+                    </div>
+                  </div>
+                  <p class="exp-content-desc">
+                    I led the redesign and rebuild of the law school’s technology help site in WordPress, working with stakeholders from planning through launch. I reorganized the navigation around what faculty, staff, and students look for most and added a filterable Classrooms page so users can find room technology at a glance. Since the relaunch, site traffic has increased by 40%.
+                  </p>
+                  <div class="projects-mobile">
+                    <img class="projects-mobile-img" src="imgs/projects/llstech-mobile.webp" alt="LLS Technology Services home page with Resources and Contact buttons" width="1000" height="517" loading="lazy" decoding="async" />
+                  </div>
+                  <div class="exp-content-tools-cont">
+                    <span class="exp-content-tool">CSS</span>
+                    <span class="exp-content-tool">JAVASCRIPT</span>
+                    <span class="exp-content-tool">PANTHEON</span>
+                    <span class="exp-content-tool">PHP</span>
+                    <span class="exp-content-tool">SCSS</span>
+                    <span class="exp-content-tool">WORDPRESS</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-link">
+              <div class="section-text section-experience section-projects">
+                <div class="exp-date-cont projects-img-cont">
+                  <img class="img-round" src="imgs/projects/lmu-wp-theme-project-square.webp" alt="Loyola Law Review home page built on the custom LMU WordPress theme" width="240" height="240" loading="lazy" decoding="async" />
+                </div>
+                <div class="exp-content">
+                  <div class="projects-heading-container">
+                    <div class="project-header">
+                      <h3 class="exp-content-title">
+                        <a class="project-title-link" href="https://loyolalawreview.lls.edu/" target="_blank" rel="noopener noreferrer">LMU WordPress Theme<span class="visually-hidden">: view the Loyola Law Review site (opens in a new tab)</span></a>
+                      </h3>
+                      <h4 class="exp-content-place">LMU Loyola Law School</h4>
+                    </div>
+                    <div class="project-ext-page-icon" aria-hidden="true">
+                       <div class="arrow-icon"></div>
+                    </div>
+                  </div>
+                  <p class="exp-content-desc">
+                    I built a custom WordPress theme that brings consistent LMU branding to Loyola Law School’s WordPress sites, so each site shares the same look and structure while serving its own audience. The Loyola Law Review site is one of the sites built on the theme.
+                  </p>
+                  <div class="projects-mobile">
+                    <img class="projects-mobile-img" src="imgs/projects/lmu-wp-theme-mobile.webp" alt="Loyola Law Review home page with a campus photo and the site navigation" width="1000" height="517" loading="lazy" decoding="async" />
+                  </div>
+                  <div class="exp-content-tools-cont">
+                    <span class="exp-content-tool">CSS</span>
+                    <span class="exp-content-tool">JAVASCRIPT</span>
+                    <span class="exp-content-tool">PHP</span>
+                    <span class="exp-content-tool">SCSS</span>
+                    <span class="exp-content-tool">WORDPRESS</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-link">
               <div class="section-text section-experience section-projects">
                 <div class="exp-date-cont projects-img-cont">
                   <img class="img-round" src="imgs/projects/amberton-project-square.webp" alt="Amberton University&#x27;s Why Study at Amberton? page with graduate and online program stats" width="240" height="240" loading="lazy" decoding="async" />
@@ -362,12 +437,11 @@
                   <div class="projects-heading-container">
                     <div class="project-header">
                       <h3 class="exp-content-title">
-                        Amberton University
-                        <span class="visually-hidden">(opens in a new tab)</span>
+                        <a class="project-title-link" href="https://amberton.edu/" target="_blank" rel="noopener noreferrer">Amberton University<span class="visually-hidden"> (opens in a new tab)</span></a>
                       </h3>
                       <h4 class="exp-content-place">Push10</h4>
                     </div>
-                    <div class="project-ext-page-icon">
+                    <div class="project-ext-page-icon" aria-hidden="true">
                        <div class="arrow-icon"></div>
                     </div>
                   </div>
@@ -390,13 +464,8 @@
                   </div>
                 </div>
               </div>
-            </a>
-            <a
-              class="project-link"
-              href="https://odadki.github.io/face-recognition-app/" 
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            </div>
+            <div class="project-link">
               <div class="section-text section-experience section-projects">
                 <div class="exp-date-cont projects-img-cont">
                   <img class="img-round" src="imgs/projects/smartbrain-project-square.webp" alt="Smartbrain app outlining a detected face in a photo with a blue box" width="240" height="240" loading="lazy" decoding="async" />
@@ -405,11 +474,10 @@
                   <div class="projects-heading-container">
                     <div class="project-header">
                       <h3 class="exp-content-title">
-                        Smartbrain App
-                        <span class="visually-hidden">(opens in a new tab)</span>
+                        <a class="project-title-link" href="https://odadki.github.io/face-recognition-app/" target="_blank" rel="noopener noreferrer">Smartbrain App<span class="visually-hidden"> (opens in a new tab)</span></a>
                       </h3>
                     </div>
-                    <div class="project-ext-page-icon">
+                    <div class="project-ext-page-icon" aria-hidden="true">
                       <div class="arrow-icon"></div>
                     </div>
                   </div>
@@ -427,13 +495,8 @@
                   </div>
                 </div>
               </div>
-            </a>
-            <a
-              class="project-link"
-              href="https://odadki.github.io/robofriends-app-2/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            </div>
+            <div class="project-link">
               <div class="section-text section-experience section-projects">
                 <div class="exp-date-cont projects-img-cont">
                   <img class="img-round" src="imgs/projects/robofriends-project-square.webp" alt="Robofriends cards for two cartoon robots below a search box" width="240" height="240" loading="lazy" decoding="async" />
@@ -442,11 +505,10 @@
                   <div class="projects-heading-container">
                     <div class="project-header">
                       <h3 class="exp-content-title">
-                        Robofriends
-                        <span class="visually-hidden">(opens in a new tab)</span>
+                        <a class="project-title-link" href="https://odadki.github.io/robofriends-app-2/" target="_blank" rel="noopener noreferrer">Robofriends<span class="visually-hidden"> (opens in a new tab)</span></a>
                       </h3>
                     </div>
-                    <div class="project-ext-page-icon">
+                    <div class="project-ext-page-icon" aria-hidden="true">
                       <div class="arrow-icon"></div>
                     </div>
                   </div>
@@ -464,13 +526,8 @@
                   </div>
                 </div>
               </div>
-            </a>
-            <a
-              class="project-link"
-              href="https://quirky-lichterman-84f5c8.netlify.app/" 
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            </div>
+            <div class="project-link">
               <div class="section-text section-experience section-projects">
                 <div class="exp-date-cont projects-img-cont">
                   <img class="img-round" src="imgs/projects/weatherapp-project-square.webp" alt="WeatherApp showing current weather and a four-day forecast for New York" width="240" height="240" loading="lazy" decoding="async" />
@@ -479,11 +536,10 @@
                   <div class="projects-heading-container">
                     <div class="project-header">
                       <h3 class="exp-content-title">
-                        WeatherApp
-                        <span class="visually-hidden">(opens in a new tab)</span>
+                        <a class="project-title-link" href="https://quirky-lichterman-84f5c8.netlify.app/" target="_blank" rel="noopener noreferrer">WeatherApp<span class="visually-hidden"> (opens in a new tab)</span></a>
                       </h3>
                     </div>
-                    <div class="project-ext-page-icon">
+                    <div class="project-ext-page-icon" aria-hidden="true">
                       <div class="arrow-icon"></div>
                     </div>
                   </div>
@@ -501,15 +557,11 @@
                   </div>
                 </div>
               </div>
-            </a>
+            </div>
           </div>
           <h2 class="projects-heading projects-sub-heading" data-nav="projects-section">UX/UI Design Projects</h2>
           <div class="section-group">
-            <a class="project-link" 
-            href="./projects/ux/carrots.html" 
-            target="_blank"
-            rel="noopener noreferrer"
-            >
+            <div class="project-link">
               <div class="section-text section-experience section-projects">
                 <div class="exp-date-cont projects-img-cont">
                   <img class="img-round" src="imgs/projects/carrots-project-square.webp" alt="Carrots Cooking App logo" width="240" height="240" loading="lazy" decoding="async" />
@@ -518,11 +570,10 @@
                   <div class="projects-heading-container">
                     <div class="project-header">
                       <h3 class="exp-content-title">
-                        Carrots Cooking App
-                        <span class="visually-hidden">(opens in a new tab)</span>
+                        <a class="project-title-link" href="./projects/ux/carrots.html">Carrots Cooking App</a>
                       </h3>
                     </div>
-                    <div class="project-ext-page-icon">
+                    <div class="project-ext-page-icon" aria-hidden="true">
                       <div class="arrow-icon"></div>
                     </div>
                   </div>
@@ -537,13 +588,8 @@
                   </div>
                 </div>
               </div>
-            </a>
-            <a 
-            class="project-link" 
-            href="./projects/ux/boutiqueapp.html" 
-            target="_blank"
-            rel="noopener noreferrer"
-            >
+            </div>
+            <div class="project-link">
               <div class="section-text section-experience section-projects">
                 <div class="exp-date-cont projects-img-cont">
                   <img class="img-round" src="imgs/projects/boutiqueapp-project-square.webp" alt="BoutiqueApp logo" width="240" height="240" loading="lazy" decoding="async" />
@@ -552,11 +598,10 @@
                   <div class="projects-heading-container">
                     <div class="project-header">
                       <h3 class="exp-content-title">
-                        BoutiqueApp
-                        <span class="visually-hidden">(opens in a new tab)</span>
+                        <a class="project-title-link" href="./projects/ux/boutiqueapp.html">BoutiqueApp</a>
                       </h3>
                     </div>
-                    <div class="project-ext-page-icon">
+                    <div class="project-ext-page-icon" aria-hidden="true">
                       <div class="arrow-icon"></div>
                     </div>
                   </div>
@@ -571,13 +616,8 @@
                   </div>
                 </div>
               </div>
-            </a>
-            <a 
-            class="project-link" 
-            href="./projects/ux/petconnect.html" 
-            target="_blank"
-            rel="noopener noreferrer"
-            >
+            </div>
+            <div class="project-link">
               <div class="section-text section-experience section-projects">
                 <div class="exp-date-cont projects-img-cont">
                   <img class="img-round" src="imgs/projects/petconnect-project-square.webp" alt="PetConnect logo" width="240" height="240" loading="lazy" decoding="async" />
@@ -586,11 +626,10 @@
                   <div class="projects-heading-container">
                     <div class="project-header">
                       <h3 class="exp-content-title">
-                        PetConnect
-                        <span class="visually-hidden">(opens in a new tab)</span>
+                        <a class="project-title-link" href="./projects/ux/petconnect.html">PetConnect</a>
                       </h3>
                     </div>
-                    <div class="project-ext-page-icon">
+                    <div class="project-ext-page-icon" aria-hidden="true">
                       <div class="arrow-icon"></div>
                     </div>
                   </div>
@@ -605,7 +644,7 @@
                   </div>
                 </div>
               </div>
-            </a>
+            </div>
           </div>
         </section>
       </main>

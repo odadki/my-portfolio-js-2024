@@ -93,10 +93,19 @@
 document.addEventListener("DOMContentLoaded", () => {
   const introAnimation = document.getElementById("intro-animation");
 
-  if (!introAnimation) {
+  if (
+    !introAnimation ||
+    document.documentElement.classList.contains("skip-intro")
+  ) {
+    if (introAnimation) introAnimation.style.display = "none";
     scrollOffset();
     return;
   }
+
+  // Remember that the intro played, so it only shows once per visit
+  try {
+    sessionStorage.setItem("introSeen", "true");
+  } catch (e) {}
 
   // Total duration: last letter (0.75s) + its animation (0.5s) + border (0.5s) = ~1.75s
   const totalDuration = 1750;
