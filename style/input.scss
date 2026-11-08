@@ -577,6 +577,7 @@ main {
 
     .exp-date-cont {
       width: 10vw;
+      min-width: 5rem;
       word-wrap: normal;
       // padding-right: 28px;
       // background-color: $color-gray;
@@ -592,6 +593,12 @@ main {
       font-size: 14px;
       // background-color: $color-gray;
       // font-weight: 500;
+
+      & > span:not(.visually-hidden) {
+        display: block;
+        text-align: end;
+        white-space: nowrap;
+      }
 
       & > div {
         text-align: end;

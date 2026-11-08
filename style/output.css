@@ -386,6 +386,7 @@ main .section-experience.section-experience-cont {
 }
 main .section-experience .exp-date-cont {
   width: 10vw;
+  min-width: 5rem;
   word-wrap: normal;
 }
 main .section-experience .exp-date {
@@ -396,6 +397,11 @@ main .section-experience .exp-date {
 }
 main .section-experience .exp-date-div {
   font-size: 14px;
+}
+main .section-experience .exp-date-div > span:not(.visually-hidden) {
+  display: block;
+  text-align: end;
+  white-space: nowrap;
 }
 main .section-experience .exp-date-div > div {
   text-align: end;
